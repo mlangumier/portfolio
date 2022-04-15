@@ -1,46 +1,62 @@
-# Getting Started with Create React App
+# Dépendancies
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Installed
+- TypeScript
+- Jest
 
-## Available Scripts
+## Coming soon
+- Node sass
+- Redux / React-redux
+- React Router
+- Axios
+- Material UI & icons
+- Firebase
+- i18n
+- Redux Saga (action + side effects)
+- JS Ramda (helps with map, filters)
 
-In the project directory, you can run:
+# Model
+- Starting point : https://medium.com/geekculture/react-js-architecture-features-folder-structure-design-pattern-70b7b9103f22#7305
+- Typescript : https://github.com/typescript-cheatsheets/react
+- Styles : https://mui.com/system/styles/basics/
 
-### `npm start`
+## Infos
+- Site à multiples projets
+- Base de donnée sur Firebase
+- "Connexion" utilisateur en arrivant sur le site (nom/pseudo uniquement) ou créer un pseudo random
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Pages
+- Home :
+  - Présentation, photo
+  - Parcours (timeline + click for details => modal)
+  - Projects présents sur ce site
+  - Poll (ex: what hobbies do you have?)
+- Todo
+  - List
+  - Modify todo (+ id)
+- Movies
+  - Movies list: list all movies from api, ordered by release date. Can add to favorites or watch later
+  - Favorites: list all favorite movies
+  - Watch-later: list all movies to watch later
+- Profile : see recap of all info on this website
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Composants
+- Navbar-left (main): 
+  - Responsive, can be opened (icons + names of all pages) or closed (icons of main pages)
+- Navbar-top (secondary):
+  - Content depends on mini-projects (Movies: all, favorites, watch later)
+- Footer: 
+  - Links all projects except the one current opened (url)
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Database
+- User :
+  - id
+  - name
+  - movie:
+    - id
+    - favorite
+    - watch_later
+  - todo_list:
+    - id
+    - task
+    - is_done
