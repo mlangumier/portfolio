@@ -55,7 +55,11 @@
   - movie:
     - id
     - favorite
+      - id
+      - name
     - watch_later
+      - id
+      - name
   - todo_list:
     - id
     - task
