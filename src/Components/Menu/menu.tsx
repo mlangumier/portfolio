@@ -1,10 +1,24 @@
+import { Box } from "@mui/material"
+import { FC } from "react"
+import { NavLink } from "react-router-dom"
 
+type MenuItem = {
+  name: string,
+  path: string,
+}
 
-const Menu = () => {
+type MenuItemsList = {
+  menuItems: MenuItem[]
+}
+
+const MenuTop: FC<MenuItemsList> = ({ menuItems }) => {
+  console.log(menuItems)
   return (
-    <div>
-      Main menu
-    </div>
+    <Box>
+      {menuItems.map((item, index) => (
+        <NavLink to={item?.path} key={`MenuItem-${index}`}>{item?.name}</NavLink>
+      ))}
+    </Box>
   )
 }
-export default Menu
+export default MenuTop

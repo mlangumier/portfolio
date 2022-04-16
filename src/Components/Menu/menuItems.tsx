@@ -1,6 +1,10 @@
-import { FAVORITES, WATCHLATER } from 'Routes/CONSTANTS';
+import { FAVORITES, MOVIES, WATCHLATER } from 'Routes/CONSTANTS';
 
 const MenuItemsMovies = [
+  {
+    name: 'Movies',
+    path: MOVIES,
+  },
   {
     name: 'Favorites',
     path: FAVORITES,
