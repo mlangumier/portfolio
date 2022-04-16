@@ -3,13 +3,13 @@
 ## Installed
 - TypeScript
 - Jest
-
-## Coming soon
 - Node sass
-- Redux / React-redux
+- React-redux
 - React Router
 - Axios
 - Material UI & icons
+
+## Coming soon
 - Firebase
 - i18n
 - Redux Saga (action + side effects)
