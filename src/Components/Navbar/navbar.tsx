@@ -1,6 +1,6 @@
 import * as React from 'react';
 import NavbarItems from './navbarItems'
-import { styled, useTheme, Theme, CSSObject } from '@mui/material/styles';
+import { styled, Theme, CSSObject } from '@mui/material/styles';
 import MuiDrawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
 import Divider from '@mui/material/Divider';
@@ -75,24 +75,15 @@ const Navbar = () => {
             {!open ? <ChevronRightIcon /> : <ChevronLeftIcon />}
           </IconButton>
         </DrawerHeader>
-        {/* <Divider /> */}
+        <Divider />
         <List>
         {NavbarItems.map((item, index) => (
-          <NavLink to={item?.path} >
+          <NavLink to={item?.path} key={`NavbarItem-${index}`} >
             <ListItemButton
-              key={item.name}
-              sx={{
-                minHeight: 48,
-                justifyContent: open ? 'initial' : 'center',
-                px: 2.5,
-              }}
+              sx={{ minHeight: 48, justifyContent: open ? 'initial' : 'center', px: 2.5 }}
             >
               <ListItemIcon
-                sx={{
-                  minWidth: 0,
-                  mr: open ? 3 : 'auto',
-                  justifyContent: 'center',
-                }}
+                sx={{ minWidth: 0, mr: open ? 3 : 'auto', justifyContent: 'center' }}
               >
                 {item.icon}
               </ListItemIcon>
@@ -101,7 +92,8 @@ const Navbar = () => {
           </NavLink>
           ))}
         </List>
-        <Divider />
+        {/* <Divider /> */}
+
       </Drawer>
   );
 }

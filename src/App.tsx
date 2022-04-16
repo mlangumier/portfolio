@@ -1,12 +1,20 @@
 import './App.scss';
 import RouterConfig from 'Routes/routes';
-import { BrowserRouter, Routes } from 'react-router-dom';
+import { createTheme, ThemeProvider } from '@mui/material';
+
+const theme = createTheme({
+  typography: {
+    fontFamily: 'Merriweather Sans'
+  }
+})
 
 function App() {
   return (
-    <div className="App">
-      <RouterConfig />
-    </div>
+    <ThemeProvider theme={theme}>
+      <div className="App">
+        <RouterConfig />
+      </div>
+    </ThemeProvider>
   );
 }
 

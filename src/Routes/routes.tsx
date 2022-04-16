@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Homepage from "Pages/Home/homepage";
 import Movies from "Pages/Movies/movies";
-import { FAVORITES, HOMEPAGE, MOVIEDETAILS, MOVIES, WATCHLATER } from "./CONSTANTS";
+import { HOMEPAGE, MOVIES } from "./CONSTANTS";
 
 const RouterConfig = () => {
   return (
