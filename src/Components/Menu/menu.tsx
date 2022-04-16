@@ -1,5 +1,5 @@
-import { Box } from "@mui/material"
-import { FC } from "react"
+import { Box, Divider } from "@mui/material"
+import React, { FC } from "react"
 import { NavLink } from "react-router-dom"
 
 type MenuItem = {
@@ -12,13 +12,22 @@ type MenuItemsList = {
 }
 
 const MenuTop: FC<MenuItemsList> = ({ menuItems }) => {
-  console.log(menuItems)
   return (
-    <Box>
-      {menuItems.map((item, index) => (
-        <NavLink to={item?.path} key={`MenuItem-${index}`}>{item?.name}</NavLink>
-      ))}
-    </Box>
+    <React.Fragment>
+      <Box sx={{
+        height:"64px", 
+        display:"flex", 
+        justifyContent:"space-around",
+        alignItems:"center",
+        background:'lightskyblue',
+        // borderBottom:'1px solid #bbb',
+      }}>
+        {menuItems.map((item, index) => (
+          <NavLink to={item?.path} key={`MenuItem-${index}`}>{item?.name}</NavLink>
+          ))}
+      </Box>
+      <Divider />
+    </React.Fragment>
   )
 }
 export default MenuTop

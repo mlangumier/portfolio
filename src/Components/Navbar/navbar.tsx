@@ -68,6 +68,8 @@ const Navbar = () => {
     setOpen(!open);
   };
 
+  // Make navbar persist after clicking ? 
+
   return (
       <Drawer variant="permanent" open={open}>
         <DrawerHeader>

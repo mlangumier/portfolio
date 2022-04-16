@@ -2,7 +2,7 @@ import { FAVORITES, MOVIES, WATCHLATER } from 'Routes/CONSTANTS';
 
 const MenuItemsMovies = [
   {
-    name: 'Movies',
+    name: 'Movie Library',
     path: MOVIES,
   },
   {
@@ -12,7 +12,26 @@ const MenuItemsMovies = [
   {
     name: 'Watch Later',
     path: WATCHLATER,
-  }
+  },
 ]
 
-export { MenuItemsMovies }
+const MenuItemsHomepage = [
+  {
+    name: 'Intro',
+    path: '#intro',
+  },
+  {
+    name: 'Experience',
+    path: '#experience',
+  },
+  {
+    name: 'Hobbies',
+    path: '#hobbies',
+  },
+  {
+    name: 'Contact',
+    path: '#contact',
+  },
+]
+
+export { MenuItemsMovies, MenuItemsHomepage }

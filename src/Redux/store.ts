@@ -2,8 +2,8 @@ import { configureStore } from '@reduxjs/toolkit'
 
 const store = configureStore({
   reducer: {
-    // movies: moviesReducer,
-    // users: usersReducer,
+    // movies: movieReducer,
+    // users: userReducer,
   },
 })
 

@@ -17,7 +17,6 @@ const RouterConfig = () => {
             <Route index element={<Movies />} />
             <Route path={FAVORITES} element={<Favorites />} />
             <Route path={WATCHLATER} element={<WatchLater />} />
-            {/* <Route path={MOVIEDETAILS} element={<MovieDetails />} /> */}
           </Route>
           <Route path='*' element={<Homepage />} />
         </Routes>
