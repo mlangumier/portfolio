@@ -1,4 +1,4 @@
-import { Box, Container, Typography } from "@mui/material";
+import { Box, Container } from "@mui/material";
 import { MenuItemsHomepage } from "Components/Menu/menuItems";
 import Navbar from "Components/Navbar/navbar";
 import MenuTop from "Components/Menu/menu";
@@ -9,19 +9,28 @@ import Contact from 'Pages/Home/Contact/contact'
 
 const Homepage = () => {
   return (
-    <Box sx={{ display: 'flex' }}>
+    <Container 
+      disableGutters 
+      fixed={false} 
+      maxWidth={false} 
+      sx={{ display: 'flex', width: '100vw', height: '100vh' }}
+    >
       <Navbar />
-      <Box className="page-full">
+      <Box className="page-full" sx={{ width: '100vw' }}>
         <MenuTop menuItems={MenuItemsHomepage} />
-        {/* Make container Fluid (~75wv) */}
-        <Container className="page-content" maxWidth="xl" component="main" sx={{ flexGrow: 1, p: 3 }} style={{background:'lightgreen'}}>
+        <Container 
+          className="page-content" 
+          maxWidth="xl" 
+          component="main" 
+          sx={{ flexGrow: 1, p: 3, background:'lightgreen', maxHeight: '100vh' }}
+        >
           <Introduction />
           <Experiences />
           <Hobbies />
           <Contact />
         </Container>
       </Box>
-    </Box>
+    </Container>
   )
 }
 

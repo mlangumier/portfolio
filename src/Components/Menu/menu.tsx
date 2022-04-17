@@ -19,7 +19,7 @@ const MenuTop: FC<MenuItemsList> = ({ menuItems }) => {
         display:"flex", 
         justifyContent:"space-around",
         alignItems:"center",
-        background:'lightskyblue',
+        // background:'lightskyblue',
         // borderBottom:'1px solid #bbb',
       }}>
         {menuItems.map((item, index) => (
