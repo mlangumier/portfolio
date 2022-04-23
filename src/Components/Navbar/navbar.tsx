@@ -1,18 +1,19 @@
-import * as React from 'react';
+import { Dispatch, FC, SetStateAction } from "react"
+import { NavLink } from 'react-router-dom';
 import NavbarItems from './navbarItems'
 import { styled, Theme, CSSObject } from '@mui/material/styles';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import MuiDrawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
-import Divider from '@mui/material/Divider';
+import { Box } from "@mui/material";
 import IconButton from '@mui/material/IconButton';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import { NavLink } from 'react-router-dom';
 
-const drawerWidth = 240;
+const drawerWidth = 180;
 
 const openedMixin = (theme: Theme): CSSObject => ({
   width: drawerWidth,
@@ -61,40 +62,56 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
   }),
 );
 
-const Navbar = () => {
-  const [open, setOpen] = React.useState(false);
+type isNavbarOpen = {
+  open: boolean,
+  setOpen: Dispatch<SetStateAction<boolean>>
+}
+
+const Navbar: FC<isNavbarOpen> = ({ open, setOpen }) => {
 
   const handleDrawer = () => {
     setOpen(!open);
   };
 
-  // Make navbar persist after clicking ? 
-
   return (
-      <Drawer variant="permanent" open={open}>
+      <Drawer variant="permanent" open={open} id="left-drawer">
+
         <DrawerHeader>
           <IconButton onClick={handleDrawer}>
             {!open ? <ChevronRightIcon /> : <ChevronLeftIcon />}
           </IconButton>
         </DrawerHeader>
-        <Divider />
-        <List>
-        {NavbarItems.map((item, index) => (
-          <NavLink to={item?.path} key={`NavbarItem-${index}`} >
+
+        <Box style={{margin:'50px 0', display:'flex', flexDirection:'column', justifyContent:'space-between', height:'100%'}}>
+          <List>
+          {NavbarItems.map((item, index) => (
+            <NavLink to={item?.path} key={`NavbarItem-${index}`} >
+              <ListItemButton
+                sx={{ minHeight: 48, justifyContent: open ? 'initial' : 'center', px: 2.5 }}
+              >
+                <ListItemIcon
+                  sx={{ minWidth: 0, mr: open ? 3 : 'auto', justifyContent: 'center' }}
+                >
+                  {item.icon}
+                </ListItemIcon>
+                <ListItemText primary={item.name} sx={{ opacity: open ? 1 : 0 }} />
+              </ListItemButton>
+            </NavLink>
+            ))}
+          </List>
+          <NavLink to={'/'} >
             <ListItemButton
               sx={{ minHeight: 48, justifyContent: open ? 'initial' : 'center', px: 2.5 }}
             >
               <ListItemIcon
                 sx={{ minWidth: 0, mr: open ? 3 : 'auto', justifyContent: 'center' }}
               >
-                {item.icon}
+                <AccountCircleIcon style={{color:'#666'}} />
               </ListItemIcon>
-              <ListItemText primary={item.name} sx={{ opacity: open ? 1 : 0 }} />
+              <ListItemText primary={'Account'} sx={{ opacity: open ? 1 : 0 }} />
             </ListItemButton>
           </NavLink>
-          ))}
-        </List>
-        {/* <Divider /> */}
+        </Box>
 
       </Drawer>
   );
