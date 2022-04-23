@@ -10,6 +10,7 @@
 - Material UI & icons
 
 ## Coming soon
+- Swiper
 - Firebase
 - i18n
 - Redux Saga (action + side effects)
