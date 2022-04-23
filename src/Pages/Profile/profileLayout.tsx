@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
-import { Outlet } from "react-router-dom";
-import MenuTop from "Components/Menu/menu";
+import { MenuItemsProfile } from "Components/Menu/menuItems";
 import Navbar from "Components/Navbar/navbar";
-import { MenuItemsMovies } from "Components/Menu/menuItems";
+import MenuTop from "Components/Menu/menu";
 import { Box, Container } from "@mui/material";
 
-const MoviesLayout = () => {
+const ProfileLayout = () => {
   const [ open, setOpen ] = useState<boolean>(false);
   const [ navbarwidth, setNavbarWidth ] = useState<number>(65);
   
@@ -17,13 +16,13 @@ const MoviesLayout = () => {
     <Box sx={{ display: 'flex' }}>
       <Navbar open={open} setOpen={setOpen} />
       <Box className="page-full" style={{ width: `calc(100% - ${navbarwidth}px)`, flexGrow: 1 }}>
-          <MenuTop menuItems={MenuItemsMovies} />
-          <Container className="page-content" maxWidth="xl" component="main" sx={{ flexGrow: 1, p: 3 }}>
-            <Outlet />
-          </Container>
+        <MenuTop menuItems={MenuItemsProfile} />
+        <Container className="page-content" maxWidth="xl" component="main" sx={{ p: 3 }}>
+          <div>User Profile Page</div>
+        </Container>
       </Box>
     </Box>
   )
 }
 
-export default MoviesLayout;
+export default ProfileLayout;

@@ -34,4 +34,11 @@ const MenuItemsHomepage = [
   },
 ]
 
-export { MenuItemsMovies, MenuItemsHomepage }
+const MenuItemsProfile = [
+  {
+    name: 'Username',
+    path: '',
+  }
+]
+
+export { MenuItemsMovies, MenuItemsHomepage, MenuItemsProfile }

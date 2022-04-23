@@ -12,6 +12,7 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
+import { PROFILE } from "Routes/CONSTANTS";
 
 const drawerWidth = 180;
 
@@ -99,13 +100,9 @@ const Navbar: FC<isNavbarOpen> = ({ open, setOpen }) => {
             </NavLink>
             ))}
           </List>
-          <NavLink to={'/'} >
-            <ListItemButton
-              sx={{ minHeight: 48, justifyContent: open ? 'initial' : 'center', px: 2.5 }}
-            >
-              <ListItemIcon
-                sx={{ minWidth: 0, mr: open ? 3 : 'auto', justifyContent: 'center' }}
-              >
+          <NavLink to={PROFILE} >
+            <ListItemButton sx={{ minHeight: 48, justifyContent: open ? 'initial' : 'center', px: 2.5 }} >
+              <ListItemIcon sx={{ minWidth: 0, mr: open ? 3 : 'auto', justifyContent: 'center' }} >
                 <AccountCircleIcon style={{color:'#666'}} />
               </ListItemIcon>
               <ListItemText primary={'Account'} sx={{ opacity: open ? 1 : 0 }} />
