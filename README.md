@@ -20,6 +20,8 @@
 - Starting point : https://medium.com/geekculture/react-js-architecture-features-folder-structure-design-pattern-70b7b9103f22#7305
 - Typescript : https://github.com/typescript-cheatsheets/react
 - Styles : https://mui.com/system/styles/basics/
+- Homepage => https://www.moreyum.com/
+- Projet movies => Netflix
 
 ## Infos
 - Site à multiples projets

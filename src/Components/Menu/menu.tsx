@@ -1,6 +1,6 @@
+import React from "react"
 import { Box, Divider } from "@mui/material"
-import React, { FC } from "react"
-import { NavLink } from "react-router-dom"
+import { Link } from "react-router-dom"
 
 type Props = {
   menuItems: {
@@ -19,7 +19,7 @@ const MenuTop = ({ menuItems }: Props) => {
         alignItems:"center",
       }}>
         {menuItems.map((item, index) => (
-          <NavLink to={item?.path} key={`MenuItem-${index}`}>{item?.name}</NavLink>
+          <Link to={item?.path} key={`MenuItem-${index}`}>{item?.name}</Link>
           ))}
       </Box>
       <Divider />
