@@ -23,7 +23,7 @@ const CreateUser = () => {
       Before we begin, let me tell you what this website is about
     </Typography>
     <Typography variant="body1" component="p">
-      The projects you are going to see on this website keep the data in a database. In order to personalize your visit, I could use your name, or I can create one for you.
+      The projects you are going to see on this website keep some info in a database. In order to personalize your visit, I could use your name, or I can create one for you.
     </Typography>
     <Typography variant="body2" component="p">
       Keep in mind, I will not get any of your personal data.

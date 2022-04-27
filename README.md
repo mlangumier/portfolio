@@ -24,9 +24,10 @@
 - Projet movies => Netflix
 
 ## Infos
+- Deployement sur Vercel
 - Site à multiples projets
 - Base de donnée sur Firebase
-- "Connexion" utilisateur en arrivant sur le site (nom/pseudo uniquement) ou créer un pseudo random
+- Utiliser un Style/theme pour chaque partie du projet
 
 ## Pages
 - Home :

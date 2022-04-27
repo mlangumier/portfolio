@@ -9,6 +9,7 @@ const interests = [
   "Husky lover",
   "Hiker",
   "Hobbit",
+  "History Nerd",
 ]
 
 
@@ -30,8 +31,8 @@ const Introduction = () => {
       <Box>
         <Typography variant="h4" component="h3">Learn. Share. Evolve.</Typography>
         <Typography variant="h3" component="h2">
-          Life will always be exciting <br />
-          since there is so much to <Typography variant="h3" component="span">develop</Typography>
+          Life is always exciting <br />
+          when there is so much to <Typography variant="h3" component="span">learn</Typography>
         </Typography>
         <Typography variant="h5" component="h5">
           Web Developer & {word}
