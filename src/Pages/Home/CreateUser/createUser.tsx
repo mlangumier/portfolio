@@ -10,6 +10,8 @@ const CreateUser = () => {
     setUsername(`Mathieu#${randomNumber(1000, 9999)}`)
   }, [])
 
+  //https://www.freecodecamp.org/news/how-to-use-redux-in-your-react-typescript-app/#setting-up
+
   return (
   <Box>
     <Typography variant="h5" component="h5">
