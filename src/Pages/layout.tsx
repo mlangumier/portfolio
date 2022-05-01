@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Navbar } from "Components/Navbar/navbar";
 import { Box } from "@mui/material";
 import { Outlet } from "react-router-dom";
+import { WelcomeUser } from "Components/WelcomeUser/welcomeUser";
 
 export const Layout = () => {
   const [ open, setOpen ] = useState<boolean>(false);
@@ -17,6 +18,10 @@ export const Layout = () => {
       <Box className="page-full" style={{ width: `calc(100% - ${navbarwidth}px)`, flexGrow: 1 }}>
         <Outlet />
       </Box>
+      {
+        // Vérifier si state.user has a name
+        <WelcomeUser />
+      }
     </Box>
   )
 }
