@@ -34,7 +34,7 @@ const userReducer = (
         todos: action.user.todos
       }
       return {
-        ...Satellite,
+        ...state,
         user: updatedUser
       }
   }

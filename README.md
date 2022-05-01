@@ -4,7 +4,7 @@
 - TypeScript
 - Jest
 - Node sass
-- React-redux
+- Redux / React-redux
 - React Router
 - Axios
 - Material UI & icons
