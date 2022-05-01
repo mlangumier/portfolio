@@ -1,4 +1,3 @@
-import { Satellite } from "@mui/icons-material"
 import * as actionTypes from "./actionTypes"
 
 const initialState: UserState = {
