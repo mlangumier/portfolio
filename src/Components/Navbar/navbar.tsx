@@ -68,7 +68,7 @@ type isNavbarOpen = {
   setOpen: Dispatch<SetStateAction<boolean>>
 }
 
-const Navbar: FC<isNavbarOpen> = ({ open, setOpen }) => {
+export const Navbar: FC<isNavbarOpen> = ({ open, setOpen }) => {
 
   const handleDrawer = () => {
     setOpen(!open);
@@ -113,4 +113,3 @@ const Navbar: FC<isNavbarOpen> = ({ open, setOpen }) => {
       </Drawer>
   );
 }
-export default Navbar

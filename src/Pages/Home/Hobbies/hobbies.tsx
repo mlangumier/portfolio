@@ -1,8 +1,7 @@
 import { Box, Checkbox, FormControlLabel, Typography } from "@mui/material"
 import { hobbiesList } from './hobbiesList'
 
-const Hobbies = () => {
-
+export const Hobbies = () => {
   return (
     <Box>
       <h3>Hobbies</h3>
@@ -31,5 +30,3 @@ const Hobbies = () => {
     </Box>
   )
 }
-
-export default Hobbies;

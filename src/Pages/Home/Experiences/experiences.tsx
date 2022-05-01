@@ -1,7 +1,6 @@
 import { Box } from "@mui/material"
 
-
-const Experiences = () => {
+export const Experiences = () => {
   return (
     <Box>
       <h3>Experiences</h3>
@@ -10,5 +9,3 @@ const Experiences = () => {
     </Box>
   )
 }
-
-export default Experiences;

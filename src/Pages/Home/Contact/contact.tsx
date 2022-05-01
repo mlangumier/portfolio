@@ -1,7 +1,6 @@
 import { Box } from "@mui/material"
 
-
-const Contact = () => {
+export const Contact = () => {
   return (
     <Box>
       <h3>Contact</h3>
@@ -10,5 +9,3 @@ const Contact = () => {
     </Box>
   )
 }
-
-export default Contact;

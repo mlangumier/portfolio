@@ -13,7 +13,7 @@ const interests = [
 ]
 
 
-const Introduction = () => {
+export const Introduction = () => {
   const [ word, setWord ] = useState<string>(interests[0])
   
   useEffect(() => {
@@ -41,5 +41,3 @@ const Introduction = () => {
     </Box>
   )
 }
-
-export default Introduction;

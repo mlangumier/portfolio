@@ -1,29 +1,17 @@
-import { useEffect, useState } from "react";
+import React from "react";
 import { Outlet } from "react-router-dom";
-import MenuTop from "Components/Menu/menu";
-import Navbar from "Components/Navbar/navbar";
+import { MenuTop } from "Components/Menu/menu";
 import { MenuItemsMovies } from "Components/Menu/menuItems";
-import { Box, Container } from "@mui/material";
+import { Container } from "@mui/material";
 
-const MoviesLayout = () => {
-  const [ open, setOpen ] = useState<boolean>(false);
-  const [ navbarwidth, setNavbarWidth ] = useState<number>(65);
-  
-  useEffect(() => {
-    open ? setNavbarWidth(180) : setNavbarWidth(65);
-  }, [open])
+export const MoviesLayout = () => {
 
   return (
-    <Box sx={{ display: 'flex' }}>
-      <Navbar open={open} setOpen={setOpen} />
-      <Box className="page-full" style={{ width: `calc(100% - ${navbarwidth}px)`, flexGrow: 1 }}>
-          <MenuTop menuItems={MenuItemsMovies} />
-          <Container className="page-content" maxWidth="xl" component="main" sx={{ flexGrow: 1, p: 3 }}>
-            <Outlet />
-          </Container>
-      </Box>
-    </Box>
+    <React.Fragment>
+      <MenuTop menuItems={MenuItemsMovies} />
+      <Container className="page-content" maxWidth="xl" component="main" sx={{ flexGrow: 1, p: 3 }}>
+        <Outlet />
+      </Container>
+    </React.Fragment>
   )
 }
-
-export default MoviesLayout;

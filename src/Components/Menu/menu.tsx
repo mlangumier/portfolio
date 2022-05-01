@@ -9,7 +9,7 @@ type Props = {
   }[],
 }
 
-const MenuTop = ({ menuItems }: Props) => {
+export const MenuTop = ({ menuItems }: Props) => {
   return (
     <React.Fragment> 
       <Box sx={{
@@ -26,4 +26,3 @@ const MenuTop = ({ menuItems }: Props) => {
     </React.Fragment>
   )
 }
-export default MenuTop
