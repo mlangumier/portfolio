@@ -4,6 +4,7 @@ import type { RootState } from 'Redux/store'
 interface UserState {
   id: string,
   name: string,
+  isConfirmed: boolean,
   movies: Array<object>,
   todos: Array<object>,
 }
@@ -11,6 +12,7 @@ interface UserState {
 const initialState: UserState = {
   id: '',
   name: '',
+  isConfirmed: false,
   movies: [],
   todos: [],
 }
@@ -19,11 +21,16 @@ export const userSlice = createSlice({
   name: 'user', 
   initialState,
   reducers: {
-    initUser: (state, action: PayloadAction<UserState>) => {
-      // Get localStorage/state-storage or ask if has user (yes: find / no: create or let us create + reroll)
+    // test
+    initUser: (state) => {
+      state.id = 'Mathieu#8653';
+      state.name = 'Mathieu';
+    },
+    updateUserName: (state, action: PayloadAction<UserState>) => {
       state.id = action.payload.id;
       state.name = action.payload.name;
     }
+
   }
 })
 
