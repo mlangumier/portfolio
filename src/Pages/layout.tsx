@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Navbar } from "Components/Navbar/navbar";
 import { Box } from "@mui/material";
 import { Outlet } from "react-router-dom";
-import { WelcomeUser } from "Components/WelcomeUser/welcomeUser";
+import { Connection } from "Components/Connection/connection";
 import { useSelector } from "react-redux";
 import { RootState } from "Redux/store";
 import { useAppDispatch } from "Redux/hooks";
@@ -30,7 +30,8 @@ export const Layout = () => {
       <Box className="page-full" style={{ width: `calc(100% - ${navbarwidth}px)`, flexGrow: 1 }}>
         <Outlet />
       </Box>
-      <WelcomeUser />
+      {/* Check localStorage, if empty, <Connection /> */}
+      <Connection />
     </Box>
   )
 }

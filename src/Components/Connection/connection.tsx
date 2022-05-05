@@ -1,0 +1,59 @@
+import { useState } from "react";
+import Box from '@mui/material/Box';
+import randomNumber from 'Functions/randomNumber'
+import Modal from '@mui/material/Modal';
+import { SearchUser } from './SearchUser/searchUser'
+import { CreateUser } from './CreateUser/createUser'
+import { Typography } from "@mui/material";
+
+const modalStyle = {
+  position: 'absolute' as 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: 600,
+  height: 240,
+  bgcolor: 'background.paper',
+  border: '2px solid #00',
+  boxShadow: 24,
+  p: 4,
+};
+
+const modalFlex = {
+  textAlign:'center',
+  display: 'flex',
+}
+
+export const Connection = () => {
+  const [ userName, setUsername ] = useState<string>("")
+  const [ open, setOpen ] = useState<boolean>(true);
+
+  const handleOpen = () => setOpen(!open);
+  
+  const handleUserName = (inputName: string) => {
+    setUsername(`${inputName || 'Mathieu'}#${randomNumber(100, 9999)}`)
+  }
+
+
+  return (
+    <Box>
+      <Modal
+        open={open}
+        onClose={handleOpen}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+        // hideBackdrop
+        // style={{backgroundColor:'rgba(0, 0, 0, 0.6)'}}
+        sx={{flexGrow: 1}}
+        >
+          <Box sx={modalStyle}>
+            <Box sx={modalFlex}>
+              <SearchUser />
+              <CreateUser />
+            </Box>
+            <Typography variant="body2" component="p">* Remember that you can modify you username at any time by visiting your Profile</Typography>
+          </Box>
+      </Modal>
+    </Box>
+  )
+}
