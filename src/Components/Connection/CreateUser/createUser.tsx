@@ -13,9 +13,11 @@ export const CreateUser = () => {
   }
 
   const handleSubmit = () => {
-    // dispatch(updateUsername({id: `${username}#9876`, name: username, isConfirmed:true, movies:[], todos:[]}))
+    dispatch(updateUsername({id: `${username}#9876`, name: username, isConfirmed:true, movies:[], todos:[]}))
     // SEARCH : redux argument of type is not assignable to parameter of type
-    dispatch(updateUsername({id: `${username}#9876`, name: username, isConfirmed:true}))
+    // Envoyer uniquement la variable/objet ?
+    // Récupérer UserState par SELECTOR et le déconstruire dans setUsername + utiliser une fonction asynchrone pour lui ajouter 'isConfirmed' et lancer le dispatch 
+    // dispatch(updateUsername({id: `${username}#9876`, name: username, isConfirmed:true}))
   }
 
   // SEARCH: then is not a fonction (~)

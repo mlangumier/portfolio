@@ -43,13 +43,12 @@ export const userSlice = createSlice({
     },
     updateUsername: (state, { payload }:PayloadAction<UserState>) => {
       // Trouver moyen de modifier ça pour ne pas avoir à envoyer tous les attributs à chaque fois
-      state.id = payload.id;
-      state.name = payload.name;
-      state.isConfirmed = payload.isConfirmed;
-      // Return whole data without replacing what hasn't change
+      localStorage.addItem("user", payload.id)
       return {
         ...state,
-        ...payload,
+        id: payload.id,
+        name: payload.name,
+        isConfirmed: payload.isConfirmed,
       };
     }
 
