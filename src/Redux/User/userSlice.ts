@@ -1,7 +1,7 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { CaseReducer, createSlice, PayloadAction } from '@reduxjs/toolkit'
 import type { RootState } from 'Redux/store'
 
-interface UserState {
+export interface UserState {
   id: string,
   name: string,
   isConfirmed: boolean,
@@ -9,7 +9,7 @@ interface UserState {
   todos: Array<object>,
 }
 
-const initialState: UserState = {
+export const initialState: UserState = {
   id: '',
   name: '',
   isConfirmed: false,
@@ -17,24 +17,46 @@ const initialState: UserState = {
   todos: [],
 }
 
+//REDUCERS (à séparer dans différents fichiers)
+// type State = {
+//   id: string,
+//   name: string,
+//   isConfirmed: boolean,
+// }
+// const createUserSlice: CaseReducer<State, PayloadAction<UserState>> = (state, action) => {
+//   state.id = action.payload.id,
+//   state.name = action.payload.name,
+// }
+
+
 export const userSlice = createSlice({
   name: 'user', 
   initialState,
+  //* Possibility: 
+  // reduciers: {
+  //   otherReducer,
+  // }
   reducers: {
-    // test
     initUser: (state) => {
       state.id = 'Mathieu#8653';
       state.name = 'Mathieu';
     },
-    updateUserName: (state, action: PayloadAction<UserState>) => {
-      state.id = action.payload.id;
-      state.name = action.payload.name;
+    updateUsername: (state, { payload }:PayloadAction<UserState>) => {
+      // Trouver moyen de modifier ça pour ne pas avoir à envoyer tous les attributs à chaque fois
+      state.id = payload.id;
+      state.name = payload.name;
+      state.isConfirmed = payload.isConfirmed;
+      // Return whole data without replacing what hasn't change
+      return {
+        ...state,
+        ...payload,
+      };
     }
 
   }
 })
 
-export const { initUser } = userSlice.actions
+export const { initUser, updateUsername } = userSlice.actions
 export const selectUser = (state: RootState) => state.user
 
 export default userSlice.reducer

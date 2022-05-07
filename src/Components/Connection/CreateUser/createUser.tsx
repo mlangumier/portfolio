@@ -1,6 +1,25 @@
+import { useState } from "react"
 import { Box, Button, TextField, Typography } from "@mui/material"
+import { useAppDispatch } from "Redux/hooks"
+import { updateUsername } from "Redux/User/userSlice"
 
 export const CreateUser = () => {
+  const dispatch = useAppDispatch()
+  const [ username, setUsername ] = useState<string>("")
+
+  const onChangeUsername = (e:any) => {
+    console.log(e)
+    setUsername(e)
+  }
+
+  const handleSubmit = () => {
+    // dispatch(updateUsername({id: `${username}#9876`, name: username, isConfirmed:true, movies:[], todos:[]}))
+    // SEARCH : redux argument of type is not assignable to parameter of type
+    dispatch(updateUsername({id: `${username}#9876`, name: username, isConfirmed:true}))
+  }
+
+  // SEARCH: then is not a fonction (~)
+
   return (
     <Box sx={{flex:1}}>
       {/* <Button variant="outlined" onClick={() => handleStep(10)}>Wait! I already have a username!</Button> */}
@@ -8,8 +27,14 @@ export const CreateUser = () => {
       <Box>
         <Typography variant="body1" component="p">Choose a username </Typography>
         <Box>
-          <TextField id="standard-basic" label="Username#1234" variant="standard" />
-          {/* <Button variant="outlined" onClick={() => handleStep(21)}>Create</Button> */}
+          <TextField 
+            name="username" 
+            label="New username" 
+            variant="standard" 
+            value={username} 
+            onChange={(e) => onChangeUsername(e?.target?.value)} 
+          />
+          <Button variant="outlined" onClick={() => handleSubmit()}>Create</Button>
         </Box>
       </Box>
       <Box>
