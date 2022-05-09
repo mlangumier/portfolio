@@ -1,6 +1,6 @@
 import React from "react";
 import { MenuItemsProfile } from "Components/Menu/menuItems";
-import { MenuTop } from "Components/Menu/menu";
+import { MenuTop } from "Components/Menu";
 import { Container } from "@mui/material";
 
 export const ProfileLayout = () => {

@@ -1,15 +1,15 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { FAVORITES, HOMEPAGE, MOVIES, PROFILE, WATCHLATER } from "./CONSTANTS";
-import { Layout } from "Pages/layout";
-import { HomepageLayout } from "Pages/Home/homepageLayout";
-import { MoviesLayout } from "Pages/Movies/moviesLayout";
-import { Movies } from "Pages/Movies/Movies/movies";
-import { Favorites } from "Pages/Movies/Favorites/favorites";
-import { WatchLater } from "Pages/Movies/WatchLater/watchLater";
-import { ProfileLayout } from "Pages/Profile/profileLayout"
+import { Layout } from "Pages";
+import { HomepageLayout } from "Pages/Home";
+import { MoviesLayout } from "Pages/Movies";
+import { Movies } from "Pages/Movies/Movies";
+import { Favorites } from "Pages/Movies/Favorites";
+import { WatchLater } from "Pages/Movies/WatchLater";
+import { ProfileLayout } from "Pages/Profile"
 
-const RouterConfig = () => {
+export const RouterConfig = () => {
   return (
     <React.Fragment>
       <BrowserRouter>
@@ -29,5 +29,3 @@ const RouterConfig = () => {
     </React.Fragment>
   )
 }
-
-export default RouterConfig;

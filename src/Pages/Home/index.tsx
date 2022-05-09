@@ -1,8 +1,8 @@
 import React from "react";
-import { Introduction } from 'Pages/Home/Introduction/introduction'
-import { Experiences } from 'Pages/Home/Experiences/experiences'
-import { Hobbies } from 'Pages/Home/Hobbies/hobbies'
-import { Contact } from 'Pages/Home/Contact/contact'
+import { Introduction } from 'Pages/Home/Introduction'
+import { Experiences } from 'Pages/Home/Experiences'
+import { Hobbies } from 'Pages/Home/Hobbies'
+import { Contact } from 'Pages/Home/Contact'
 import { Container } from "@mui/material";
 
 export const HomepageLayout = () => {

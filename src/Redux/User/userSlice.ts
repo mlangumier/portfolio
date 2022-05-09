@@ -17,6 +17,12 @@ export const initialState: UserState = {
   todos: [],
 }
 
+export interface UserIdentity {
+  id: string,
+  name: string,
+  isConfirmed: boolean,
+}
+
 //REDUCERS (à séparer dans différents fichiers)
 // type State = {
 //   id: string,
@@ -41,7 +47,7 @@ export const userSlice = createSlice({
       state.id = 'Mathieu#8653';
       state.name = 'Mathieu';
     },
-    updateUsername: (state, { payload }:PayloadAction<UserState>) => {
+    updateUsername: (state, { payload }:PayloadAction<UserIdentity>) => {
       // Trouver moyen de modifier ça pour ne pas avoir à envoyer tous les attributs à chaque fois
       localStorage.addItem("user", payload.id)
       return {

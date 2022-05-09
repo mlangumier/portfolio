@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { Navbar } from "Components/Navbar/navbar";
+import { Navbar } from "Components/Navbar";
 import { Box } from "@mui/material";
 import { Outlet } from "react-router-dom";
-import { Connection } from "Components/Connection/connection";
+import { Connection } from "Components/Connection";
 import { useSelector } from "react-redux";
 import { RootState } from "Redux/store";
 import { useAppDispatch } from "Redux/hooks";

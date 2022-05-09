@@ -1,5 +1,5 @@
 import './App.scss';
-import RouterConfig from 'Routes/routes';
+import { RouterConfig } from 'Routes';
 import { createTheme, ThemeProvider } from '@mui/material';
 
 const theme = createTheme({

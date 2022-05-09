@@ -1,10 +1,8 @@
 import { useState } from "react";
-import Box from '@mui/material/Box';
-import randomNumber from 'Functions/randomNumber'
-import Modal from '@mui/material/Modal';
-import { SearchUser } from './SearchUser/searchUser'
-import { CreateUser } from './CreateUser/createUser'
-import { Typography } from "@mui/material";
+import { randomNumber } from 'Functions/randomNumber'
+import { SearchUser } from './SearchUser'
+import { CreateUser } from './CreateUser'
+import { Typography, Box, Modal } from "@mui/material";
 
 const modalStyle = {
   position: 'absolute' as 'absolute',
