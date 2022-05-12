@@ -1,5 +1,6 @@
 import { CaseReducer, createSlice, PayloadAction } from '@reduxjs/toolkit'
 import type { RootState } from 'Redux/store'
+import { database } from 'Services/api.firebase'
 
 export interface UserState {
   id: string,
@@ -43,13 +44,14 @@ export const userSlice = createSlice({
   //   otherReducer,
   // }
   reducers: {
-    initUser: (state) => {
+    initUser: (state:any) => {
       state.id = 'Mathieu#8653';
       state.name = 'Mathieu';
+      state.isConfirmed = false
     },
-    updateUsername: (state, { payload }:PayloadAction<UserIdentity>) => {
-      // Trouver moyen de modifier ça pour ne pas avoir à envoyer tous les attributs à chaque fois
-      localStorage.addItem("user", payload.id)
+    updateUsername: (state:any, { payload }:PayloadAction<UserIdentity>) => {
+      // localStorage.addItem("user", payload.id)
+      database.put(`user/${payload.id}`, payload)
       return {
         ...state,
         id: payload.id,
