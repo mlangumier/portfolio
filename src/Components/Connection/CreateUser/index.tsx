@@ -9,20 +9,13 @@ export const CreateUser = () => {
   const [ username, setUsername ] = useState<string>("")
 
   const onChangeUsername = (e:any) => {
-    console.log(e)
     setUsername(e)
   }
 
   const handleSubmit = () => {
     const rand = randomNumber(1000,9999)
-    dispatch(createUser({id: `${username}#${rand}`, name: username, isConfirmed:true}))
-    // SEARCH : redux argument of type is not assignable to parameter of type
-    // Envoyer uniquement la variable/objet ?
-    // Récupérer UserState par SELECTOR et le déconstruire dans setUsername + utiliser une fonction asynchrone pour lui ajouter 'isConfirmed' et lancer le dispatch 
-    // dispatch(createUser({id: `${username}#9876`, name: username, isConfirmed:true}))
+    dispatch(createUser({id: `${rand}`, name: username, isConfirmed:true}))
   }
-
-  // SEARCH: then is not a fonction (~)
 
   return (
     <Box sx={{flex:1}}>
@@ -45,7 +38,7 @@ export const CreateUser = () => {
         <Typography variant="body1" component="p">Or let me choose a username for you </Typography>
         <Box>
           <TextField id="standard-basic" label="Aragorn#4947" variant="standard" />
-          {/* On click 'Meh...', put another label on btn */}
+          {/* On click 'Meh...', put another label on btn (reload) */}
           <Box>
             <Button variant="outlined">Meh...</Button> 
             {/* <Button variant="outlined" onClick={() => handleStep(21)}>This one!</Button> */}

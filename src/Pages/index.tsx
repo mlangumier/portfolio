@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Navbar } from "Components/Navbar";
 import { Box } from "@mui/material";
 import { Outlet } from "react-router-dom";
@@ -6,7 +6,7 @@ import { Connection } from "Components/Connection";
 import { useSelector } from "react-redux";
 import { RootState } from "Redux/store";
 import { useAppDispatch } from "Redux/hooks";
-import { initUser } from "Redux/User/userSlice";
+import { getAllUsers, getUser } from "Redux/User/userSlice";
 
 export const Layout = () => {
   const user = useSelector((state:RootState) => state.user)
@@ -14,14 +14,14 @@ export const Layout = () => {
   const [ navbarwidth, setNavbarWidth ] = useState<number>(65);
   const dispatch = useAppDispatch()
 
-  console.log('State:', user)
+  // console.log('State:', user)
   
   useEffect(() => {
     open ? setNavbarWidth(180) : setNavbarWidth(65);
   }, [open])
 
   useEffect(() => {
-    dispatch(initUser()) 
+    dispatch(getUser(8639))
   }, [dispatch])
 
   return (
