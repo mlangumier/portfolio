@@ -1,7 +1,8 @@
 import { useState } from "react"
 import { Box, Button, TextField, Typography } from "@mui/material"
 import { useAppDispatch } from "Redux/hooks"
-import { updateUsername } from "Redux/User/userSlice"
+import { createUser } from "Redux/User/userSlice"
+import { randomNumber } from "Functions/randomNumber"
 
 export const CreateUser = () => {
   const dispatch = useAppDispatch()
@@ -13,11 +14,12 @@ export const CreateUser = () => {
   }
 
   const handleSubmit = () => {
-    dispatch(updateUsername({id: `${username}#9876`, name: username, isConfirmed:true}))
+    const rand = randomNumber(1000,9999)
+    dispatch(createUser({id: `${username}#${rand}`, name: username, isConfirmed:true}))
     // SEARCH : redux argument of type is not assignable to parameter of type
     // Envoyer uniquement la variable/objet ?
     // Récupérer UserState par SELECTOR et le déconstruire dans setUsername + utiliser une fonction asynchrone pour lui ajouter 'isConfirmed' et lancer le dispatch 
-    // dispatch(updateUsername({id: `${username}#9876`, name: username, isConfirmed:true}))
+    // dispatch(createUser({id: `${username}#9876`, name: username, isConfirmed:true}))
   }
 
   // SEARCH: then is not a fonction (~)

@@ -1,6 +1,9 @@
 import { CaseReducer, createSlice, PayloadAction } from '@reduxjs/toolkit'
 import type { RootState } from 'Redux/store'
-import { database } from 'Services/api.firebase'
+import { getDatabase, ref, push, onValue } from 'firebase/database'
+import { firebaseApp } from 'Services/firebase'
+import { randomNumber } from 'Functions/randomNumber'
+const database = getDatabase(firebaseApp)
 
 export interface UserState {
   id: string,
@@ -11,8 +14,8 @@ export interface UserState {
 }
 
 export const initialState: UserState = {
-  id: '',
-  name: '',
+  id: `Visitor#${randomNumber(1000,9999)}`,
+  name: 'Visitor',
   isConfirmed: false,
   movies: [],
   todos: [],
@@ -40,30 +43,52 @@ export const userSlice = createSlice({
   name: 'user', 
   initialState,
   //* Possibility: 
-  // reduciers: {
+  // reducers: {
   //   otherReducer,
   // }
   reducers: {
     initUser: (state:any) => {
-      state.id = 'Mathieu#8653';
-      state.name = 'Mathieu';
-      state.isConfirmed = false
-    },
-    updateUsername: (state:any, { payload }:PayloadAction<UserIdentity>) => {
       // localStorage.addItem("user", payload.id)
-      database.put(`user/${payload.id}`, payload)
+      return {
+        ...state,
+        id: initialState.id,
+        name: initialState.name,
+        isConfirmed: initialState.isConfirmed
+      }
+    },
+    createUser: (state:any, { payload }:PayloadAction<UserIdentity>) => {
+      // localStorage.addItem("user", payload.id)
+      const userRef = ref(database, `/users`)
+      push(userRef, payload)
       return {
         ...state,
         id: payload.id,
         name: payload.name,
         isConfirmed: payload.isConfirmed,
       };
-    }
+    },
+    // getAllUsers: (state:any) => {
+    //   const usersRef = ref(database, '/users')
+    //   onValue(usersRef, (snapshot) => {
+    //     const users = snapshot.val()
+    //     const userList = 
+    //   })
+    //   return {
+    //     ...state,
+    //   }
+    // },
+    
+    // getUser: (state: any, { payload }:PayloadAction<UserState>) => {
+    //   const userRef = ref(database, '/users')
+    //   return {
+    //     ...state,
+    //   }
+    // },
 
   }
 })
 
-export const { initUser, updateUsername } = userSlice.actions
+export const { initUser, createUser } = userSlice.actions
 export const selectUser = (state: RootState) => state.user
 
 export default userSlice.reducer
