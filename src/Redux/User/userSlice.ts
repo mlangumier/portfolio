@@ -1,4 +1,4 @@
-import { CaseReducer, createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { CaseReducer, createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'
 import type { RootState } from 'Redux/store'
 import { getDatabase, ref, set, get, child, push, update, onValue } from 'firebase/database'
 import { firebaseApp } from 'Services/firebase'
@@ -19,7 +19,7 @@ export interface UserState {
   todos: Array<object>,
 }
 export const initialState: UserState = {
-  id: `${randomNumber(1000,9999)}`,
+  id: '0000',
   name: 'Visitor',
   isConfirmed: false,
   movies: [],
@@ -55,7 +55,7 @@ export const userSlice = createSlice({
   // }
   reducers: {
     createUser: (state:UserState, { payload }:PayloadAction<UserIdentity>) => {
-      localStorage.setItem("user", JSON.stringify(payload))
+      localStorage.setItem("portfolio:app:user", JSON.stringify(payload))
       set(ref(database, `users/${payload.id}`), {...payload})
       return {
         ...state,
@@ -64,14 +64,32 @@ export const userSlice = createSlice({
         isConfirmed: payload.isConfirmed
       };
     },
-    getUser: (state: UserState, { payload }:PayloadAction<any>) => {
-      onValue(ref(database, `users/${payload}`), (snapshot) => {
+    getUser: (state:UserState, { payload }:PayloadAction<any>) => {
+      const userRef = ref(database, `user/${payload}`);
+      onValue(userRef, (snapshot) => {
         const data = snapshot.val()
         console.log('DATA:', data)
       })
-    },
-  }
+      // get(child(database, `user/${payload}`)).then((snapshot) => {
+      //   console.log("SNAPSHOT", snapshot.val())
+      // })
+    }
+  },
 })
+
+// const getUserFn = (id:string) => {
+//   const database = ref(getDatabase(firebaseApp))
+//   get(child(database, `users/${id}`)).then((snapshot) => {
+//     if (snapshot.exists()) {
+//       console.log('GETUSERFN:', snapshot.val())
+//       return snapshot.val()
+//     } else {
+//       return "No data available"
+//     }
+//   }).catch((error) => {
+//     console.log('ERROR:', error)
+//   })
+// }
 
 export const storeSlice = createSlice({
   name: 'users',
@@ -80,10 +98,16 @@ export const storeSlice = createSlice({
   },
   reducers: {
     getAllUsers: (state: UsersState) => {
+      // https://youtu.be/azdwN_4IDKA?t=669
       const userRef = ref(database, `users`)
-      console.log('REF:', userRef)
       onValue(userRef, (snapshot) => {
         const data = snapshot.val()
+        // if (data !== null) {
+        //   console.log('ENTERS GET USERS')
+        //   Object.values(data).map((user) => {
+        //     console.log('1-USER:', user)
+        //   })
+        // }
       })
     },
 

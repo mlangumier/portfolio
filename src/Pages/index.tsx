@@ -22,6 +22,7 @@ export const Layout = () => {
 
   useEffect(() => {
     dispatch(getUser(8639))
+    // dispatch(getAllUsers())
   }, [dispatch])
 
   return (
