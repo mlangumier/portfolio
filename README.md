@@ -5,10 +5,10 @@
 - Redux / React-redux
 - React Router
 - Material UI & icons
+- Firebase
 
 ## Coming soon
 - Axios
-- Firebase
 - Swiper
 - i18n
 - Redux Saga (action + side effects)
