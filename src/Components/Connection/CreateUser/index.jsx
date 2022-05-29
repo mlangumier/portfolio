@@ -41,9 +41,8 @@ export const CreateUser = () => {
         <Typography variant="body1" component="p">Choose a username </Typography>
         <Box>
           <InputComponent
-            name="username"
+            name="user"
             label="New username"
-            variant="standard"
             value={userCustom?.name}
             onChange={onChangeUsername}
           />
@@ -53,7 +52,10 @@ export const CreateUser = () => {
       <Box>
         <Typography variant="body1" component="p">Or let me choose a username for you </Typography>
         <Box>
-          <TextField id="standard-basic" label={`${userRandom?.name}#${userRandom?.id}`} variant="standard"  />
+          <InputComponent 
+            name="user"
+            label={userRandom?.name}
+          />
           <Box>
             <Button variant="outlined" onClick={() => createRandomUser()}>Meh...</Button> 
             <Button variant="outlined" onClick={() => handleSubmit(userRandom)}>This one!</Button>

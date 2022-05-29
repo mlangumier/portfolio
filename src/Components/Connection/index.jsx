@@ -5,7 +5,7 @@ import { CreateUser } from './CreateUser'
 import { Typography, Box, Modal } from "@mui/material";
 
 const modalStyle = {
-  position: 'absolute', // as 'absolute',
+  position: 'absolute',
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
@@ -16,6 +16,9 @@ const modalStyle = {
   boxShadow: 24,
   p: 4,
 };
+// :focus-visible {
+//   outline: -webkit-focus-ring-color auto 1px;
+// }
 
 const modalFlex = {
   textAlign:'center',

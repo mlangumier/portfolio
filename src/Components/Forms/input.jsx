@@ -1,7 +1,7 @@
 import { TextField } from "@mui/material"
 
 export const InputComponent = (props) => {
-  const { name, label, variant, value, onChange } = props
+  const { name, label, variant = "standard", value, onChange } = props
   return (
     <TextField 
       name={name} 
