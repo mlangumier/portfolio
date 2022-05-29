@@ -1,0 +1,15 @@
+import React from "react";
+import { MenuItemsProfile } from "Components/Menu/menuItems";
+import { MenuTop } from "Components/Menu";
+import { Container } from "@mui/material";
+
+export const ProfileLayout = () => {
+  return (
+    <React.Fragment>
+      <MenuTop menuItems={MenuItemsProfile} />
+      <Container className="page-content" maxWidth="xl" component="main" sx={{ p: 3 }}>
+        <div>User Profile Page</div>
+      </Container>
+    </React.Fragment>
+  )
+}
