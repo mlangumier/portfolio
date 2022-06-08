@@ -6,9 +6,9 @@
 - React Router
 - Material UI & icons
 - Firebase
+- Axios
 
 ## Coming soon
-- Axios
 - Swiper
 - i18n
 - Redux Saga (action + side effects)
