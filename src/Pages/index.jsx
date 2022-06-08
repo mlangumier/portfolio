@@ -6,7 +6,7 @@ import { Connection } from "Components/Connection";
 import { useDispatch, useSelector } from "react-redux";
 import { collection, getDoc, doc, getDocs } from "firebase/firestore";
 import { database } from "Services/firebase";
-import { getUser } from "Redux/User/userSlice";
+import { getUser, LOCAL_STORAGE_USER } from "Redux/User/userSlice";
 // import { getAllUsers, getUser } from "Redux/User/userSlice";
 
 export const Layout = () => {
@@ -15,30 +15,23 @@ export const Layout = () => {
   const [ navbarwidth, setNavbarWidth ] = useState(65);
   const dispatch = useDispatch()
 
-  // console.log('State:', user)
-  
   useEffect(() => {
     open ? setNavbarWidth(180) : setNavbarWidth(65);
   }, [open])
 
   useEffect(() => {
-    //------------------------- Get ONE user
+    //----- Get user on startup if localstorage (id)
     const fetchUser = async (id) => {
       const userRef = doc(database, "users", id)
       const data = await getDoc(userRef)
       dispatch(getUser(data.data()))
     }
-    fetchUser("5535")
-    //------------------------- Get ALL users
-    const getUsers = async () => {
-      const usersRef = collection(database, "users")
-      const data = await getDocs(usersRef)
-      // console.log('DATA ALL:', data.docs) //+ map on doc.data()
-      // dispatch(getAllUsers())
-    }
-    // getUsers()
-    // Double render issue
-  }, [dispatch])
+    // const storage = JSON.parse(localStorage.getItem(LOCAL_STORAGE_USER))
+    // if (storage) fetchUser(storage?.id)
+
+    //----- Function to get user with name (where)
+    // const q = query(collection(db, "cities"), where("capital", "==", true));
+  }, [])
 
   return (
     <Box sx={{ display: 'flex' }}>

@@ -8,6 +8,8 @@ export const initialState = {
   todos: [],
 }
 
+export const LOCAL_STORAGE_USER = "portfolio:app:user"
+
 //REDUCERS (à séparer dans différents fichiers)
 // type State = {
 //   id: string,
@@ -21,6 +23,9 @@ export const initialState = {
 
 // Add Loading / Done reducers aside (own reducer)
 
+// Conserver le store au reload => persist :
+// https://dev.to/dawnind/persist-redux-state-with-redux-persist-3k0d
+
 export const userSlice = createSlice({
   name: 'user', 
   initialState,
@@ -33,15 +38,17 @@ export const userSlice = createSlice({
       return { ...state, ...payload }
     },
     createUser: (state, { payload }) => {
-      localStorage.setItem("portfolio:app:user", JSON.stringify(payload))
+      localStorage.setItem(LOCAL_STORAGE_USER, payload.id)
+      console.log('CREATE USER:', payload)
       return { ...state, ...payload };
     },
     updateUser: (state, { payload }) => {
-      localStorage.setItem("portfolio:app:user", JSON.stringify(payload))
-      console.log('UPDATE:', payload)
+      localStorage.setItem(LOCAL_STORAGE_USER, payload.id)
+      console.log('UPDATE USER:', payload)
       return { ...state, ...payload }
     },
     resetUser: (state) => {
+      localStorage.setItem(LOCAL_STORAGE_USER, "")
       return { ...state, ...initialState }
     }
   },
