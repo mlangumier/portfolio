@@ -8,7 +8,7 @@ export const Movies = () => {
   const dispatch = useDispatch()
   const [ movieList, setMovieList ] = useState([])
   const [ navigation, setNavigation ] = useState({})
-  const [ movieDetails, setMovieDetails ] = useState({})
+  const [ movieDetails, setMovieDetails ] = useState(null)
   
   useEffect(() => {
     fetchMovies("discover/movie").then(result => {
@@ -23,9 +23,9 @@ export const Movies = () => {
   }, [])
   // console.log('MOVIES:', movieList, navigation)
 
-  const navigatePage = (direction) => {
-    console.log('NEXT PAGE:', direction)
-  }
+  // const navigatePage = (direction) => {
+  //   console.log('NEXT PAGE:', direction)
+  // }
   
   const getMovieDetails = (movieId) => {
     fetchMovies(`movie/${movieId}`).then(result => {
