@@ -35,20 +35,22 @@ export const userSlice = createSlice({
   // }
   reducers: {
     getUser: (state, { payload }) => {
+      console.log('USER FETCHED')
       return { ...state, ...payload }
     },
     createUser: (state, { payload }) => {
       localStorage.setItem(LOCAL_STORAGE_USER, payload.id)
-      console.log('CREATE USER:', payload)
+      console.log('USER CREATED:', payload)
       return { ...state, ...payload };
     },
     updateUser: (state, { payload }) => {
-      localStorage.setItem(LOCAL_STORAGE_USER, payload.id)
-      console.log('UPDATE USER:', payload)
+      // localStorage.setItem(LOCAL_STORAGE_USER, payload.id)
+      console.log('USER UPDATED:', payload)
       return { ...state, ...payload }
     },
     resetUser: (state) => {
       localStorage.setItem(LOCAL_STORAGE_USER, "")
+      console.log('USER LOGGED OUT')
       return { ...state, ...initialState }
     }
   },
