@@ -21,11 +21,11 @@ export const Layout = () => {
 
   useEffect(() => {
     //----- Get user on startup if localstorage (id)
-    const fetchUser = async (id) => {
-      const userRef = doc(database, "users", id)
-      const data = await getDoc(userRef)
-      dispatch(getUser(data.data()))
-    }
+    // const fetchUser = async (id) => {
+    //   const userRef = doc(database, "users", id)
+    //   const data = await getDoc(userRef)
+    //   dispatch(getUser(data.data()))
+    // }
     // const storage = JSON.parse(localStorage.getItem(LOCAL_STORAGE_USER))
     // if (storage) fetchUser(storage?.id)
 
@@ -40,7 +40,7 @@ export const Layout = () => {
         <Outlet />
       </Box>
       {/* Check localStorage, if empty, <Connection /> */}
-      <Connection />
+      {/* <Connection /> */}
     </Box>
   )
 }
