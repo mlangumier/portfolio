@@ -1,11 +1,14 @@
 import { useEffect, useState } from 'react';
 import { useDispatch } from "react-redux";
+import { Box } from '@mui/material';
+
 import { fetchMovies } from 'Services/movieApi'
 import { getMovies } from "Redux/Movies/movieSlice";
-import { Box } from '@mui/material';
 import { MovieDetails } from '../Shared/MovieDetails'
-import { MovieItem } from '../Shared/MovieItem'
+import { MovieList } from '../Shared/MovieList'
+
 import style from './style.module.scss'
+import { InputComponent } from 'Components/Forms/input';
 
 export const Movies = () => {
   const dispatch = useDispatch()
@@ -34,18 +37,21 @@ export const Movies = () => {
   }
 
   return (
-    <Box className={style.pageContainer}>
-      <Box className={style.movieContainer}>
-        {movieList?.map((movie, index) => (
-          <MovieItem  key={index} movie={movie} getMovieDetails={() => getMovieDetails(movie)} 
-          />
-        ))}
-      </Box>
-      <Box className={style.movieDetails}>
-        {movieDetails 
-          ? <MovieDetails movie={movieDetails} />
-          : <p>Click on any movie to see its informations</p>
-        }
+    <Box>
+      {/* <InputComponent 
+        name="movieSearch"
+        label="Search..." 
+        value={""}
+        onChange={""}
+      /> */}
+      <Box className={style.movieBlocks}>
+        <MovieList movieList={movieList} getMovieDetails={getMovieDetails} />
+        <Box className={style.movieDetails}>
+          {movieDetails 
+            ? <MovieDetails movie={movieDetails} />
+            : <p>Click on any movie to see its informations</p>
+          }
+        </Box>
       </Box>
       {/* <Box style={{display:'flex', justifyContent:'space-between', width:'200px'}}>
         <button type='button' onClick={() => navigatePage(-1)}> {'<<'} </button>
