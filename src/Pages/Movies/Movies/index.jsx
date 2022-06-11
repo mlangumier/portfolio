@@ -3,6 +3,9 @@ import { useDispatch } from "react-redux";
 import { fetchMovies } from 'Services/movieApi'
 import { getMovies } from "Redux/Movies/movieSlice";
 import { Box } from '@mui/material';
+import { MovieDetails } from '../Shared/MovieDetails'
+import { MovieItem } from '../Shared/MovieItem'
+import style from './style.module.scss'
 
 export const Movies = () => {
   const dispatch = useDispatch()
@@ -35,20 +38,31 @@ export const Movies = () => {
   }
 
   return (
-    <Box>
-      <h2>MOVIE LIST</h2>
-      <Box style={{margin:'40px 10px'}}>
-        {movieList?.map((movie, index) => {
-          return <p key={index} onClick={() => getMovieDetails(movie?.id)}>{movie?.title}</p>
-        })}
+    <Box className={style.pageContainer}>
+      <Box className={style.movieContainer}>
+        {movieList?.map((movie, index) => (
+          <MovieItem 
+            key={index} 
+            id={movie?.id}
+            title={movie?.original_title}
+            thumbnail={movie?.poster_path}
+            rating={movie?.vote_average}
+            getMovieDetails={getMovieDetails} 
+          />
+        ))}
       </Box>
-        {movieDetails &&
-          <Box>
-            <h3>{movieDetails?.original_title}</h3>
-            <p>Released: {movieDetails?.release_date}</p>
-            <p>{movieDetails?.overview}</p>
-          </Box>
+      <Box className={style.movieDetails}>
+        {movieDetails 
+          ? <MovieDetails 
+            title={movieDetails?.original_title}
+            released={movieDetails?.release_date}
+            description={movieDetails?.overview}
+            thumbnail={movieDetails?.poster_path}
+            rating={movieDetails?.vote_average}
+          />
+          : <p>Click on any movie to see its informations</p>
         }
+      </Box>
       {/* <Box style={{display:'flex', justifyContent:'space-between', width:'200px'}}>
         <button type='button' onClick={() => navigatePage(-1)}> {'<<'} </button>
         <p>Page {navigation?.page}/{navigation?.totalPages}</p>

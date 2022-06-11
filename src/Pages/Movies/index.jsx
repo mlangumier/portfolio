@@ -5,7 +5,6 @@ import { MenuItemsMovies } from "Components/Menu/menuItems";
 import { Container } from "@mui/material";
 
 export const MoviesLayout = () => {
-
   return (
     <React.Fragment>
       <MenuTop menuItems={MenuItemsMovies} />

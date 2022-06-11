@@ -13,3 +13,5 @@ export const fetchMovies = async (search) => {
     return {status: data?.status, statusText: data?.statusText}
   }
 }
+
+export const imgApiMovie = 'https://image.tmdb.org/t/p/w500/'

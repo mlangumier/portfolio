@@ -1,0 +1,17 @@
+.pageContainer {
+  display: flex;
+  gap: 2rem;
+}
+
+.movieContainer {
+  flex: 2;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: .5rem;
+}
+
+.movieDetails {
+  flex: 1;
+  position: relative;
+}
