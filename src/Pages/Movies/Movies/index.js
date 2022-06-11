@@ -10,56 +10,40 @@ import style from './style.module.scss'
 export const Movies = () => {
   const dispatch = useDispatch()
   const [ movieList, setMovieList ] = useState([])
-  const [ navigation, setNavigation ] = useState({})
+  // const [ navigation, setNavigation ] = useState({})
   const [ movieDetails, setMovieDetails ] = useState(null)
   
   useEffect(() => {
     fetchMovies("discover/movie").then(result => {
       dispatch(getMovies(result?.results))
       setMovieList(result?.results);
-      setNavigation({
-        page: result?.page,
-        totalPages: result?.total_pages,
-        totalResults: result?.total_results,
-      })
+      // setNavigation({
+      //   page: result?.page,
+      //   totalPages: result?.total_pages,
+      //   totalResults: result?.total_results,
+      // })
     })
-  }, [])
-  // console.log('MOVIES:', movieList, navigation)
+  }, [dispatch])
 
   // const navigatePage = (direction) => {
   //   console.log('NEXT PAGE:', direction)
   // }
   
-  const getMovieDetails = (movieId) => {
-    fetchMovies(`movie/${movieId}`).then(result => {
-      console.log('MOVIE DETAILS:', result)
-      setMovieDetails(result)
-    })
+  const getMovieDetails = (movie) => {
+    setMovieDetails(movie)
   }
 
   return (
     <Box className={style.pageContainer}>
       <Box className={style.movieContainer}>
         {movieList?.map((movie, index) => (
-          <MovieItem 
-            key={index} 
-            id={movie?.id}
-            title={movie?.original_title}
-            thumbnail={movie?.poster_path}
-            rating={movie?.vote_average}
-            getMovieDetails={getMovieDetails} 
+          <MovieItem  key={index} movie={movie} getMovieDetails={() => getMovieDetails(movie)} 
           />
         ))}
       </Box>
       <Box className={style.movieDetails}>
         {movieDetails 
-          ? <MovieDetails 
-            title={movieDetails?.original_title}
-            released={movieDetails?.release_date}
-            description={movieDetails?.overview}
-            thumbnail={movieDetails?.poster_path}
-            rating={movieDetails?.vote_average}
-          />
+          ? <MovieDetails movie={movieDetails} />
           : <p>Click on any movie to see its informations</p>
         }
       </Box>

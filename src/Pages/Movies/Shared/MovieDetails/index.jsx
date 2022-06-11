@@ -1,18 +1,24 @@
-import style from './style.module.scss'
-import { imgApiMovie } from 'Services/movieApi'
-import { Box } from '@mui/material'
 import React from 'react'
+import { Box } from '@mui/material'
 
-export const MovieDetails = (props) => {
-  const { title, released, description, thumbnail, rating } = props
+import { imgApiMovie } from 'Services/movieApi'
 
+import style from './style.module.scss'
+
+export const MovieDetails = ({ movie:{ 
+  original_title,
+  release_date,
+  overview,
+  poster_path,
+  vote_average,
+ } }) => {
   return (
     <Box className={style.container}>
-      <h3>{title}</h3>
-      <img src={`${imgApiMovie}${thumbnail}`} alt={title} className={style.image} />
-      <p>Released: {released}</p>
-      <p>Rating: {rating}</p>
-      <p>{description}</p>
+      <h3>{original_title}</h3>
+      <img src={`${imgApiMovie}${poster_path}`} alt={original_title} className={style.image} />
+      <p>Released: {release_date}</p>
+      <p>Rating: {vote_average}</p>
+      <p>{overview}</p>
     </Box>
   )
 }
