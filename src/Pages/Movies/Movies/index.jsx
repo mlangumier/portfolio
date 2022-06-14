@@ -6,9 +6,9 @@ import { fetchMovies } from 'Services/movieApi'
 import { getMovies } from "Redux/Movies/movieSlice";
 import { MovieDetails } from '../Shared/MovieDetails'
 import { MovieList } from '../Shared/MovieList'
+import { SearchMovies } from '../SearchMovies'
 
 import style from './style.module.scss'
-import { InputComponent } from 'Components/Forms/input';
 
 export const Movies = () => {
   const dispatch = useDispatch()
@@ -20,6 +20,7 @@ export const Movies = () => {
     fetchMovies("discover/movie").then(result => {
       dispatch(getMovies(result?.results))
       setMovieList(result?.results);
+      setMovieDetails(result?.results[0])
       // setNavigation({
       //   page: result?.page,
       //   totalPages: result?.total_pages,
@@ -36,13 +37,14 @@ export const Movies = () => {
     setMovieDetails(movie)
   }
 
+  const searchMovie = (target) => {
+    console.log('SEARCH:', target)
+  }
+
   return (
     <Box>
-      {/* <InputComponent 
-        name="movieSearch"
-        label="Search..." 
-        value={""}
-        onChange={""}
+      {/* <SearchMovies 
+        searchMovie={searchMovie}
       /> */}
       <Box className={style.movieBlocks}>
         <MovieList movieList={movieList} getMovieDetails={getMovieDetails} />
