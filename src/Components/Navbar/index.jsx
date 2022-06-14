@@ -65,15 +65,20 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 
 export const Navbar = ({ open, setOpen }) => {
 
-  const handleDrawer = () => {
-    setOpen(!open);
-  };
+  const openDrawer = () => setOpen(true)
+  const closeDrawer = () => setOpen(false)
 
   return (
-      <Drawer variant="permanent" open={open} id="left-drawer">
+      <Drawer 
+        variant="permanent" 
+        open={open} 
+        id="left-drawer"
+        onMouseEnter={openDrawer}
+        onMouseLeave={closeDrawer}
+      >
 
         <DrawerHeader>
-          <IconButton onClick={handleDrawer}>
+          <IconButton>
             {!open ? <ChevronRightIcon /> : <ChevronLeftIcon />}
           </IconButton>
         </DrawerHeader>

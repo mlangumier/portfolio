@@ -13,7 +13,6 @@ import style from './style.module.scss'
 export const Movies = () => {
   const dispatch = useDispatch()
   const [ movieList, setMovieList ] = useState([])
-  // const [ navigation, setNavigation ] = useState({})
   const [ movieDetails, setMovieDetails ] = useState(null)
   
   useEffect(() => {
@@ -21,18 +20,9 @@ export const Movies = () => {
       dispatch(getMovies(result?.results))
       setMovieList(result?.results);
       setMovieDetails(result?.results[0])
-      // setNavigation({
-      //   page: result?.page,
-      //   totalPages: result?.total_pages,
-      //   totalResults: result?.total_results,
-      // })
     })
   }, [dispatch])
 
-  // const navigatePage = (direction) => {
-  //   console.log('NEXT PAGE:', direction)
-  // }
-  
   const getMovieDetails = (movie) => {
     setMovieDetails(movie)
   }
@@ -55,11 +45,6 @@ export const Movies = () => {
           }
         </Box>
       </Box>
-      {/* <Box style={{display:'flex', justifyContent:'space-between', width:'200px'}}>
-        <button type='button' onClick={() => navigatePage(-1)}> {'<<'} </button>
-        <p>Page {navigation?.page}/{navigation?.totalPages}</p>
-        <button type='button' onClick={() => navigatePage(+1)}> {'>>'} </button>
-      </Box> */}
     </Box>
   )
 }

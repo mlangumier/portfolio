@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit'
 export const initialState = {
   id: '1234',
   name: 'Visitor',
-  isConfirmed: false,
+  isLoggedIn: false,
   movies: [],
   todos: [],
 }
@@ -48,8 +48,8 @@ export const userSlice = createSlice({
       console.log('USER UPDATED:', payload)
       return { ...state, ...payload }
     },
-    resetUser: (state) => {
-      localStorage.setItem(LOCAL_STORAGE_USER, "")
+    logout: (state) => {
+      localStorage.removeItem(LOCAL_STORAGE_USER)
       console.log('USER LOGGED OUT')
       return { ...state, ...initialState }
     }
