@@ -1,17 +1,17 @@
-import { FAVORITES, MOVIES, WATCHLATER } from 'Routes/CONSTANTS';
+import { PATH_FAVORITES, PATH_MOVIES, PATH_WATCHLATER } from 'Routes/CONSTANTS';
 
 const MenuItemsMovies = [
   {
     name: 'Movie Library',
-    path: MOVIES,
+    path: PATH_MOVIES,
   },
   {
     name: 'Favorites',
-    path: FAVORITES,
+    path: PATH_FAVORITES,
   },
   {
     name: 'Watch Later',
-    path: WATCHLATER,
+    path: PATH_WATCHLATER,
   },
 ]
 
@@ -41,4 +41,16 @@ const MenuItemsProfile = [
   }
 ]
 
-export { MenuItemsMovies, MenuItemsHomepage, MenuItemsProfile }
+const MenuItemsLogin = [
+  {
+    name: 'Login',
+    path: '',
+  }
+]
+
+export { 
+  MenuItemsMovies, 
+  MenuItemsHomepage, 
+  MenuItemsProfile, 
+  MenuItemsLogin 
+}

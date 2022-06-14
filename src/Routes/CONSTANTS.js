@@ -1,7 +1,8 @@
-export const HOMEPAGE = '/'
+export const PATH_HOMEPAGE = '/'
 
-export const MOVIES = '/movies'
-export const FAVORITES = 'favorites'
-export const WATCHLATER = 'watch-later'
+export const PATH_MOVIES = '/movies'
+export const PATH_FAVORITES = 'favorites'
+export const PATH_WATCHLATER = 'watch-later'
 
-export const PROFILE = '/profile'
+export const PATH_PROFILE = '/profile'
+export const PATH_LOGIN = '/login'

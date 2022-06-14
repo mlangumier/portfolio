@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux"
 import { useNavigate } from "react-router"
-// import { getUser } from "redux/actions/client";
 
-export const PrivateRoutes = ({ authorizations, component: RouteComponent }) => {
+// import { getUser } from "redux/actions/client";
+import { PATH_LOGIN } from 'Routes/CONSTANTS'
+
+export const ProtectedRoutes = ({ authorizations, component: RouteComponent }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate()
 
@@ -21,14 +23,14 @@ export const PrivateRoutes = ({ authorizations, component: RouteComponent }) => 
   // user: authToken, isLoggedIn, role
 
   const handleRedirection = () => {
-    navigate('/login')
+    navigate(PATH_LOGIN)
   }
 
   let auth = false;
   const handleAuthVerification = () => {
     if (!user) {
       if (authToken) {
-        dispatch(getUser()).then(() => setDisplayComponent(true))
+        // dispatch(getUser()).then(() => setDisplayComponent(true))
       } else {
         handleRedirection()
       }
@@ -49,11 +51,9 @@ export const PrivateRoutes = ({ authorizations, component: RouteComponent }) => 
       {displayComponent && <RouteComponent />}
     </>
   )
-
 }
-
 
 export const USER_ROLE = {
   ADMIN: 'admin',
-  CLIENT: 'client',
+  USER: 'user',
 }
