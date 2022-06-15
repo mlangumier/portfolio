@@ -12,7 +12,7 @@ export const Layout = () => {
   }, [open])
 
   return (
-    <Box sx={{ display: 'flex' }}>
+    <Box sx={{ display: 'flex', height:'100%', minHeight:'100vh' }}>
       <Navbar open={open} setOpen={setOpen} />
       <Box className="page-full" style={{ width: `calc(100% - ${navbarwidth}px)`, flexGrow: 1 }}>
         <Outlet />
