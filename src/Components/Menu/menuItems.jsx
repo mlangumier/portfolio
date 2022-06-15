@@ -9,10 +9,6 @@ const MenuItemsMovies = [
     name: 'Favorites',
     path: PATH_FAVORITES,
   },
-  {
-    name: 'Watch Later',
-    path: PATH_WATCHLATER,
-  },
 ]
 
 const MenuItemsHomepage = [

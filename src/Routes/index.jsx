@@ -6,7 +6,6 @@ import { HomepageLayout } from "Pages/Home";
 import { MoviesLayout } from "Pages/Movies";
 import { Movies } from "Pages/Movies/Movies";
 import { Favorites } from "Pages/Movies/Favorites";
-import { WatchLater } from "Pages/Movies/WatchLater";
 import { ProfileLayout } from "Pages/Profile"
 import { LoginLayout } from 'Pages/Login'
 import { ProtectedRoutes, USER_ROLE } from './ProtectedRoutes'
@@ -20,7 +19,6 @@ export const RouterConfig = () => {
           <Route path={PATH_MOVIES} element={<ProtectedRoutes authorizations={[USER_ROLE.USER, USER_ROLE.ADMIN]} component={MoviesLayout} />}>
             <Route index element={<Movies />} />
             <Route path={PATH_FAVORITES} element={<Favorites />} />
-            <Route path={PATH_WATCHLATER} element={<WatchLater />} />
           </Route>
           <Route path={PATH_PROFILE} element={<ProfileLayout />} />
           <Route path={PATH_LOGIN} element={<LoginLayout />} />

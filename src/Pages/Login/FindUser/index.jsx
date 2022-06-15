@@ -18,15 +18,17 @@ export const FindUser = () => {
   const [ username, setUsername ] = useState("")
 
   const handleInput = (target) => {
-    setUsername(target.value)
+    setUsername(target.value.toLowerCase().trim())
   }
 
   const findUser = async () => {
-    const userRef = doc(database, "users", username.toLowerCase())
-    const snap = await getDoc(userRef)
-    if (snap.data()) {
-      dispatch(setUser(snap.data()))
-      navigate(PATH_MOVIES)
+    if (username.length > 0) {
+      const userRef = doc(database, "users", username)
+      const snap = await getDoc(userRef)
+      if (snap.data()) {
+        dispatch(setUser(snap.data()))
+        navigate(PATH_MOVIES)
+      }
     }
   }
 

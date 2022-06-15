@@ -1,7 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 export const initialState = {
-  token: '1234',
   name: 'Visitor',
   role: '',
   movies: [],

@@ -1,21 +1,26 @@
 import React from 'react'
-import { Box } from '@mui/material'
+import { Box, Typography } from '@mui/material'
 
 import { imgApiMovie } from 'Services/movieApi'
 
 import style from './style.module.scss'
 
 export const MovieItem = ({ movie: {
-  original_title, 
+  title, 
   poster_path,
 },
 getMovieDetails
 }) => {
   return (
     <Box onClick={getMovieDetails} className={style.movieBox}>
-      <img src={`${imgApiMovie}${poster_path}`} alt={original_title}/>
-      {/* <h3>{original_title}</h3> */}
+      <img src={`${imgApiMovie}${poster_path}`} alt={title}/>
+      <Typography 
+        component="p"
+        variant="body1"
+        className={style.title}
+      >{title.toUpperCase()}</Typography>
       {/* <p>Favorite</p> */}
+      {/* <p>See on IMBD</p> */}
     </Box>
   )
 }

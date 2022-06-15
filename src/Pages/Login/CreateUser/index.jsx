@@ -20,24 +20,25 @@ export const CreateUser = () => {
   const [ error, setError ] = useState(null)
 
   const handleInput = (target) => {
-    setUsername(target.value)
+    setUsername(target.value.toLowerCase().trim())
   }
 
   const createUser = async () => {
     const user = { 
-      name: username.toLowerCase(),
+      name: username,
       role: "user",
-      token: randomNumber(1000, 9999)
-     }
-    const userRef = doc(database, "users", username.toLowerCase())
-    const snap = await getDoc(userRef)
-    if (snap.data()) {
-      setError('*This user already exists. Please choose another username')
-    } else {
-      await setDoc(doc(database, 'users', username.toLowerCase()), user)
-        .then(setError(null))
-        .then(dispatch(setUser(user)))
-        .then(navigate(PATH_MOVIES))
+    }
+    if (user.name.length > 0) {
+      const userRef = doc(database, "users", user.name)
+      const snap = await getDoc(userRef)
+      if (snap.data()) {
+        setError('*This user already exists. Please choose another username')
+      } else {
+        await setDoc(doc(database, 'users', user.name), user)
+          .then(setError(null))
+          .then(dispatch(setUser(user)))
+          .then(navigate(PATH_MOVIES))
+      }
     }
   }
 

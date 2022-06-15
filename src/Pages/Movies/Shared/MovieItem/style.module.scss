@@ -1,7 +1,25 @@
 .movieBox {
+  position: relative;
   width: 200px;
   text-align: center;
+  cursor: pointer;
+  background-color: black;
+  &:hover img {
+    opacity: .2;
+  }
+  &:hover .title {
+    opacity: 1;
+  }
   img {
     width: 200px;
+  }
+  .title {
+    opacity: 0;
+    width: 180px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
   }
 }
