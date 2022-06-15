@@ -1,21 +1,15 @@
 import React from "react"
-import { Box, Divider } from "@mui/material"
 import { Link } from "react-router-dom"
+import { Box, Divider } from "@mui/material"
+
+import style from './style.module.scss'
 
 export const MenuTop = ({ menuItems }) => {
   return (
-    <React.Fragment> 
-      <Box sx={{
-        height:"64px", 
-        display:"flex", 
-        justifyContent:"space-evenly",
-        alignItems:"center",
-      }}>
-        {menuItems.map((item, index) => (
-          <Link to={item?.path} key={`MenuItem-${index}`}>{item?.name}</Link>
-          ))}
-      </Box>
-      <Divider />
-    </React.Fragment>
+    <Box className={style.container}>
+      {menuItems.map((item, index) => (
+        <Link to={item?.path} key={`MenuItem-${index}`}>{item?.name}</Link>
+        ))}
+    </Box>
   )
 }

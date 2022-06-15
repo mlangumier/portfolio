@@ -3,7 +3,7 @@ import { TextField } from "@mui/material"
 export const InputComponent = ({
   name, 
   label, 
-  variant = "standard", 
+  variant = "outlined", 
   value, 
   onChange
 }) => {

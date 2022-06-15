@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
-import { Navbar } from "Components/Navbar";
-import { Box } from "@mui/material";
 import { Outlet } from "react-router-dom";
+import { Box } from "@mui/material";
+
+import { Navbar } from "Components/Navbar";
+
+import style from './style.module.scss'
 
 export const Layout = () => {
   const [ open, setOpen ] = useState(false);
@@ -12,9 +15,9 @@ export const Layout = () => {
   }, [open])
 
   return (
-    <Box sx={{ display: 'flex', height:'100%', minHeight:'100vh' }}>
+    <Box className={style.container}>
       <Navbar open={open} setOpen={setOpen} />
-      <Box className="page-full" style={{ width: `calc(100% - ${navbarwidth}px)`, flexGrow: 1 }}>
+      <Box className="page-full" sx={{ width: `calc(100% - ${navbarwidth}px)`, flexGrow: 1 }}>
         <Outlet />
       </Box>
     </Box>

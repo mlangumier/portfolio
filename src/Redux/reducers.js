@@ -1,7 +1,7 @@
-// import userReducer from './User/userSlice'
+import userReducer from './User/userSlice'
 import movieReducer from './Movies/movieSlice'
 
 export const rootReducer = {
-  // user: userReducer,
+  user: userReducer,
   movies: movieReducer,
 }

@@ -7,16 +7,26 @@ import { MenuItemsLogin } from "Components/Menu/menuItems";
 import { CreateUser } from './CreateUser'
 import { FindUser } from './FindUser'
 
+import style from './style.module.scss'
+
 export const LoginLayout = () => {
   return (
     <React.Fragment>
       <MenuTop menuItems={MenuItemsLogin} />
-      <Container className="page-content" maxWidth="xl" component="main" sx={{ flexGrow: 1, p: 3 }}>
-        <Box style={{height:'100%'}}>
-          <Typography component="h2" variant="h3">You must be logged in to access our movie library</Typography>
-          <Box>
+      <Container className={style.container} maxWidth="xl" component="main">
+        <Box>
+          <Box className={style.content}>
+          <Typography 
+            component="h2" 
+            variant="h5"
+            className={style.title}
+          >You must be logged in to access our movie library</Typography>
             <CreateUser />
-            <Typography component="p" variant="body1">----- or -----</Typography>
+            <Typography 
+              component="p" 
+              variant="body1"
+              className={style.separator}
+            >or</Typography>
             <FindUser />
           </Box>
         </Box>

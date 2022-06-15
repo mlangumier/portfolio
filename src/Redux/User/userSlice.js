@@ -1,9 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 export const initialState = {
-  id: '1234',
+  token: '1234',
   name: 'Visitor',
-  isLoggedIn: false,
+  role: '',
   movies: [],
   todos: [],
 }
@@ -34,18 +34,8 @@ export const userSlice = createSlice({
   //   otherReducer,
   // }
   reducers: {
-    getUser: (state, { payload }) => {
-      console.log('USER FETCHED')
-      return { ...state, ...payload }
-    },
-    createUser: (state, { payload }) => {
-      localStorage.setItem(LOCAL_STORAGE_USER, payload.id)
-      console.log('USER CREATED:', payload)
-      return { ...state, ...payload };
-    },
-    updateUser: (state, { payload }) => {
-      // localStorage.setItem(LOCAL_STORAGE_USER, payload.id)
-      console.log('USER UPDATED:', payload)
+    setUser: (state, { payload }) => {
+      localStorage.setItem(LOCAL_STORAGE_USER, payload.name)
       return { ...state, ...payload }
     },
     logout: (state) => {
@@ -56,5 +46,5 @@ export const userSlice = createSlice({
   },
 })
 
-export const { getUser, createUser, updateUser, resetUser } = userSlice.actions
+export const { setUser, resetUser } = userSlice.actions
 export default userSlice.reducer
