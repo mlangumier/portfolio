@@ -1,11 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-export const initialState = {
-  name: 'Visitor',
-  role: '',
-  movies: [],
-  todos: [],
-}
+export const initialState = {}
 
 export const LOCAL_STORAGE_USER = "portfolio:app:user"
 

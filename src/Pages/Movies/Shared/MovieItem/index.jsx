@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Typography } from '@mui/material'
+import { Box, Skeleton, Typography } from '@mui/material'
 
 import { imgApiMovie } from 'Services/movieApi'
 
@@ -13,7 +13,10 @@ getMovieDetails
 }) => {
   return (
     <Box onClick={getMovieDetails} className={style.movieBox}>
-      <img src={`${imgApiMovie}${poster_path}`} alt={title}/>
+      {poster_path 
+        ? <img src={`${imgApiMovie}${poster_path}`} alt={title}/>
+        : <Skeleton variant='rectangular' />
+      }
       <Typography 
         component="p"
         variant="body1"

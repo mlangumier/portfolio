@@ -1,9 +1,16 @@
 .movieBox {
   position: relative;
   width: 200px;
+  height: fit-content;
   text-align: center;
   cursor: pointer;
-  background-color: black;
+  :global(.MuiSkeleton-root) {
+    width: 200px;
+    height: 282px;
+  }
+  &:hover {
+    background-color: black;
+  }
   &:hover img {
     opacity: .2;
   }

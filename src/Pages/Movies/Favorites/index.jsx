@@ -1,6 +1,6 @@
 
 export const Favorites = () => {
   return (
-    <h2>Favorite</h2>
+    <h2 style={{textAlign:'center'}}>COMING SOON</h2>
   )
 }

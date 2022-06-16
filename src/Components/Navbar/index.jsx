@@ -28,13 +28,9 @@ export const Navbar = ({ open, setOpen }) => {
       >
 
         <DrawerHeader>
-          {/* <IconButton> */}
-            {/* {!open ? <ChevronRightIcon /> : <ChevronLeftIcon />} */}
-          {/* </IconButton> */}
-          <ListItemText 
-            primary={user?.name} 
-            sx={{ opacity: open ? 1 : 0, justifyContent: open ? 'initial' : 'center' }} 
-          />
+          <IconButton>
+            {!open ? <ChevronRightIcon /> : <ChevronLeftIcon />}
+          </IconButton>
         </DrawerHeader>
 
         <Box className={style.navItems}>

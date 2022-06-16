@@ -7,10 +7,13 @@ export const movieSlice = createSlice({
   initialState,
   reducers: {
     getMovies: (state, { payload }) => {
-      return { ...state, ...payload }
+      return [ ...payload ];
+    },
+    resetMovies: (state) => {
+      return initialState;
     }
   }
 })
 
-export const { getMovies } = movieSlice.actions;
+export const { getMovies, resetMovies } = movieSlice.actions;
 export default movieSlice.reducer
