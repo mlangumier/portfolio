@@ -39,11 +39,10 @@ export const userSlice = createSlice({
     },
     logout: (state) => {
       localStorage.removeItem(LOCAL_STORAGE_USER)
-      console.log('USER LOGGED OUT')
       return { ...state, ...initialState }
     }
   },
 })
 
-export const { setUser, resetUser } = userSlice.actions
+export const { setUser, logout } = userSlice.actions
 export default userSlice.reducer

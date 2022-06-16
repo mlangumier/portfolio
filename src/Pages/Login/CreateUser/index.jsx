@@ -8,7 +8,6 @@ import { setUser } from 'Redux/User/userSlice'
 import { database } from "Services/firebase";
 import { InputComponent } from 'Components/Forms/input'
 import { ButtonSimple } from 'Components/Buttons'
-import { randomNumber } from 'Functions/randomNumber'
 import { PATH_MOVIES } from 'Routes/CONSTANTS'
 
 import style from './style.module.scss'
