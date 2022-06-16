@@ -14,8 +14,10 @@ export const Movies = () => {
   const dispatch = useDispatch()
   const [ movieList, setMovieList ] = useState([])
   const [ movieDetails, setMovieDetails ] = useState(null)
+  const [ movieSearched, setMovieSearched ] = useState("")
   
   useEffect(() => {
+    console.log('INIT')
     fetchMovies("discover/movie").then(result => {
       dispatch(getMovies(result?.results))
       setMovieList(result?.results);
@@ -27,15 +29,28 @@ export const Movies = () => {
     setMovieDetails(movie)
   }
 
-  const searchMovie = (target) => {
-    console.log('SEARCH:', target)
+  const handleSearchMovie = (target) => {
+    setMovieSearched(target.value)
   }
+  useEffect(() => {
+      const delayedRequest = setTimeout(() => {
+      console.log('SEARCH', movieSearched)
+      // fetchMovies("search/movie", movieSearched).then(result => {
+      //   console.log('RES:', result)
+      //   dispatch(getMovies(result?.results))
+      //   setMovieList(result?.results);
+      //   setMovieDetails(result?.results[0])
+      // })
+    }, 1000)
+    return () => clearTimeout(delayedRequest)
+  }, [movieSearched])
 
   return (
     <Box>
-      {/* <SearchMovies 
-        searchMovie={searchMovie}
-      /> */}
+      <SearchMovies 
+        handleSearchMovie={handleSearchMovie}
+        search={movieSearched}
+      />
       <Box className={style.movieBlocks}>
         <MovieList movieList={movieList} getMovieDetails={getMovieDetails} />
         <Box className={style.movieDetails}>

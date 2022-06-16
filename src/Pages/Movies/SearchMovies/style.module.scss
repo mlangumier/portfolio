@@ -1,0 +1,13 @@
+.searchBox {
+  margin-bottom: 20px;
+  width: 100%;
+  :global(.MuiFormControl-root) {
+    width: 100%;
+  }
+  :global(.MuiOutlinedInput-root) {
+    width: 50%;
+    @media(max-width: 600px) {
+      width: 100%;
+    }
+  }
+}

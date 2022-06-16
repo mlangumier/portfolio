@@ -3,8 +3,8 @@ import axios from "axios"
 const baseUrl = "https://api.themoviedb.org/3";
 const api_key = process.env.REACT_APP_MOVIE_API_KEY;
 
-export const fetchMovies = async (search) => {
-  const data = await axios.get(`${baseUrl}/${search}`, {
+export const fetchMovies = async ({ type }) => {
+  const data = await axios.get(`${baseUrl}/${type}`, {
     params: { api_key }
   })
   if (data?.status === 200) {

@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-import { PATH_FAVORITES, PATH_HOMEPAGE, PATH_LOGIN, PATH_MOVIES, PATH_PROFILE, PATH_WATCHLATER } from "./CONSTANTS";
+import { PATH_FAVORITES, PATH_HOMEPAGE, PATH_LOGIN, PATH_MOVIES, PATH_PROFILE } from "./CONSTANTS";
 import { Layout } from "Pages";
 import { HomepageLayout } from "Pages/Home";
 import { MoviesLayout } from "Pages/Movies";

@@ -2,14 +2,19 @@ import { Box } from "@mui/system"
 
 import { InputComponent } from 'Components/Forms/input';
 
-export const SearchMovies = ({ searchMovies }) => {
+import style from './style.module.scss'
+
+export const SearchMovies = ({ 
+  search, 
+  handleSearchMovie 
+}) => {
   return (
-    <Box>
+    <Box className={style.searchBox}>
       <InputComponent 
         name="movieSearch"
         label="Search..." 
-        value={""}
-        onChange={searchMovies}
+        value={search}
+        onChange={(e) => handleSearchMovie(e)}
       />
     </Box>
   )
