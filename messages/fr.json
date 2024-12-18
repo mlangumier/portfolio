@@ -43,6 +43,28 @@
           "title": "Je développe des applications web modernes et performantes",
           "description": "<jobTitle>DÉVELOPPEUR FRONTEND</jobTitle> expérimenté, je créé des applications <tech>React.js</tech> & <tech>TypeScript</tech> user-friendly, et j'ai pour objectif d'évoluer vers du développement Fullstack."
         },
+        "skills": {
+          "title": "Compétences",
+          "description": "Travailler sur des projets variés avec différentes équipes m'a permi d'acquérir des compétences techniques, organisationnelles et collaboratives indispensables.",
+          "cards": {
+            "technical": {
+              "title": "Développement Frontend",
+              "description": "Créer des sites performants, responsifs et optimisés pour le SEO et l'UI/UX, avec requêtes API et gestion du state."
+            },
+            "adapt": {
+              "title": "Adaptabilité",
+              "description": "Evoluer sur plusieur technologies pour être opérationnel sur différents projets, m'adapter aux workflows et répondre aux besoins de l'équipe."
+            },
+            "teamwork": {
+              "title": "Travail en équipe",
+              "description": "Travailler au sein d'une équipe agile, participer aux revues de code et à l'amélioration des process, partager les informations et compétences, et rédiger des documentations claires."
+            },
+            "learning": {
+              "title": "Veille & auto-formation",
+              "description": "Effectuer une veille technologique pour suivre les évolutions des outils maîtrisés ou nouveaux, et continuer de monter en compétence."
+            }
+          }
+        },
         "contact": {
           "title": "Me contacter",
           "description": "Envie d'en savoir plus ? Jeter un oeil à mon profil LinkedIn pour plus d'info sur mes expériences, mon repository Github pour voir les techno que j'utilise, ou envoyez-moi un email grâce au lien ci-dessous !"

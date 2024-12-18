@@ -1,5 +1,5 @@
-import defaultTheme from 'tailwindcss/defaultTheme';
 import tailwindcssAnimate from 'tailwindcss-animate';
+import defaultTheme from 'tailwindcss/defaultTheme';
 
 import type { Config } from 'tailwindcss';
 
@@ -16,10 +16,10 @@ const config: Config = {
       center: true,
       padding: {
         DEFAULT: '1rem',
-        lg: '0',
+        xl: '0',
       },
       screens: {
-        lg: '1024px',
+        xl: '1280px',
       },
     },
     fontFamily: {
@@ -62,8 +62,7 @@ const config: Config = {
         'header-title-start': 'auto 1fr',
       },
       boxShadow: {
-        'card-25': '4px 4px 4px 0 hsl(var(--shadow) / 0.25)',
-        'card-50': '4px 4px 4px 0 hsl(var(--shadow) / 0.50)',
+        'card-25': '2px 2px 6px 0 hsl(var(--shadow) / 0.25)',
       },
       backdropBlur: {
         xs: '2px',
