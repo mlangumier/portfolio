@@ -3,23 +3,22 @@ import Image from 'next/image';
 import React from 'react';
 
 import { profilePicture } from '@/assets';
+import ExperiencesBlock from '@/components/experiences-block';
 import ExternalLink from '@/components/links/external-link';
 import NavigationLink from '@/components/links/navigation-link';
 import SectionWrapper from '@/components/section-block';
 import SectionTitle from '@/components/section-title-block';
+import SkillsBlock from '@/components/skills-block';
 import { socials } from '@/utils/socials';
-import SkillsBlock from '@/components/skills-block/skills-block';
 
 const HomepageView = () => {
   const tPage = useTranslations('Pages.Homepage.sections');
   const tButton = useTranslations('Components.Buttons');
-  const { linkedin, github } = socials;
 
   return (
     <>
       <SectionWrapper
         id="hero"
-        full
         first
         containerStyle="flex flex-col-reverse justify-between gap-8 md:flex-row md:gap-12 lg:gap-32"
       >
@@ -47,15 +46,22 @@ const HomepageView = () => {
         </div>
       </SectionWrapper>
 
-      <SectionWrapper id="skills" full dark>
+      <SectionWrapper id="skills" dark>
         <SectionTitle title={tPage('skills.title')} description={tPage('skills.description')} dark />
         <SkillsBlock />
       </SectionWrapper>
 
-      <SectionWrapper id="contact" full>
-        <SectionTitle title={tPage('contact.title')} description={tPage('contact.description')}>
-          <ExternalLink href={linkedin.url}>{linkedin.label}</ExternalLink>
-          <ExternalLink href={github.url}>{github.label}</ExternalLink>
+      <SectionWrapper id="experiences">
+        <SectionTitle title={tPage('experiences.title')}>
+          <ExternalLink href="/CV_Developpeur_Frontend.pdf"> {tButton('downloadResume')}</ExternalLink>
+        </SectionTitle>
+        <ExperiencesBlock />
+      </SectionWrapper>
+
+      <SectionWrapper id="contact" dark>
+        <SectionTitle title={tPage('contact.title')} description={tPage('contact.description')} dark>
+          <ExternalLink href={socials.linkedin.url}>{socials.linkedin.label}</ExternalLink>
+          <ExternalLink href={socials.github.url}>{socials.github.label}</ExternalLink>
           <ExternalLink href={`mailto:${process.env.CONTACT_EMAIL}?subject=Portfolio%20-%20Contact`}>
             {tButton('sendEmail')}
           </ExternalLink>

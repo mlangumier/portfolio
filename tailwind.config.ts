@@ -60,9 +60,7 @@ const config: Config = {
       gridTemplateColumns: {
         'header-title-center': 'auto 1fr minmax(0, 2.5rem)',
         'header-title-start': 'auto 1fr',
-      },
-      boxShadow: {
-        'card-25': '2px 2px 6px 0 hsl(var(--shadow) / 0.25)',
+        experience: '1fr 0.125rem 1fr',
       },
       backdropBlur: {
         xs: '2px',

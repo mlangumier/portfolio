@@ -22,8 +22,8 @@ interface Props {
  */
 const SectionWrapper: React.FC<Props> = ({
   id,
+  full = true,
   first = false,
-  full = false,
   dark = false,
   containerStyle,
   children,

@@ -13,7 +13,8 @@
   "Components": {
     "Buttons": {
       "talk": "Let's talk!",
-      "sendEmail": "Send an email"
+      "sendEmail": "Send an email",
+      "downloadResume": "Download Resume"
     }
   },
 
@@ -62,6 +63,26 @@
             "learning": {
               "title": "Continuous Training",
               "description": "Perform technology watch and continuous learning to keep learning, gaining skills and discover new tools."
+            }
+          }
+        },
+        "experiences": {
+          "title": "Experience",
+          "cards": {
+            "dixeed": {
+              "title": "Frontend Developer",
+              "business": "Dixeed",
+              "description": "I developed and maintained optimized web and mobile applications according to the requirements of various clients."
+            },
+            "ffy": {
+              "title": "React / Fullstack Developer",
+              "business": "Flying For You",
+              "description": "I reworked the website according to the new designs and developped new features that allowed better monitoring of the marketing campaigns."
+            },
+            "humanBooster": {
+              "title": "Fullstack Developer Training",
+              "business": "Human Booster",
+              "description": "I developed various short-term and long-term project and learned how to quickly adapt and gain skills with different languages and tools."
             }
           }
         },

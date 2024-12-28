@@ -97,13 +97,12 @@ Using our new design, we're going to rework our homepage, making it more enjoyab
   - [x] Use icon library for cards
   - [x] Develop generic Card component with simple animation on hover (temporary animation)
 
-- [ ] Experience section:
+- [x] Experience section:
 
-  - [ ] Setup translations
-  - [ ] Prepare items content as data object
-  - [ ] Setup basic vertical (grid?) layout, check vertical line
-  - [ ] Re-use CardComponent for experiences (+ slide-in animations?)
-  - [ ] Use Card component for experiences
+  - [x] Setup translations
+  - [x] Prepare items content as data object
+  - [x] Setup basic vertical (grid?) layout, check vertical line
+  - [x] Use Card component for experiences
 
 - [ ] Deploy full basic homepage
 
@@ -173,6 +172,7 @@ Not linked to any roadmap, but to do when/if relevant or necessary.
 - [ ] Component - Change language switcher to a `Select` component
 - [ ] Internationalization - Add translations for accessibility & common items (links, buttons)
 - [ ] Routes - Upon adding new pages, reorganise routes
+- [ ] Architecture - Use `FSD` ([Feature-Slided Design](https://feature-sliced.design/docs/guides/tech/with-nextjs#app-router)) for better clarity & scaling
 - [ ] Internationalization - Separate dictionaries in multiple files when starting projects
 - [ ] Theme - When creating project, check if relevant to use style files (.css + tailwind.config.ts) specific to the project's route to override generic style (layout, component, fonts etc.).
 - [ ] Markdown - Update files & formatting, add table of contents (cf. extension)
