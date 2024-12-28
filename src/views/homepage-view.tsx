@@ -8,6 +8,7 @@ import NavigationLink from '@/components/links/navigation-link';
 import SectionWrapper from '@/components/section-block';
 import SectionTitle from '@/components/section-title-block';
 import { socials } from '@/utils/socials';
+import SkillsBlock from '@/components/skills-block/skills-block';
 
 const HomepageView = () => {
   const tPage = useTranslations('Pages.Homepage.sections');
@@ -46,7 +47,12 @@ const HomepageView = () => {
         </div>
       </SectionWrapper>
 
-      <SectionWrapper id="contact" full dark>
+      <SectionWrapper id="skills" full dark>
+        <SectionTitle title={tPage('skills.title')} description={tPage('skills.description')} dark />
+        <SkillsBlock />
+      </SectionWrapper>
+
+      <SectionWrapper id="contact" full>
         <SectionTitle title={tPage('contact.title')} description={tPage('contact.description')}>
           <ExternalLink href={linkedin.url}>{linkedin.label}</ExternalLink>
           <ExternalLink href={github.url}>{github.label}</ExternalLink>
@@ -54,13 +60,6 @@ const HomepageView = () => {
             {tButton('sendEmail')}
           </ExternalLink>
         </SectionTitle>
-      </SectionWrapper>
-
-      <SectionWrapper id="under-construction">
-        <SectionTitle
-          title={`[ ${tPage('underConstruction.title')} ]`}
-          description={tPage('underConstruction.description')}
-        />
       </SectionWrapper>
     </>
   );

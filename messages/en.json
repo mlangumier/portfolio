@@ -43,6 +43,28 @@
           "title": "I develop modern and optimized web applications",
           "description": "As an experienced <jobTitle>FRONEND DEVELOPER</jobTitle>, I create user-friendly <tech>React.js</tech> & <tech>TypeScript</tech> applications, with the goal of becoming Fullstack developer."
         },
+        "skills": {
+          "title": "Skills",
+          "description": "Working on various projects with different teams has allowed me to learn many technical, organizational and collaborative skills, all of them essential in this line of work.",
+          "cards": {
+            "technical": {
+              "title": "Frontend Development",
+              "description": "Create fast and responsive web apps optimized for SEO and UI/UX, with features such as API calls and state management."
+            },
+            "adapt": {
+              "title": "Adaptability",
+              "description": "Be operational with several tools and languages to be able to work on multiple projects, and quickly adapt to a team's workflow."
+            },
+            "teamwork": {
+              "title": "Teamwork",
+              "description": "Work with an agile approach, participate in code reviews and improving processes, share information and skills, and write clear documentation."
+            },
+            "learning": {
+              "title": "Continuous Training",
+              "description": "Perform technology watch and continuous learning to keep learning, gaining skills and discover new tools."
+            }
+          }
+        },
         "contact": {
           "title": "Contact me",
           "description": "Want to know more? Go check out my profile on LinkedIn to learn more about my experience, my Github repository to see what stack I'm using, or send me an email using the following link!"

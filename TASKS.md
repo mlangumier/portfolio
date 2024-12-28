@@ -90,25 +90,20 @@ Using our new design, we're going to rework our homepage, making it more enjoyab
   - [x] Check code, fix bugs, clean up code
   - [x] Deploy & test
 
-- [ ] Skills section:
+- [x] Skills section:
 
-  - [ ] Setup translations
-  - [ ] Prepare items content in as data object (separate file if can get translation there, or directly in component)
-  - [ ] Create a SectionIntroBlock for title/description(s)/button(s) with prop for align (text & buttons-flex) and max-width
-  - [ ] Transform logos into svg components and setup sizes & colors.
-  - [ ] Create SkillBlock component with responsive grid.
-  - [ ] Develop Card component with simple animation on hover, add prop for bg-color, padding(?), and hover border direction (if using this).
-  - [ ] Optional: Setup section skeleton for suspense fallback if slow loading time
+  - [x] Setup translations
+  - [x] Prepare items content in a data object (separate file if can get translation there, or directly in component)
+  - [x] Use icon library for cards
+  - [x] Develop generic Card component with simple animation on hover (temporary animation)
 
 - [ ] Experience section:
 
   - [ ] Setup translations
-  - [ ] Prepare items content in as data object
-  - [ ] Setup the temporary horizontal layout (vertical layout will be implemented with the animations).
-  - [ ] Use the SectionIntroBlock component for left-side content
-  - [ ] Create ExperiencesBlock component with responsive grid
-  - [ ] Use Card component to display experiences
-  - [ ] Optional: Setup section skeleton for suspense fallback if slow loading time
+  - [ ] Prepare items content as data object
+  - [ ] Setup basic vertical (grid?) layout, check vertical line
+  - [ ] Re-use CardComponent for experiences (+ slide-in animations?)
+  - [ ] Use Card component for experiences
 
 - [ ] Deploy full basic homepage
 
@@ -173,7 +168,7 @@ Now that out page is looking much better, we're going to add some animations and
 
 Not linked to any roadmap, but to do when/if relevant or necessary.
 
-- [ ] Theme - Setup dark mode integration (+ must allow other themes as well)
+- [ ] Theme - Setup dark mode integration (+ colored themes)
 - [ ] Component - Add a scroll-to-top button
 - [ ] Component - Change language switcher to a `Select` component
 - [ ] Internationalization - Add translations for accessibility & common items (links, buttons)

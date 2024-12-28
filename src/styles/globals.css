@@ -28,7 +28,6 @@
   }
 
   .dark {
-    /* Add variables when needed */
     --cyan-900: 196.4 63.6 23.7;
     --cyan-700: 192.9 82.3 31;
     --sky-50: 204 100 97.1;
@@ -75,7 +74,7 @@
   }
 
   .title-card {
-    @apply text-lg font-bold text-primary;
+    @apply text-lg font-bold text-accent;
   }
 
   p,
@@ -117,6 +116,10 @@
   }
   .section-full {
     @apply min-h-[calc(100vh-5rem)] content-center;
+  }
+
+  .card {
+    @apply w-full rounded-lg border bg-white p-5 transition-all hover:scale-105;
   }
 }
 
