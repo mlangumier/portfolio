@@ -13,7 +13,8 @@
   "Components": {
     "Buttons": {
       "talk": "Discutons !",
-      "sendEmail": "Envoyer un email"
+      "sendEmail": "Envoyer un email",
+      "downloadResume": "Télécharger le CV"
     }
   },
 
@@ -62,6 +63,26 @@
             "learning": {
               "title": "Veille & auto-formation",
               "description": "Effectuer une veille technologique pour suivre les évolutions des outils maîtrisés ou nouveaux, et continuer de monter en compétence."
+            }
+          }
+        },
+        "experiences": {
+          "title": "Expériences",
+          "cards": {
+            "dixeed": {
+              "title": "Développeur Frontend",
+              "business": "Dixeed",
+              "description": "J'ai participé au développement et à la maintenance d'applications web et mobiles performantes pour répondre aux besoins de différents clients."
+            },
+            "ffy": {
+              "title": "Développeur React / Fullstack",
+              "business": "Flying For You",
+              "description": "J'ai effectué une refonte graphique du site et participé au développement de nouvelles fonctionnalités qui ont permi un meilleur suivi des campagnes marketing."
+            },
+            "humanBooster": {
+              "title": "Formation Développeur Fullstack",
+              "business": "Human Booster",
+              "description": "J'ai développé des projets fullstack sur court et long terme et appris à m'adapter et monter en compétences rapidement sur différentes outils et langages."
             }
           }
         },
