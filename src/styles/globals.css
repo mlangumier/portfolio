@@ -113,7 +113,7 @@
   }
 
   .card {
-    @apply h-full w-full rounded-lg border bg-white p-5 shadow-md transition-all hover:scale-105 hover:shadow-lg;
+    @apply h-full w-full rounded-lg border border-grey-border bg-white p-5 shadow-md transition-all hover:scale-[1.02] hover:shadow-lg;
   }
 }
 

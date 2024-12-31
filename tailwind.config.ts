@@ -65,6 +65,9 @@ const config: Config = {
       backdropBlur: {
         xs: '2px',
       },
+      animationDuration: {
+        '1500': '1.5s',
+      },
       // Use keyframes and animations for reusable "fade" and "slide" animations
       // keyframes:{},
       // animations: {},
