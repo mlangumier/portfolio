@@ -13,7 +13,8 @@
   "Components": {
     "Buttons": {
       "talk": "Discutons !",
-      "sendEmail": "Envoyer un email"
+      "sendEmail": "Envoyer un email",
+      "downloadResume": "Télécharger le CV"
     }
   },
 
@@ -42,6 +43,48 @@
           "salutation": "Bonjour ! Je m'appel Mathieu,",
           "title": "Je développe des applications web modernes et performantes",
           "description": "<jobTitle>DÉVELOPPEUR FRONTEND</jobTitle> expérimenté, je créé des applications <tech>React.js</tech> & <tech>TypeScript</tech> user-friendly, et j'ai pour objectif d'évoluer vers du développement Fullstack."
+        },
+        "skills": {
+          "title": "Compétences",
+          "description": "Travailler sur des projets variés avec différentes équipes m'a permi d'acquérir des compétences techniques, organisationnelles et collaboratives indispensables.",
+          "cards": {
+            "technical": {
+              "title": "Développement Frontend",
+              "description": "Créer des sites performants, responsifs et optimisés pour le SEO et l'UI/UX, avec requêtes API et gestion du state."
+            },
+            "adapt": {
+              "title": "Adaptabilité",
+              "description": "Evoluer sur plusieur technologies pour être opérationnel sur différents projets, m'adapter aux workflows et répondre aux besoins de l'équipe."
+            },
+            "teamwork": {
+              "title": "Travail en équipe",
+              "description": "Travailler au sein d'une équipe agile, participer aux revues de code et à l'amélioration des process, partager les informations et compétences, et rédiger des documentations claires."
+            },
+            "learning": {
+              "title": "Veille & auto-formation",
+              "description": "Effectuer une veille technologique pour suivre les évolutions des outils maîtrisés ou nouveaux, et continuer de monter en compétence."
+            }
+          }
+        },
+        "experiences": {
+          "title": "Expériences",
+          "cards": {
+            "dixeed": {
+              "title": "Développeur Frontend",
+              "business": "Dixeed",
+              "description": "J'ai participé au développement et à la maintenance d'applications web et mobiles performantes pour répondre aux besoins de différents clients."
+            },
+            "ffy": {
+              "title": "Développeur React / Fullstack",
+              "business": "Flying For You",
+              "description": "J'ai effectué une refonte graphique du site et participé au développement de nouvelles fonctionnalités qui ont permi un meilleur suivi des campagnes marketing."
+            },
+            "humanBooster": {
+              "title": "Formation Développeur Fullstack",
+              "business": "Human Booster",
+              "description": "J'ai développé des projets fullstack sur court et long terme et appris à m'adapter et monter en compétences rapidement sur différentes outils et langages."
+            }
+          }
         },
         "contact": {
           "title": "Me contacter",

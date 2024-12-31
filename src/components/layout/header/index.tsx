@@ -9,7 +9,6 @@ import { cn } from '@/utils/tailwindcss';
 import { INavRouteItem } from '@/utils/types';
 
 import BurgerIcon from './burger-icon';
-import { useIsScreenLargerThan } from '../../../../hooks/use-is-screen-larger-than';
 
 interface Props {
   navItems: INavRouteItem[];
@@ -18,7 +17,6 @@ interface Props {
 const Header: React.FC<Props> = ({ navItems }) => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const pathname = usePathname();
-  const isLargeScreen = useIsScreenLargerThan('md');
   const tHeader = useTranslations('Layout.Header');
 
   const handleBurgerMenu = (state: 'open' | 'close') => {
@@ -28,14 +26,6 @@ const Header: React.FC<Props> = ({ navItems }) => {
   const toggleBurgerMenu = () => {
     setIsMenuOpen(prev => !prev);
   };
-
-  // Closes the mobile menu when increasing the browser's window size
-  // -> 'overflow-hidden' would otherwise stay and prevent the user from navigation the page
-  useEffect(() => {
-    if (isLargeScreen) {
-      setIsMenuOpen(false);
-    }
-  }, [isLargeScreen]);
 
   // Disables scrolling when mobile menu is open
   useEffect(() => {
