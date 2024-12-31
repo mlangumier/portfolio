@@ -104,23 +104,23 @@ Using our new design, we're going to rework our homepage, making it more enjoyab
   - [x] Setup basic vertical (grid?) layout, check vertical line
   - [x] Use Card component for experiences
 
-- [ ] Deploy full basic homepage
+- [x] Deploy full basic homepage
 
 #### Animation & interaction
 
-Now that out page is looking much better, we're going to add some animations and interaction, to better improve the user experience, and display more interesting skills.
+Now that our page is looking much better, we're going to add some animations and interaction, to better improve the user experience, and display more interesting skills.
 
 - [ ] Skills section:
 
-  - [ ] Add slide-in bottom-to-top animation for cards, with opacity change.
-  - [ ] Make the cards appear with different delays.
+  - [ ] Card animations: Slide-in from bottom with fade-in while appearing.
+  - [ ] Delay the animation on desktop so the cards don't appear all at once.
+  - [ ] Make sure the animation only happens once: the cards stay after appearing.
 
 - [ ] Experience section:
 
-  - [ ] Switch the layout to vertical
-  - [ ] Develop the animated vertical chronological line: needs a circle or arrow when reaching experience card, appears on scroll down, and changes color when scrolling past the experience card. The color needs to change back if scrolling up, but must not disappear.
-  - [ ] Develop the slide-in animation for the cards: either bottom-to-top, or side-to-center (kind of) with opacity change.
-  - [ ] Must appear on scroll and stay.
+  - [ ] Card animations: slide-in from side with fade-in while appearing.
+  - [ ] Timeline: make the line & circles change color or appear with scroll.
+  - [ ] (optional) Change Card border color once the circle has changed.
 
 - [ ] Contact section:
 
