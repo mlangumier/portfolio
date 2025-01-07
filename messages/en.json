@@ -42,7 +42,7 @@
         "hero": {
           "salutation": "Hello ! I'm Mathieu,",
           "title": "I develop modern and optimized web applications",
-          "description": "As an experienced <jobTitle>FRONEND DEVELOPER</jobTitle>, I create user-friendly <tech>React.js</tech> & <tech>TypeScript</tech> applications, with the goal of becoming Fullstack developer."
+          "description": "As an experienced <jobTitle>FRONTEND DEVELOPER</jobTitle>, I create user-friendly <tech>React.js</tech> & <tech>TypeScript</tech> applications, with the goal of becoming Fullstack developer."
         },
         "skills": {
           "title": "Skills",
