@@ -14,7 +14,7 @@ interface Props {
 }
 
 const SkillCard: React.FC<Props> = ({ item, index, isViewportLg }) => {
-  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.3 });
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: isViewportLg ? 0.3 : 1 });
   const [hasLoaded, setHasLoaded] = useState<boolean>(false);
 
   // Adds a '1s' delay between each cards using the item's index number.

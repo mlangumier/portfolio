@@ -9,10 +9,9 @@ import { Experience } from './';
 
 interface Props {
   item: Experience;
-  isViewportMd: boolean;
 }
-const ExperienceCard: React.FC<Props> = ({ item, isViewportMd }) => {
-  const { ref, inView } = useInView({ triggerOnce: true, threshold: isViewportMd ? 1 : 0.3 });
+const ExperienceCard: React.FC<Props> = ({ item }) => {
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 1 });
 
   return (
     <div ref={ref} className="group flex items-center justify-between md:justify-normal md:odd:flex-row-reverse">

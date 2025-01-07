@@ -162,7 +162,7 @@ Now that our page is looking much better, we're going to add some animations and
 
 ## FIXES & UPDATES
 
-Not linked to any roadmap, but to do when/if relevant or necessary.
+Not linked to any roadmap, to do when relevant or if necessary.
 
 - [ ] Markdown - Update files & formatting, add table of contents (cf. extension)
 - [ ] Theme - Setup dark mode integration (+ colored themes?)

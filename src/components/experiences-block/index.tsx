@@ -1,9 +1,6 @@
-'use client';
-
 import { useTranslations } from 'next-intl';
 import React from 'react';
 
-import useViewportBreakpoint from '@/hooks/use-viewport-breakpoint';
 import { cn } from '@/utils/tailwindcss';
 
 import ExperienceCard from './experience-card';
@@ -18,7 +15,6 @@ export interface Experience {
 
 const ExperiencesBlock: React.FC = () => {
   const t = useTranslations('Pages.Homepage.sections.experiences.cards');
-  const isViewportMd = useViewportBreakpoint('md');
 
   const experienceItems: Experience[] = [
     {
@@ -53,7 +49,7 @@ const ExperiencesBlock: React.FC = () => {
       )}
     >
       {experienceItems.map((item: Experience, index: number) => (
-        <ExperienceCard key={index} item={item} isViewportMd={isViewportMd} />
+        <ExperienceCard key={index} item={item} />
       ))}
     </div>
   );
