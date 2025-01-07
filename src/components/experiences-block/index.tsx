@@ -1,9 +1,14 @@
+'use client';
+
 import { useTranslations } from 'next-intl';
 import React from 'react';
 
+import useViewportBreakpoint from '@/hooks/use-viewport-breakpoint';
 import { cn } from '@/utils/tailwindcss';
 
-interface Experience {
+import ExperienceCard from './experience-card';
+
+export interface Experience {
   title: string;
   business: string;
   dates: string;
@@ -13,6 +18,7 @@ interface Experience {
 
 const ExperiencesBlock: React.FC = () => {
   const t = useTranslations('Pages.Homepage.sections.experiences.cards');
+  const isViewportMd = useViewportBreakpoint('md');
 
   const experienceItems: Experience[] = [
     {
@@ -33,46 +39,22 @@ const ExperiencesBlock: React.FC = () => {
       title: t('humanBooster.title'),
       business: t('humanBooster.business'),
       dates: '2020-2021',
-      location: 'St-Etienne',
+      location: 'St-Étienne',
       description: t('humanBooster.description'),
     },
   ];
 
   return (
-    <div className="mt-20 grid grid-cols-1 grid-rows-3 gap-y-4 md:grid-cols-experience">
-      {experienceItems.map((item: Experience, index) => (
-        <React.Fragment key={item.business}>
-          <div
-            className={cn(
-              'md:flex md:flex-row md:items-center',
-              index % 2 === 0 ? 'md:col-start-1' : 'md:col-start-3 md:flex-row-reverse'
-            )}
-          >
-            <article className={cn('card z-10 min-w-[15rem] space-y-4 sm:max-md:hover:scale-[1.02]')}>
-              <div>
-                <p className="title-card">{item.title}</p>
-                <p className="body-muted">
-                  {item.dates} | <span className="font-semibold">{item.business}</span>, {item.location}
-                </p>
-              </div>
-              <p>{item.description}</p>
-            </article>
-
-            <div id={`line-${index}`} className="relative hidden h-[0.125rem] w-8 bg-accent md:block">
-              <div
-                className={cn(
-                  'absolute top-1/2 size-4 -translate-y-1/2 rounded-full bg-accent',
-                  index % 2 === 0 ? 'left-full -translate-x-1/2' : 'left-0 -translate-x-1/2'
-                )}
-              />
-            </div>
-          </div>
-
-          <div id="empty-placeholder-grid" className={cn('hidden md:block', index % 2 === 0 ? '' : 'md:hidden')} />
-        </React.Fragment>
+    <div
+      id="timeline-container"
+      className={cn(
+        'relative mt-20 space-y-4',
+        'before:absolute before:inset-0 before:ml-3 before:h-full before:w-0.5 before:-translate-x-px before:bg-gradient-to-b before:from-transparent before:via-accent before:to-transparent md:before:mx-auto md:before:translate-x-0'
+      )}
+    >
+      {experienceItems.map((item: Experience, index: number) => (
+        <ExperienceCard key={index} item={item} isViewportMd={isViewportMd} />
       ))}
-
-      <div id="vertical-line" className="col-start-2 row-span-3 row-start-1 hidden h-full w-full bg-accent md:block" />
     </div>
   );
 };

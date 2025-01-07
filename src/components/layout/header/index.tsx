@@ -4,6 +4,7 @@ import { useTranslations } from 'next-intl';
 import React, { useEffect, useState } from 'react';
 
 import LocalSwitcher from '@/components/locale-switcher';
+import useViewportBreakpoint from '@/hooks/use-viewport-breakpoint';
 import { Link, usePathname } from '@/i18n/routing';
 import { cn } from '@/utils/tailwindcss';
 import { INavRouteItem } from '@/utils/types';
@@ -18,6 +19,7 @@ const Header: React.FC<Props> = ({ navItems }) => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const pathname = usePathname();
   const tHeader = useTranslations('Layout.Header');
+  const isViewportMd = useViewportBreakpoint('md');
 
   const handleBurgerMenu = (state: 'open' | 'close') => {
     setIsMenuOpen(state === 'open');
@@ -26,6 +28,11 @@ const Header: React.FC<Props> = ({ navItems }) => {
   const toggleBurgerMenu = () => {
     setIsMenuOpen(prev => !prev);
   };
+
+  // On window resize, if mobile menu was open, close it when using desktop layout (without it, would prevent from scrolling)
+  useEffect(() => {
+    if (isViewportMd) setIsMenuOpen(false);
+  }, [isViewportMd]);
 
   // Disables scrolling when mobile menu is open
   useEffect(() => {
