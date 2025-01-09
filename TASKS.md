@@ -123,13 +123,17 @@ Now that our page is looking much better, we're going to add some animations and
 
 - [ ] Contact section:
 
-  - [ ] Choose what tools to use for sending email
-  - [ ] Update the description text and remove the mailto button.
-  - [ ] Setup the contact form using Next-15's `Form` and create the input & text-area components with pending state animation on submit.
-  - [ ] Display confirmation / error message (modal?)
+  - [ ] Choose what tools to use for sending email -> Nodemailer
+  - [ ] Update the description text
+  - [ ] Setup form translations
+  - [ ] Setup the contact form:
+    - [x] Create the input & text-area components
+    - [ ] Add pending state animation (+disable fields) on submit
+    - [ ] Display confirmation/error message (toast? message to form?)
   - [ ] Setup form validation with Zod
   - [ ] Setup email sender
-  - [ ] Double-check mobile behaviour
+  - [ ] (?) Setup Google Re-Captcha
+  - [ ] (?) Send confirmation email when message is received?
 
 ## ROADMAP - DONE
 

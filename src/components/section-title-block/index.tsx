@@ -1,5 +1,6 @@
-import { cn } from '@/utils/tailwindcss';
 import React from 'react';
+
+import { cn } from '@/utils/tailwindcss';
 
 interface Props {
   title: string;

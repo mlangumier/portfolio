@@ -3,6 +3,7 @@ import Image from 'next/image';
 import React from 'react';
 
 import { profilePicture } from '@/assets';
+import ContactForm from '@/components/contact-form';
 import ExperiencesBlock from '@/components/experiences-block';
 import ExternalLink from '@/components/links/external-link';
 import NavigationLink from '@/components/links/navigation-link';
@@ -62,10 +63,8 @@ const HomepageView = () => {
         <SectionTitle title={tPage('contact.title')} description={tPage('contact.description')} dark>
           <ExternalLink href={socials.linkedin.url}>{socials.linkedin.label}</ExternalLink>
           <ExternalLink href={socials.github.url}>{socials.github.label}</ExternalLink>
-          <ExternalLink href={`mailto:${process.env.CONTACT_EMAIL}?subject=Portfolio%20-%20Contact`}>
-            {tButton('sendEmail')}
-          </ExternalLink>
         </SectionTitle>
+        <ContactForm />
       </SectionWrapper>
     </>
   );
