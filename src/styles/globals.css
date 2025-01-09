@@ -90,6 +90,11 @@
   button {
     @apply appearance-none border-none;
   }
+
+  input,
+  textarea {
+    @apply focus:outline-none;
+  }
 }
 
 @layer components {
@@ -121,7 +126,7 @@
     @apply flex flex-col gap-1;
   }
   .form-input {
-    @apply w-full rounded-md border border-grey-border bg-white p-2 text-foreground focus:outline-none focus:ring focus:ring-accent;
+    @apply w-full rounded-md border border-grey-border bg-white p-2 text-foreground focus:ring focus:ring-accent;
   }
 }
 
