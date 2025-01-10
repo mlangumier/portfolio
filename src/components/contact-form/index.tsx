@@ -10,9 +10,6 @@ import { submitContactForm } from './form-validation';
 import FormInput from './input';
 import FormTextArea from './text-area';
 
-// TODO: Setup Nodemailer
-// TODO: Setup Gmail SMTP
-// TODO: Use the "/api" route to setup the "sendEmail()" function?
 // TODO: Add icons: btn-hover (message/arrow), spinner on 'pending', checkmark on success
 
 const initialState: ActionResponse = {
@@ -34,8 +31,9 @@ const ContactForm: React.FC = () => {
           minLength={1}
           maxLength={50}
           required
+          disabled={isPending}
           defaultValue={state.inputs?.firstname}
-          errorMessage={state.errors?.firstname && state.errors?.firstname[0]}
+          errorMessage={state.fieldErrors?.firstname && state.fieldErrors?.firstname[0]}
         />
         <FormInput
           id="lastname"
@@ -45,8 +43,9 @@ const ContactForm: React.FC = () => {
           minLength={1}
           maxLength={50}
           required
+          disabled={isPending}
           defaultValue={state.inputs?.lastname}
-          errorMessage={state.errors?.lastname && state.errors?.lastname[0]}
+          errorMessage={state.fieldErrors?.lastname && state.fieldErrors?.lastname[0]}
         />
         <FormInput
           id="email"
@@ -54,19 +53,41 @@ const ContactForm: React.FC = () => {
           label="Email"
           type="email"
           required
+          disabled={isPending}
           defaultValue={state.inputs?.email}
-          errorMessage={state.errors?.email && state.errors?.email[0]}
+          errorMessage={state.fieldErrors?.email && state.fieldErrors?.email[0]}
         />
-        <FormInput id="tel" name="tel" label="Phone (optional)" type="tel" defaultValue={state.inputs?.tel} />
+        <FormInput
+          id="tel"
+          name="tel"
+          label="Phone (optional)"
+          type="tel"
+          disabled={isPending}
+          defaultValue={state.inputs?.tel}
+        />
+        <FormInput
+          id="subject"
+          name="subject"
+          label="Subject"
+          type="text"
+          minLength={1}
+          maxLength={100}
+          required
+          disabled={isPending}
+          defaultValue={state.inputs?.subject}
+          errorMessage={state.fieldErrors?.subject && state.fieldErrors?.subject[0]}
+          className="md:col-span-2"
+        />
       </div>
       <FormTextArea
         id="message"
         name="message"
         label="Message"
-        minLength={30}
+        // minLength={30}
         rows={4}
+        disabled={isPending}
         defaultValue={state.inputs?.message}
-        errorMessage={state.errors?.message && state.errors?.message[0]}
+        errorMessage={state.fieldErrors?.message && state.fieldErrors?.message[0]}
       />
 
       {/* Temporary - Remove after Success/Error setup */}

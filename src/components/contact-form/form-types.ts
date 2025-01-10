@@ -3,13 +3,14 @@ export interface ContactFormData {
   lastname: string;
   email: string;
   tel?: string;
+  subject: string;
   message: string;
 }
 
 export interface ActionResponse {
   success: boolean;
   message: string;
-  errors?: {
+  fieldErrors?: {
     [K in keyof ContactFormData]?: string[];
   };
   inputs?: {
