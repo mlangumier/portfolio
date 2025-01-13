@@ -8,14 +8,14 @@ export interface ContactFormData {
 }
 
 export enum EStatus {
-  IDLE = 'idle',
-  SUCCESS = 'success',
-  ERROR = 'error',
+  IDLE,
+  SUCCESS,
+  ERROR,
 }
 
 export interface ActionResponse {
-  status: EStatus.IDLE | EStatus.SUCCESS | EStatus.ERROR;
-  message: string;
+  status: EStatus;
+  message?: string;
   fieldErrors?: {
     [K in keyof ContactFormData]?: string[];
   };

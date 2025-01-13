@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 
 import { cn } from '@/utils/tailwindcss';
 
 interface Props {
   title: string;
-  description?: string;
+  description?: string | ReactNode;
   dark?: boolean;
   children?: React.ReactNode;
 }
@@ -17,7 +17,7 @@ interface Props {
  * @returns The title block with a list of CTAs
  */
 const SectionTitle: React.FC<Props> = ({ title, description, dark = false, children }) => (
-  <div id="section-title" className={cn('relative text-center', dark && 'dark')}>
+  <div id="section-title" className={cn('relative mx-auto max-w-3xl text-center', dark && 'dark')}>
     <h2 className="section-title">{title}</h2>
     {description && <p className="mt-5">{description}</p>}
     {children && <div className="mt-8 flex flex-row flex-wrap justify-center gap-4">{children}</div>}

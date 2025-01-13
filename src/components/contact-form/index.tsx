@@ -1,27 +1,27 @@
 'use client';
 
+import { useTranslations } from 'next-intl';
 import React, { useActionState } from 'react';
 import { TbLoader2, TbSend2 } from 'react-icons/tb';
 
 import Button from '../button';
+import { submitContactForm } from './actions/submit-form';
+import FormInput from './fields/input';
+import FormTextArea from './fields/text-area';
 import { ActionResponse, EStatus } from './form-types';
-import { submitContactForm } from './form-validation';
-import FormInput from './input';
-import FormTextArea from './text-area';
 
 const initialState: ActionResponse = {
   status: EStatus.IDLE,
-  message: '',
 };
 
 const ContactForm: React.FC = () => {
   const [state, action, isPending] = useActionState(submitContactForm, initialState);
-  // const t = useTranslations('')
+  const t = useTranslations('Pages.Homepage.sections.contact.form');
 
   if (state.status === EStatus.SUCCESS) {
     return (
       <div className="mx-auto mt-20 max-w-md p-4 text-center">
-        <p className="text-secondary">{state.message}</p>
+        <p className="text-secondary">{t.rich('responseMessages.success', { br: () => <br /> })}</p>
       </div>
     );
   }
@@ -32,8 +32,7 @@ const ContactForm: React.FC = () => {
         <FormInput
           id="firstname"
           name="firstname"
-          label="Firstname"
-          type="text"
+          label={t('labels.firstname')}
           minLength={1}
           maxLength={50}
           required
@@ -44,7 +43,7 @@ const ContactForm: React.FC = () => {
         <FormInput
           id="lastname"
           name="lastname"
-          label="Lastname"
+          label={t('labels.lastname')}
           type="text"
           minLength={1}
           maxLength={50}
@@ -56,9 +55,10 @@ const ContactForm: React.FC = () => {
         <FormInput
           id="email"
           name="email"
-          label="Email"
+          label={t('labels.email')}
           type="email"
           required
+          maxLength={100}
           disabled={isPending}
           defaultValue={state.inputs?.email}
           errorMessage={state.fieldErrors?.email && state.fieldErrors?.email[0]}
@@ -66,18 +66,20 @@ const ContactForm: React.FC = () => {
         <FormInput
           id="tel"
           name="tel"
-          label="Phone (optional)"
+          label={`${t('labels.tel')} (${t('labels.optional').toLowerCase()})`}
           type="tel"
+          maxLength={15}
           disabled={isPending}
           defaultValue={state.inputs?.tel}
+          errorMessage={state.fieldErrors?.tel && state.fieldErrors?.tel[0]}
         />
         <FormInput
           id="subject"
           name="subject"
-          label="Subject"
+          label={t('labels.subject')}
           type="text"
           minLength={1}
-          maxLength={100}
+          maxLength={200}
           required
           disabled={isPending}
           defaultValue={state.inputs?.subject}
@@ -88,8 +90,10 @@ const ContactForm: React.FC = () => {
       <FormTextArea
         id="message"
         name="message"
-        label="Message"
+        label={t('labels.message')}
         minLength={30}
+        maxLength={2000}
+        required
         rows={4}
         disabled={isPending}
         defaultValue={state.inputs?.message}
@@ -111,11 +115,11 @@ const ContactForm: React.FC = () => {
         >
           {isPending ? (
             <>
-              <TbLoader2 className="size-6 animate-spin" /> Sending...
+              {t('button.sending')} <TbLoader2 className="size-6 animate-spin" />
             </>
           ) : (
             <>
-              Send message <TbSend2 className="size-6" />
+              {t('button.sendMessage')} <TbSend2 className="size-6" />
             </>
           )}
         </Button>
