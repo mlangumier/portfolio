@@ -87,12 +87,50 @@
           }
         },
         "contact": {
-          "title": "Contact me",
-          "description": "Want to know more? Go check out my profile on LinkedIn to learn more about my experience, my Github repository to see what stack I'm using, or send me an email using the following link!"
-        },
-        "underConstruction": {
-          "title": "Website under construction",
-          "description": "More coming soon!"
+          "title": "Contact",
+          "description": "Want to know more? Visit my LinkedIn profile and Github repository to learn more about my experience and skills. You can also send me a message via this contact form or this email address <code>{emailAddress}</code> <br></br> Let's talk soon!",
+          "form": {
+            "labels": {
+              "firstname": "First name",
+              "lastname": "Last name",
+              "email": "Email address",
+              "tel": "Phone number",
+              "subject": "Subject",
+              "message": "Message",
+              "optional": "Optional"
+            },
+            "button": {
+              "sendMessage": "Send message",
+              "sending": "Sending"
+            },
+            "fieldErrors": {
+              "firstname": "Please enter your first name",
+              "lastname": "Please enter your last name",
+              "email": "Please enter a valid email address",
+              "tel": "Please enter a valid phone number",
+              "subject": "Please enter the subject of your message",
+              "message": "Your message must be at least 30 characters long"
+            },
+            "responseMessages": {
+              "success": "Message sent! <br></br> You will soon receive an email confirming I have received your message. If you do not see this email, please check your spam folder.",
+              "errors": {
+                "missingFields": "Incorrect or missing fields.",
+                "sendingFailed": "The message couldn't be sent. Please, try again. If the problem persists, you can send your message directly to the following email address: {emailAddress}",
+                "generic": "An error occured. Please, try again. If the problem persists, you can send your message directly to the following email address: {emailAddress}"
+              }
+            }
+          },
+          "emailContent": {
+            "dateTime": "On {sendDate} at {sendTime}",
+            "confirmationText": "Thank you for you message {senderFirstname}, I'll come back to you as soon as I can!",
+            "contactInfo": "Contact information",
+            "emailLabel": "Email",
+            "telLabel": "Phone",
+            "subjectLabel": "Subject",
+            "messageLabel": "Message",
+            "cyaText": "See you around!",
+            "salutation": "Best regards"
+          }
         }
       }
     },

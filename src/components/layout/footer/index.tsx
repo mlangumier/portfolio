@@ -1,8 +1,8 @@
 import { useTranslations } from 'next-intl';
 import React from 'react';
 
+import { socialsList } from '@/data/socials';
 import { Link } from '@/i18n/routing';
-import { socialsList } from '@/utils/socials';
 import { INavRouteItem } from '@/utils/types';
 
 import { CategoryBlock } from './category-block';

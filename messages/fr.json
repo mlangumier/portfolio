@@ -88,11 +88,49 @@
         },
         "contact": {
           "title": "Me contacter",
-          "description": "Envie d'en savoir plus ? Jeter un oeil à mon profil LinkedIn pour plus d'info sur mes expériences, mon repository Github pour voir les techno que j'utilise, ou envoyez-moi un email grâce au lien ci-dessous !"
-        },
-        "underConstruction": {
-          "title": "Site en construction",
-          "description": "Plus d'info à venir !"
+          "description": "Envie d'en savoir plus ? N'hésitez pas à visiter mon profil LinkedIn et mon repository Github afin d'en apprendre plus sur mes expériences et compétences. Vous pouvez également m'envoyer un message grâce à ce formulaire, ou à cette adresse <code>{emailAddress}</code> <br></br> À très bientôt !",
+          "form": {
+            "labels": {
+              "firstname": "Prénom",
+              "lastname": "Nom",
+              "email": "Adresse email",
+              "tel": "Numéro de téléphone",
+              "subject": "Sujet du message",
+              "message": "Message",
+              "optional": "Optionnel"
+            },
+            "button": {
+              "sendMessage": "Envoyer",
+              "sending": "Envoie en cours"
+            },
+            "fieldErrors": {
+              "firstname": "Veuillez renseigner votre prénom",
+              "lastname": "Veuillez renseigner votre nom",
+              "email": "Veuillez renseigner une adresse email valide",
+              "tel": "Veuillez renseigner un numéro de téléphone valide",
+              "subject": "Veuillez renseigner le sujet de votre message",
+              "message": "Votre message doit contenir plus de 30 caractères"
+            },
+            "responseMessages": {
+              "success": "Message envoyé ! <br></br> Vous allez recevoir un email vous confirmant la réception de ce message. Si vous ne trouvez pas cet email, pensez à vérifier dans vos courriers indésirables.",
+              "errors": {
+                "missingFields": "Champs manquants ou incorrects.",
+                "sendingFailed": "L'envoie du message a échoué. Veuillez réessayer. Si ce problème persiste, envoyez directement votre message à l'adresse suivante : {emailAddress}",
+                "generic": "Une erreur est survenue. Veuiller réessayer. Si ce problème persiste, envoyez directement votre message à l'adresse suivante : {emailAddress}"
+              }
+            }
+          },
+          "emailContent": {
+            "dateTime": "Le {sendDate} à {sendTime}",
+            "confirmationText": "Merci pour votre message {senderFirstname}, je reviens vers vous dès que possible !",
+            "contactInfo": "Informations contact",
+            "emailLabel": "Email",
+            "telLabel": "Tél",
+            "subjectLabel": "Sujet",
+            "messageLabel": "Message",
+            "cyaText": "À très bientôt !",
+            "salutation": "Cordialement"
+          }
         }
       }
     },

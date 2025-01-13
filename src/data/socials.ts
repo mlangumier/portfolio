@@ -1,4 +1,6 @@
-import { IExternalLink } from './types';
+import { IExternalLink } from '../utils/types';
+
+export const emailDisplay = 'mathieu.langumier[at]gmail.com';
 
 interface ISocials {
   linkedin: IExternalLink;

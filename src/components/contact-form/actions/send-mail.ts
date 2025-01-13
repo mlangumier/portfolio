@@ -1,5 +1,7 @@
-import { getLocale } from 'next-intl/server';
+import { getLocale, getTranslations } from 'next-intl/server';
 import nodemailer from 'nodemailer';
+
+import { ContactFormData } from '../form-types';
 
 const contactEmail = process.env.CONTACT_EMAIL;
 const smtpServerUsername = process.env.SMTP_SERVER_USERNAME;
@@ -13,16 +15,15 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-export interface ContactEmail {
-  firstname: string;
-  lastname: string;
-  email: string;
-  tel?: string;
-  subject: string;
-  message: string;
-}
-export async function sendMail({ firstname, lastname, email, tel, subject, message }: ContactEmail): Promise<boolean> {
-  // TODO: get translations
+export async function sendMail({
+  firstname,
+  lastname,
+  email,
+  tel,
+  subject,
+  message,
+}: ContactFormData): Promise<boolean> {
+  const t = await getTranslations('Pages.Homepage.sections.contact.emailContent');
 
   try {
     await transporter.verify();
@@ -41,7 +42,7 @@ export async function sendMail({ firstname, lastname, email, tel, subject, messa
           <div style="margin:0 12px;">
             <div style="max-width:600px; margin:auto; padding:32px 20px;">
               <p style="font-size:14px; color:#333333; text-align:end; margin:0;">
-                Le ${formattedNow.date} à ${formattedNow.time}
+                ${t('dateTime', { sendDate: formattedNow.date, sendTime: formattedNow.time })}
               </p>
             </div>
 
@@ -50,25 +51,25 @@ export async function sendMail({ firstname, lastname, email, tel, subject, messa
                 showConfirmation
                   ? `
                 <p style="font-size:16px; text-align:center; margin:12px 0 40px;">
-                  Merci pour votre message, ${firstname}, je reviens vers vous dès que possible !
+                  ${t('confirmationText', { senderFirstname: firstname })}
                 </p>
                 `
                   : ''
               }
 
               <p style="font-size: 16px; margin:12px 0;"> 
-                <b>Contact Informations:</b> <br/>
+                <b>${t('contactInfo')} :</b> <br/>
                 ${firstname} ${lastname} <br/>
-                Email: ${email} <br/>
-                Tel: ${tel || '-'}
+                ${t('emailLabel')} : ${email} <br/>
+                ${t('telLabel')} : ${tel || '-'}
               </p>
               
 
               <div style="margin:20px 0 0;">
                 <p style="font-size:16px; line-height:20px; margin:0 0 4px;">
-                  <b>Subject: </b>${showConfirmation ? subject : `Portfolio Contact - ${subject}`}
+                  <b>${t('subjectLabel')} : </b>${showConfirmation ? subject : `Portfolio Contact - ${subject}`}
                 </p>
-                <p style="font-size:16px; line-height:20px; margin:0;"><b>Message: </b>${message}</p>
+                <p style="font-size:16px; line-height:20px; margin:0;"><b>${t('messageLabel')} : </b>${message}</p>
               </div>
             </div>
 
@@ -77,13 +78,13 @@ export async function sendMail({ firstname, lastname, email, tel, subject, messa
                 ? `
               <div style="margin:auto; padding:40px 0;">
                 <p style="font-size:20px; color:#333333; text-transform:uppercase; font-weight:bold; text-align:center; margin:0;">
-                  à très bientôt!
+                  ${t('cyaText')}
                 </p>
               </div>
 
               <div style="background-color:#333333; margin:auto; padding:32px 20px; max-width:600px">
                 <p style="font-size:14px; line-height:20px; font-weight:bold; color:#ffffff; text-align:end; margin:0;">
-                  Cordialement <br/>
+                  ${t('salutation')} <br/>
                 </p>
                 <p style="font-size:14px; line-height:20px; font-weight:bold; color:#ffffff; text-align:end; margin:0;">
                   Mathieu Langumier
@@ -101,7 +102,6 @@ export async function sendMail({ firstname, lastname, email, tel, subject, messa
     await transporter.sendMail({
       from: `"Portfolio (${firstname} ${lastname})" <` + email + '>',
       to: contactEmail,
-      // replyTo: `"${firstname} ${lastname}" <` + email + '>', // Possible, but not relevant.
       subject: `Portfolio Contact - ${subject}`,
       html: contactEmailHtml(),
     });

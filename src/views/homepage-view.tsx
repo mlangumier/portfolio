@@ -10,7 +10,7 @@ import NavigationLink from '@/components/links/navigation-link';
 import SectionWrapper from '@/components/section-block';
 import SectionTitle from '@/components/section-title-block';
 import SkillsBlock from '@/components/skills-block';
-import { socials } from '@/utils/socials';
+import { emailDisplay, socials } from '@/data/socials';
 
 const HomepageView = () => {
   const tPage = useTranslations('Pages.Homepage.sections');
@@ -60,7 +60,15 @@ const HomepageView = () => {
       </SectionWrapper>
 
       <SectionWrapper id="contact" dark>
-        <SectionTitle title={tPage('contact.title')} description={tPage('contact.description')} dark>
+        <SectionTitle
+          title={tPage('contact.title')}
+          description={tPage.rich('contact.description', {
+            emailAddress: emailDisplay,
+            code: chunk => <span className="border-b border-primary font-bold">{chunk}</span>,
+            br: () => <br />,
+          })}
+          dark
+        >
           <ExternalLink href={socials.linkedin.url}>{socials.linkedin.label}</ExternalLink>
           <ExternalLink href={socials.github.url}>{socials.github.label}</ExternalLink>
         </SectionTitle>
