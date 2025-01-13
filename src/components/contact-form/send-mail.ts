@@ -35,7 +35,6 @@ export async function sendMail({ firstname, lastname, email, tel, subject, messa
       time: dateNow.toLocaleTimeString(locale === 'fr' ? 'fr-FR' : 'en-US', { hour: '2-digit', minute: '2-digit' }),
     };
 
-    // TODO: Move ContactEmailTemplate to its own file
     const contactEmailHtml = (showConfirmation?: boolean): string => {
       return `
         <div style="font-family:DM Sans, sans-serif; background-color:#eeeeee; height:100%; width:100%;">
@@ -100,8 +99,9 @@ export async function sendMail({ firstname, lastname, email, tel, subject, messa
 
     //* ----- Sends mail to me
     await transporter.sendMail({
-      from: `"Portfolio (${firstname} ${lastname}) - " <` + email + '>',
+      from: `"Portfolio (${firstname} ${lastname})" <` + email + '>',
       to: contactEmail,
+      // replyTo: `"${firstname} ${lastname}" <` + email + '>', // Possible, but not relevant.
       subject: `Portfolio Contact - ${subject}`,
       html: contactEmailHtml(),
     });
@@ -111,7 +111,6 @@ export async function sendMail({ firstname, lastname, email, tel, subject, messa
       from: '"Mathieu Langumier" <' + contactEmail + '>',
       to: email,
       subject: `Contact - ${subject}`,
-      text: `Hi ${firstname}, thanks you for your message, I'll reply as soon as I can!`,
       html: contactEmailHtml(true),
     });
 

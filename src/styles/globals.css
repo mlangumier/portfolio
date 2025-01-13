@@ -112,7 +112,7 @@
   }
 
   .btn {
-    @apply inline-flex rounded-md px-8 py-4 text-base font-semibold leading-none transition-all duration-150 ease-out;
+    @apply inline-flex flex-row items-center justify-between gap-2 rounded-md px-8 py-4 text-base font-semibold leading-none transition-all duration-150 ease-out hover:gap-8;
   }
   .btn-primary {
     @apply bg-accent text-secondary hover:bg-accent-hover;

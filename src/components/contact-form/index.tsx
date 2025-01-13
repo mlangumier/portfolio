@@ -1,24 +1,30 @@
 'use client';
 
 import React, { useActionState } from 'react';
-
-import { cn } from '@/utils/tailwindcss';
+import { TbLoader2, TbSend2 } from 'react-icons/tb';
 
 import Button from '../button';
-import { ActionResponse } from './form-types';
+import { ActionResponse, EStatus } from './form-types';
 import { submitContactForm } from './form-validation';
 import FormInput from './input';
 import FormTextArea from './text-area';
 
-// TODO: Add icons: btn-hover (message/arrow), spinner on 'pending', checkmark on success
-
 const initialState: ActionResponse = {
-  success: false,
+  status: EStatus.IDLE,
   message: '',
 };
 
 const ContactForm: React.FC = () => {
   const [state, action, isPending] = useActionState(submitContactForm, initialState);
+  // const t = useTranslations('')
+
+  if (state.status === EStatus.SUCCESS) {
+    return (
+      <div className="mx-auto mt-20 max-w-md p-4 text-center">
+        <p className="text-secondary">{state.message}</p>
+      </div>
+    );
+  }
 
   return (
     <form action={action} className="mx-auto mt-20 max-w-3xl space-y-4">
@@ -83,37 +89,35 @@ const ContactForm: React.FC = () => {
         id="message"
         name="message"
         label="Message"
-        // minLength={30}
+        minLength={30}
         rows={4}
         disabled={isPending}
         defaultValue={state.inputs?.message}
         errorMessage={state.fieldErrors?.message && state.fieldErrors?.message[0]}
       />
 
-      {/* Temporary - Remove after Success/Error setup */}
-      {state?.message && (
-        <div
-          className={cn(
-            'mx-auto w-fit border-2 bg-white p-4 text-center',
-            state.success ? 'border-green-500' : 'border-red-500'
-          )}
-        >
-          {state.success ? (
-            <p className="text-green-500">{state.message}</p>
-          ) : (
-            <p className="text-red-500">{state.message}</p>
-          )}
+      {state.status === EStatus.ERROR && (
+        <div className="mx-auto max-w-md p-4 text-center">
+          <p className="text-red-400">{state.message}</p>
         </div>
       )}
 
-      <div className="flex justify-end pt-4">
+      <div className="flex justify-center pt-4">
         <Button
           type="submit"
           // TODO: Remove className after dark-mode setup
           className="bg-secondary text-primary hover:bg-secondary"
           disabled={isPending}
         >
-          {isPending ? 'Sending...' : 'Send message'}
+          {isPending ? (
+            <>
+              <TbLoader2 className="size-6 animate-spin" /> Sending...
+            </>
+          ) : (
+            <>
+              Send message <TbSend2 className="size-6" />
+            </>
+          )}
         </Button>
       </div>
     </form>

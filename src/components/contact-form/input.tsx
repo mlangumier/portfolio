@@ -9,18 +9,18 @@ interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
 }
 
 const FormInput: React.FC<Props> = ({ label, id, className, errorMessage, ...rest }) => {
+  // TODO: Update colors after dark mode setup
   return (
     <div className={cn('form-field', className)}>
       {label && (
-        // TODO: Remove className after dark-mode setup
         <label htmlFor={id} className="text-secondary">
           {label}
         </label>
       )}
-      <input id={id} {...rest} className={cn('form-input', errorMessage && 'border border-red-500')} />
+      <input id={id} {...rest} className={cn('form-input', errorMessage && 'border-2 border-red-400')} />
 
       {errorMessage && (
-        <p id={`${id}-error`} className="ml-2 text-sm text-red-500">
+        <p id={`${id}-error`} className="ml-2 text-sm text-red-400">
           *{errorMessage}
         </p>
       )}
