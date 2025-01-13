@@ -4,7 +4,7 @@ import { z } from 'zod';
 
 import { capitalizeSentence } from '@/utils/capitalize-sentence';
 
-import { ActionResponse, ContactFormData } from './form-types';
+import { ActionResponse, ContactFormData, EStatus } from './form-types';
 import { sendMail } from './send-mail';
 
 const contactSchema = z.object({
@@ -13,8 +13,7 @@ const contactSchema = z.object({
   email: z.string().trim().email({ message: 'Correct email format required' }),
   tel: z.string().trim().optional(),
   subject: z.string().trim().min(1, { message: 'Subject is required' }),
-  message: z.string().trim(),
-  // .min(30, { message: 'Your message must contain at least 30 characters.' }),
+  message: z.string().trim().min(30, { message: 'Your message must contain at least 30 characters.' }),
 });
 
 // TODO: Translation for Zod schema error messages
@@ -32,13 +31,13 @@ export async function submitContactForm(prevState: ActionResponse | null, formDa
       message: formData.get('message') as string,
     };
 
-    // Validate form data:
+    //* Validate form data:
     const validatedData = contactSchema.safeParse(rawData);
 
     if (!validatedData.success) {
       return {
-        success: false,
-        message: 'Fields incorrect',
+        status: EStatus.ERROR,
+        message: 'Please fill in all required fields.',
         fieldErrors: validatedData.error.flatten().fieldErrors,
         inputs: rawData,
       };
@@ -55,20 +54,20 @@ export async function submitContactForm(prevState: ActionResponse | null, formDa
 
     if (!response) {
       return {
-        success: false,
+        status: EStatus.ERROR,
         message: 'Failed to send the message. Please, try again.',
         inputs: rawData,
       };
     }
 
     return {
-      success: true,
-      message: 'Email sent!',
+      status: EStatus.SUCCESS,
+      message: 'Message sent!',
     };
   } catch {
     return {
-      success: false,
-      message: 'Please fix errors',
+      status: EStatus.ERROR,
+      message: 'Something went wrong! Please, try again.',
     };
   }
 }
