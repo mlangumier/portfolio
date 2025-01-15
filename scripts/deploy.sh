@@ -5,7 +5,7 @@
 echo "Current environment: ${ENV_NAME-undefined}"
 echo "Vercel environment: ${VERCEL_ENV-undefined}"
 
-[[ "$ENV_NAME" == "production" || "$ENV_NAME" == "development" ]] || {
+[[ "$ENV_NAME" == "production" || "$ENV_NAME" == "development" || "$ENV_NAME" == "testing" ]] || {
   echo "❌ Deployment cancelled. Missing or invalid environment variables."
   exit 0
 }

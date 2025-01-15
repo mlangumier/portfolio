@@ -26,7 +26,8 @@ These are the current dependencies and environment setup on this project, and a 
 - [x] Prettier, ESLint, Husky
 - [x] Next-intl
 - [x] Docker
-- [ ] Zod (typescript & forms)
+- [x] Zod
+- [x] Nodemailer
 - [ ] Axios & Tanstack Query
 - [ ] Redux
 - [ ] Database (Supabase? -> PostgreSQL, RESTful API, auth, assets storage)
@@ -121,15 +122,18 @@ Now that our page is looking much better, we're going to add some animations and
   - [x] Card animations: slide-in from side with fade-in while appearing.
   - [x] Timeline: make the line & circles change color or appear with scroll.
 
-- [ ] Contact section:
+- [x] Contact section:
 
-  - [ ] Choose what tools to use for sending email
-  - [ ] Update the description text and remove the mailto button.
-  - [ ] Setup the contact form using Next-15's `Form` and create the input & text-area components with pending state animation on submit.
-  - [ ] Display confirmation / error message (modal?)
-  - [ ] Setup form validation with Zod
-  - [ ] Setup email sender
-  - [ ] Double-check mobile behaviour
+  - [x] Choose what tools to use for sending email -> Nodemailer
+  - [x] Update the description text
+  - [x] Setup form translations
+  - [x] Setup the contact form:
+    - [x] Create the input & text-area components
+    - [x] Add pending state animation (+disable fields) on submit
+    - [x] Display confirmation/error message (toast? message to form?)
+  - [x] Setup form validation with Zod
+  - [x] Setup email sender
+  - [x] Send confirmation email when message is received?
 
 ## ROADMAP - DONE
 
