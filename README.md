@@ -1,58 +1,127 @@
-# Next.js Portfolio
+# Portfolio
 
-Welcome! I am **Mathieu Langumier**, and this is my portfolio.
+Hello and welcome! This project is meant to showcase some of my skills as well as examples of projects I have been working. I will be adding more features, pages and projects, so feel free to come back from time to time and [check out what's new](https://mathieulangumier.vercel.app)!
 
-This is a project that regroups some personnal and profesionnal projects I have had the pleasure of working on. It serves as both a continuous training project and an overview of the skills I have acquired.
+![Screenshot of the Hero section](./public/screenshot-design-hero.png)
 
-This project uses **Next.js 15** with Turbopack, **React 19**, **TypeScript** and **Tailwind CSS**. Various dependencies will be added depending on the different skills used in this projects.
+**I am currently looking for a new opportunity, so if you're looking for someone with this set of skills, feel free to [send me a message](https://www.linkedin.com/in/mathieu-langumier/)!**
 
-## Start the project
+## Table of Contents
 
-There are a few steps required to setup the environment. Instead of using `localhost:3000` during development, we'll be using `https://mathieulangumier.local`. By doing so, the experience while developing will be much closer to the one in production and will allow us to detect issues more effectively.
+- [Table of Contents](#table-of-contents)
+- [Who am I ?](#who-am-i-)
+- [The Project](#the-project)
+  - [Starting Process](#starting-process)
+    - [A Rocky Start](#a-rocky-start)
+    - [Rework - Design with Figma](#rework---design-with-figma)
+  - [Stack](#stack)
+    - [Core Stack - React/Next.js \& TypeScript + Zod](#core-stack---reactnextjs--typescript--zod)
+    - [Style - Tailwind CSS](#style---tailwind-css)
+    - [Teamwork - Docker, Git, Github](#teamwork---docker-git-github)
+    - [Formatting - Prettier, ESLint, Husky](#formatting---prettier-eslint-husky)
+    - [Internationalization - Next-intl](#internationalization---next-intl)
+    - [Deployment - Vercel](#deployment---vercel)
+- [How to Use this Project](#how-to-use-this-project)
+  - [Next.js](#nextjs)
+  - [Docker](#docker)
+  - [Style \& Formatting](#style--formatting)
+- [Future](#future)
+- [Contact](#contact)
 
-If you want to quickly check out the project without any of this, forget these steps and simply use `npm run dev` after you've installed the dependencies.
+## Who am I ?
 
-### Step 1 - Change the host name
+Hi, I'm **Mathieu Langumier**. I'm a `Frontend Developer` with around two years of experience in `React`, `Next.js` & `TypeScript`. I've also worked on projects with Ionic, Prismic, Vue.js & Node/Express.js with PostgreSQL. I love taking part in all the aspects of developing a project, creating and assembling the differents pieces and how they all interact together is facinating! That's why my long-term **goal** is to work as a `Fullstack Developer` and truly work on all aspects on a project.
 
-In the file `~/../../etc/hosts`, add the name `mathieulangumier.local` to the list host names.
+Outside of coding, I always try and take some time to play D&D or video games with friends, enjoy a show with a good story, or simply do something relaxing, like reading a book or spend some time whittling animals while listening to music.
 
-### Step 2 - HTTPS Certificate
+## The Project
 
-Install [mkcert](https://github.com/FiloSottile/mkcert), then use the following command to generate the certificates required to run on a locally trusted environment.
+Although this project only displays a landing page, the idea was to **setup** the project as I would in a **professionnal environment**. Therefore, I have used some dependencies that are not required for the project in its current state. But, since I will be adding other pages and features, this starting setup will allows me to expand and add features without refactoring the whole project - which I have already done once (see the following section).
 
-```cli
-mkcert --cert-file mathieulangumier.local.crt --key-file mathieulangumier.local.key mathieulangumier.local
-```
+### Starting Process
 
-Once the two files are created, create a `/cert` folder at the root of the project and move them inside.
+#### A Rocky Start
 
-### Step 3 - Docker
+Indeed, as I was planning the content and structure of this project, one thing I didn't plan for was the design. Sure, I had spend some time researching portfolios, templates and other ideas, but I didn't have a definitive visual guide. So, I started coding, never sure of what style I wanted, or if my components's style would go well with the rest. But I already had most of the content I had planned at this time, so I decided to finish this version, and then started working on a **[proper design on Figma](https://www.figma.com/design/VfFVEGdjzBooyy6RyFCJzK/Portfolio?node-id=0-1&t=XGvWvvBTXZ2xmJpN-1)**.
 
-This project uses the latest versions of `docker` and `docker-compose`.
+#### Rework - Design with Figma
 
-Use the command `docker-compose build` to run the project for the first time. After that, use `docker-compose up` to start the development environment. Navigate to `https://mathieulangumier.local` and make sure that this URL works. The app should automatically reload while making changes on the project.
-Use Ctrl+C to stop the live server, and `docker-compose down` to stop the containers.
+And it was a great experience! I hadn't worked on **`Figma`** for a while - usually integrating designs, but not creating them - but I still remembered how to setup the `theme & variables`, `components & variants`, and how to work with the `12-columns layout`. Applying this knowledge, and at the same time researching and learning about design & UI/UX's best practices allowed me to rework this website in a way that fit what I had in mind and would be much more pleasant to see.
 
-### Warning
+<p align="center">
+  <img src="./public/screenshot-layout-versions.png" alt="Screent of two versions of the new design"/>
+</p>
+  <p align="center">Two versions of the new design</p>
 
-If you have an Apache or Nginx server that starts automatically and is using the port `443`, you might need to stop them manually to allow this app to start.
+### Stack
 
-## Style & Formatting
+Now, as I said, the goal was to setup this project as I would in a professionnal environment. With that in mind, there were a few things to consider, and dependencies to pick:
 
-In order to have a homogenous code base within our project, we're going to use **ESLint** and **Prettier** with **Husky**.
+#### Core Stack - React/Next.js & TypeScript + Zod
 
-If you are already using their related VSCode extensions, VSCode should use this project's config as a base while you're working on it.
+My area of expertise, so these were the best candidates for this project. `React` for the effective use of hooks, `Next.js` for server & client components, and `TypeScript` because using types makes managing data and props so much easier, and `Zod` is perfect for data validation and type inference with TS.
 
-With these dependencies, we're marking sure that the remote repository's if formatted and homogenous. For that, we're using **Husky**'s pre-commit feature, which allows a script to run each time we're comming changes. We've also created another script in `./scripts/format.sh` that has the same purpose but that we can use anytime with `npm run check-n-format`.
+#### Style - Tailwind CSS
 
-### Tailwind CSS IntelliSense
+I see what you're wondering: "No ShadCn??", and I have thought about it, but my goal was to first work on more advanced `Tailwind CSS` features, and get a more in-depth understanding of this library. Now that I have, there is a good chance I'm going to use ShadCN on future projects, and I might even add it to this project at some point.
 
-This VSCode extension helps with auto-completion on the `className` attribute. In VSCode, the setting `Tailwind CSS: class attributes` allows you to add other attributes that will show auto-completion. You can add this project's custom attribute: `containerStyle`
+#### Teamwork - Docker, Git, Github
 
-## Deployment
+Using `Git` for versionning - of course - allows me to keep using branche management and merging methods as I would when working within a team.
+Since `Github` is free, it is the perfect tool to keep our project on. Moreover, this allows us to use Vercel for deployement with minimal setup.
+`Docker` is perfect for a team, it allows everyone to use the project with the same setup regarding Node, NPM and other setup. (Not relevant here because it's not set up, but it also simplifies the use of backend projects for Frontend developers).
 
-This project uses **Github** & **Vercel**'s features to simplify the deployment process. We are using our `main` branch as our automatic deployment branch, and the `develop` branch to preview any changes done before that.
+#### Formatting - Prettier, ESLint, Husky
+
+`Prettier` & `ESLint` allows everyone working on this project to use the same formatting rules, regarding of their VSCode settings. It prevent another person from saving a file and having their VSCode auto-formatting the whole file - which would show on commits.
+`Husky` is an additional tool we use to setup a script preventing commits to pass if there are any remaining stylistic or formatting errors.
+
+#### Internationalization - Next-intl
+
+Starting this project, I wanted it to be available in both `French` & `English`, and since I'm using Next.js, this was the first choice.
+Being able to understand & speak english is an important skill in this career, and I wanted my portfolio to be available outside of France, since I'm also interested in working outside of France.
+
+#### Deployment - Vercel
+
+For simplicity of use, and because it is free, `Vercel` was my first choice when I was looking to deploy this project. Because their team also works on Next.js, that makes it the optimal way to host a Next.js project. Also, using its Github integration allows me to auto-deploy every pull request made on selected branches (**main** for production, **develop** for development)
+
+## How to Use this Project
+
+If you want to use this project to suggest some changes, or just see how I've set things up, you can start the project the two following ways.
+
+### Next.js
+
+The simplest way is to start the project the same way you would any other: `npm i` & `npm run dev`.
+
+### Docker
+
+To start the project using Docker - optimal for collaborative environments - we'll want to change a few things: change the hostname, add `https certificates`, and start the development server with Docker.
+
+- **Change Hostname**: Go into your hostname file - `~/../../etc/hosts` for Ubuntu - and add the name `mathieulangumier.local` to the list (you can change it, this is an example).
+- **Activate Https certificates**:
+  - Install [mkcert](https://github.com/FiloSottile/mkcert)
+  - Then use this command to generate the certificates: `mkcert --cert-file mathieulangumier.local.crt --key-file mathieulangumier.local.key mathieulangumier.local`
+  - Create a `/certs` folder in your project's root and place the two new files inside of it.
+- **Use Docker**:
+  - Install `Docker` & `Docker-compose`
+  - Use `docker-compose build` to run the project the first time.
+  - After that, you can stick with `docker-compose up` to start the dev server and work on your project. You can close the server by pressing `Ctrl + C`, then shutting them down using `docker-compose down` (not required).
+- **Warning**: We've setup `Nginx`, but it might not start if you already have another Nginx or Apache server running on port `443`. If this happens, make sure to shut down the other server and try again.
+
+And you're all set! Enjoy!
+
+### Style & Formatting
+
+While working on this project, `Husky` will prevent you from commiting changes if there are linting or formatting issues. To avoid this, you can comment the commands in `./.huksy/pre-commit`, which will prevent Husky from checking your code before commit.
+Don't forget to reactivate it once you're done!
+
+`Tailwind CSS` & its intellisense allow us to use auto-completion of custom props via VSCode settings. To do that, simplfy add your prop name to the extension's list in `Tailwind CSS: class attributes`. On this project, we're added `containerStyle` to our list.
+
+## Future
+
+What's coming ? What am I working on ?
+Well, I'm not going to say anything until the next featured are deployed, or - if you're curious - until you see the related commits. What I can tell you, however, is that I will be updating this portfolio regularly with corrective changes, updating the dependencies and related code if required, adding new features, new pages, and at some point new projects. Stay tuned!
 
 ## Contact
 
-If you have any question, you can contact me on [LinkedIn](https://www.linkedin.com/in/mathieu-langumier/).
+If you have any question, you can either send me an email via this [Portfolio](https://mathieulangumier.vercel.app/#contact) or contact me on [LinkedIn](https://www.linkedin.com/in/mathieu-langumier/).
