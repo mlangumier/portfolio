@@ -40,21 +40,21 @@
       },
       "sections": {
         "hero": {
-          "salutation": "Bonjour ! Je m'appel Mathieu,",
+          "salutation": "Bonjour ! Je m'appelle Mathieu,",
           "title": "Je développe des applications web modernes et performantes",
-          "description": "<jobTitle>DÉVELOPPEUR FRONTEND</jobTitle> expérimenté, je créé des applications <tech>React.js</tech> & <tech>TypeScript</tech> user-friendly, et j'ai pour objectif d'évoluer vers du développement Fullstack."
+          "description": "<jobTitle>DÉVELOPPEUR FRONT-END</jobTitle> expérimenté, je crée des applications <tech>React.js</tech> & <tech>TypeScript</tech> user-friendly, et j'ai pour objectif d'évoluer vers du développement Full-stack."
         },
         "skills": {
           "title": "Compétences",
-          "description": "Travailler sur des projets variés avec différentes équipes m'a permi d'acquérir des compétences techniques, organisationnelles et collaboratives indispensables.",
+          "description": "Travailler sur des projets variés avec différentes équipes m'a permis d'acquérir des compétences techniques, organisationnelles et collaboratives indispensables.",
           "cards": {
             "technical": {
-              "title": "Développement Frontend",
+              "title": "Développement Front-end",
               "description": "Créer des sites performants, responsifs et optimisés pour le SEO et l'UI/UX, avec requêtes API et gestion du state."
             },
             "adapt": {
               "title": "Adaptabilité",
-              "description": "Evoluer sur plusieur technologies pour être opérationnel sur différents projets, m'adapter aux workflows et répondre aux besoins de l'équipe."
+              "description": "Evoluer sur plusieurs technologies pour être opérationnel sur différents projets, m'adapter aux workflows et répondre aux besoins de l'équipe."
             },
             "teamwork": {
               "title": "Travail en équipe",
@@ -70,19 +70,19 @@
           "title": "Expériences",
           "cards": {
             "dixeed": {
-              "title": "Développeur Frontend",
+              "title": "Développeur Front-end",
               "business": "Dixeed",
               "description": "J'ai participé au développement et à la maintenance d'applications web et mobiles performantes pour répondre aux besoins de différents clients."
             },
             "ffy": {
-              "title": "Développeur React / Fullstack",
+              "title": "Développeur React / Full-stack",
               "business": "Flying For You",
-              "description": "J'ai effectué une refonte graphique du site et participé au développement de nouvelles fonctionnalités qui ont permi un meilleur suivi des campagnes marketing."
+              "description": "J'ai effectué une refonte graphique du site et participé au développement de nouvelles fonctionnalités qui ont permis un meilleur suivi des campagnes marketing."
             },
             "humanBooster": {
-              "title": "Formation Développeur Fullstack",
+              "title": "Formation Développeur Full-stack",
               "business": "Human Booster",
-              "description": "J'ai développé des projets fullstack sur court et long terme et appris à m'adapter et monter en compétences rapidement sur différentes outils et langages."
+              "description": "J'ai développé des projets Full-stack sur court et long terme et appris à m'adapter et monter en compétences rapidement sur différents outils et langages."
             }
           }
         },
@@ -116,7 +116,7 @@
               "errors": {
                 "missingFields": "Champs manquants ou incorrects.",
                 "sendingFailed": "L'envoie du message a échoué. Veuillez réessayer. Si ce problème persiste, envoyez directement votre message à l'adresse suivante : {emailAddress}",
-                "generic": "Une erreur est survenue. Veuiller réessayer. Si ce problème persiste, envoyez directement votre message à l'adresse suivante : {emailAddress}"
+                "generic": "Une erreur est survenue. Veuillez réessayer. Si ce problème persiste, envoyez directement votre message à l'adresse suivante : {emailAddress}"
               }
             }
           },
