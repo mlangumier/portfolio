@@ -36,20 +36,20 @@
     "Homepage": {
       "metadata": {
         "title": "Portfolio",
-        "description": "A portfolio with my resume and examples of professional and personnal projects I have had the pleasure of working on."
+        "description": "A portfolio with my resume and examples of professional and personal projects I have had the pleasure of working on."
       },
       "sections": {
         "hero": {
           "salutation": "Hello ! I'm Mathieu,",
           "title": "I develop modern and optimized web applications",
-          "description": "As an experienced <jobTitle>FRONTEND DEVELOPER</jobTitle>, I create user-friendly <tech>React.js</tech> & <tech>TypeScript</tech> applications, with the goal of becoming Fullstack developer."
+          "description": "As an experienced <jobTitle>FRONT-END DEVELOPER</jobTitle>, I create user-friendly <tech>React.js</tech> & <tech>TypeScript</tech> applications, with the goal of becoming a Full-stack developer."
         },
         "skills": {
           "title": "Skills",
           "description": "Working on various projects with different teams has allowed me to learn many technical, organizational and collaborative skills, all of them essential in this line of work.",
           "cards": {
             "technical": {
-              "title": "Frontend Development",
+              "title": "Front-end Development",
               "description": "Create fast and responsive web apps optimized for SEO and UI/UX, with features such as API calls and state management."
             },
             "adapt": {
@@ -62,7 +62,7 @@
             },
             "learning": {
               "title": "Continuous Training",
-              "description": "Perform technology watch and continuous learning to keep learning, gaining skills and discover new tools."
+              "description": "Conduct technology watch and continuous learning to gain new skills and explore emerging tools."
             }
           }
         },
@@ -70,19 +70,19 @@
           "title": "Experience",
           "cards": {
             "dixeed": {
-              "title": "Frontend Developer",
+              "title": "Front-end Developer",
               "business": "Dixeed",
               "description": "I developed and maintained optimized web and mobile applications according to the requirements of various clients."
             },
             "ffy": {
-              "title": "React / Fullstack Developer",
+              "title": "React / Full-stack Developer",
               "business": "Flying For You",
-              "description": "I reworked the website according to the new designs and developped new features that allowed better monitoring of the marketing campaigns."
+              "description": "I reworked the website according to the new designs and developed new features that allowed better monitoring of the marketing campaigns."
             },
             "humanBooster": {
-              "title": "Fullstack Developer Training",
+              "title": "Full-stack Developer Training",
               "business": "Human Booster",
-              "description": "I developed various short-term and long-term project and learned how to quickly adapt and gain skills with different languages and tools."
+              "description": "I developed various short-term and long-term projects and learned how to quickly adapt and gain skills with different languages and tools."
             }
           }
         },
@@ -116,13 +116,13 @@
               "errors": {
                 "missingFields": "Incorrect or missing fields.",
                 "sendingFailed": "The message couldn't be sent. Please, try again. If the problem persists, you can send your message directly to the following email address: {emailAddress}",
-                "generic": "An error occured. Please, try again. If the problem persists, you can send your message directly to the following email address: {emailAddress}"
+                "generic": "An error occurred. Please, try again. If the problem persists, you can send your message directly to the following email address: {emailAddress}"
               }
             }
           },
           "emailContent": {
             "dateTime": "On {sendDate} at {sendTime}",
-            "confirmationText": "Thank you for you message {senderFirstname}, I'll come back to you as soon as I can!",
+            "confirmationText": "Thank you for you message {senderFirstname}, I'll get back to you as soon as I can!",
             "contactInfo": "Contact information",
             "emailLabel": "Email",
             "telLabel": "Phone",
