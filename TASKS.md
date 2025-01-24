@@ -46,7 +46,7 @@ To add later / when relevant:
 
 ## ROADMAP - Current Tasks
 
-- [ ] Internationalization - Check issue with Next-Intl always using 'en' as default locale (check setup, provider & cookies)
+- [x] Internationalization - Check issue with Next-Intl always using 'en' as default locale (check setup, provider & cookies)
 - [x] Markdown - Update files & formatting, add table of contents (cf. extension)
 - [ ] Theme - Setup dark mode integration (+ colored themes?)
 - [ ] Architecture - Use `FSD` ([Feature-Slided Design](https://feature-sliced.design/docs/guides/tech/with-nextjs#app-router)) for better clarity & scaling
