@@ -92,6 +92,10 @@ If you want to use this project, suggest some changes, or just see how I've set 
 ### Next.js
 
 The simplest way is to start the project the same way you would any other: `npm i` & `npm run dev`.
+Some information about the script: `"dev": "next dev --turbopack --experimental-https"`:
+
+- `--turbopack` is a new Next.js 15 feature, it's a bundler that allows faster local development (not necessary in this project, but always good to have)
+- `--experimental-https` generates self-signed certificates that will allow us to use webhooks & authentication without issue later. The url for localhost will now start with `https`.
 
 ### Docker
 
