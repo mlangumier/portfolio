@@ -107,12 +107,7 @@ const ContactForm: React.FC = () => {
       )}
 
       <div className="flex justify-center pt-4">
-        <Button
-          type="submit"
-          // TODO: Remove className after dark-mode setup
-          className="bg-secondary text-primary hover:bg-secondary"
-          disabled={isPending}
-        >
+        <Button type="submit" disabled={isPending}>
           {isPending ? (
             <>
               {t('button.sending')} <TbLoader2 className="size-6 animate-spin" />

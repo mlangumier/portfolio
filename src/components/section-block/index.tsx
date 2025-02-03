@@ -6,7 +6,7 @@ interface Props {
   id: string;
   full?: boolean;
   first?: boolean;
-  dark?: boolean;
+  invertedSection?: boolean;
   containerStyle?: string;
   children: React.ReactNode;
 }
@@ -17,14 +17,14 @@ interface Props {
  * @param id - Section's name
  * @param full - Makes the section use the viewport's height, minus the Header.
  * @param first - (only for first section of the page) Reduces the padding-top on mobile
- * @param dark - Set a dark background color
+ * @param invertedSection - Set a dark background color for the section
  * @param containerStyle - Adding style to container
  */
 const SectionWrapper: React.FC<Props> = ({
   id,
   full = true,
   first = false,
-  dark = false,
+  invertedSection = false,
   containerStyle,
   children,
 }) => {
@@ -35,7 +35,7 @@ const SectionWrapper: React.FC<Props> = ({
         'overflow-clip bg-background',
         first ? 'section-py-first' : 'section-py',
         full && 'section-full',
-        dark && 'bg-primary'
+        invertedSection && 'inverted-theme'
       )}
     >
       <div className={cn('container', containerStyle)}>{children}</div>

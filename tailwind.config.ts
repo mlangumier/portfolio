@@ -43,13 +43,21 @@ const config: Config = {
         },
         background: {
           DEFAULT: 'hsl(var(--background))',
+          light: 'hsl(var(--background-light))',
         },
         foreground: {
           DEFAULT: 'hsl(var(--foreground))',
-          muted: 'hsl(var(--muted-foreground))',
+          muted: 'hsl(var(--foreground-muted))',
+          dark: 'hsl(var(--foreground-dark))',
+        },
+        button: {
+          foreground: 'hsl(var(--button-foreground))',
+          background: 'hsl(var(--button-background))',
+          'background-hover': 'hsl(var(--button-background-hover))',
         },
         card: {
-          DEFAULT: 'hsl(var(--card))',
+          title: 'hsl(var(--card-title))',
+          'foreground-muted': 'hsl(var(--card-foreground-muted))',
         },
         border: {
           DEFAULT: 'hsl(var(--border))',
@@ -72,9 +80,6 @@ const config: Config = {
       animationDuration: {
         '1500': '1.5s',
       },
-      // Use keyframes and animations for reusable "fade" and "slide" animations
-      // keyframes:{},
-      // animations: {},
     },
   },
   plugins: [tailwindcssAnimate],

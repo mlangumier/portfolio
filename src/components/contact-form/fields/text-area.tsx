@@ -9,14 +9,9 @@ interface Props extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
 }
 
 const FormTextArea: React.FC<Props> = ({ label, id, className, errorMessage, ...rest }) => {
-  // TODO: Update colors after dark-mode setup
   return (
     <div className={cn('form-field', className)}>
-      {label && (
-        <label htmlFor={id} className="text-secondary">
-          {label}
-        </label>
-      )}
+      {label && <label htmlFor={id}>{label}</label>}
       <textarea id={id} {...rest} className={cn('form-input', errorMessage && 'border-2 border-red-400')} />
 
       {errorMessage && (
