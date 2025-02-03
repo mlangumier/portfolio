@@ -110,7 +110,6 @@ const ContactForm: React.FC = () => {
         <Button
           type="submit"
           // TODO: Remove className after dark-mode setup
-          className="bg-secondary text-primary hover:bg-secondary"
           disabled={isPending}
         >
           {isPending ? (

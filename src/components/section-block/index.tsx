@@ -28,6 +28,8 @@ const SectionWrapper: React.FC<Props> = ({
   containerStyle,
   children,
 }) => {
+  // TODO: get theme here (CSS or useTheme), define dark/light section color
+
   return (
     <section
       id={id}
@@ -35,7 +37,7 @@ const SectionWrapper: React.FC<Props> = ({
         'overflow-clip bg-background',
         first ? 'section-py-first' : 'section-py',
         full && 'section-full',
-        dark && 'bg-primary'
+        dark && 'dark:light dark'
       )}
     >
       <div className={cn('container', containerStyle)}>{children}</div>

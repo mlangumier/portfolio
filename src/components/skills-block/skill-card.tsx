@@ -40,7 +40,7 @@ const SkillCard: React.FC<Props> = ({ item, index, isViewportLg }) => {
           {item.title}
           {item.icon}
         </p>
-        <p>{item.description}</p>
+        <p className="text-foreground-dark">{item.description}</p>
       </div>
     </article>
   );
