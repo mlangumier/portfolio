@@ -48,10 +48,14 @@ const config: Config = {
           DEFAULT: 'hsl(var(--foreground))',
           muted: 'hsl(var(--muted-foreground))',
         },
-        grey: {
-          border: 'hsl(var(--border))',
-          shadow: 'hsl(var(--shadow))',
-          backdrop: 'hsl(var(--backdrop) / 50)',
+        card: {
+          DEFAULT: 'hsl(var(--card))',
+        },
+        border: {
+          DEFAULT: 'hsl(var(--border))',
+        },
+        shadow: {
+          DEFAULT: 'hsl(var(--shadow))',
         },
       },
       gridTemplateRows: {
@@ -74,6 +78,7 @@ const config: Config = {
     },
   },
   plugins: [tailwindcssAnimate],
+  darkMode: 'class',
 };
 
 export default config;
