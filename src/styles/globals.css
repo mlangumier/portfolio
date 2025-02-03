@@ -6,40 +6,42 @@
 
 @layer base {
   :root {
-    --cyan-900: 196.4 63.6 23.7;
-    --cyan-700: 192.9 82.3 31;
-    --sky-50: 204 100 97.1;
-    --cyan-950: 200 50 10;
-    --slate-500: 215.4 16.3 46.9;
-    --slate-200: 214.3 31.8 91.4;
+    --hue: 195;
 
-    --primary: var(--cyan-900);
-    --accent: var(--cyan-700);
-    --accent-hover: var(--primary);
-    --secondary: var(--sky-50);
-    --tertiary: var(--cyan-950);
+    --primary: var(--hue) 55 20; /*dark-blue*/
+    --secondary: var(--hue) 100 90; /*light-blue*/
+    --accent: var(--hue) 80 30; /*medium-blue*/
+    --accent-hover: var(--hue) 80 35; /*medium-blue(+)*/
+    --tertiary: var(--hue) 50 10; /*gold*/
 
-    --background: var(--secondary);
-    --foreground: var(--tertiary);
-    --muted-foreground: var(--slate-500);
+    --foreground: var(--hue) 50 5;
+    --muted-foreground: var(--hue) 20 50;
+    --background: var(--hue) 100 98;
 
-    --border: var(--slate-200);
+    --card: var(--hue) 100 98;
+    --border: var(--hue) 10 85;
     --shadow: var(--primary);
   }
 
   .dark {
-    --cyan-900: 196.4 63.6 23.7;
-    --cyan-700: 192.9 82.3 31;
-    --sky-50: 204 100 97.1;
-    --sky-100: 204 100 90;
+    --hue: 195;
 
-    --primary: var(--sky-100);
-    --accent: var(--sky-50);
-    --accent-hover: var(--primary);
-    --secondary: var(--cyan-700);
+    --primary: var(--hue) 55 80;
+    --secondary: var(--hue) 100 10;
+    --accent: var(--hue) 80 70;
+    --accent-hover: var(--hue) 80 65;
+    --tertiary: var(--hue) 50 90;
 
-    --background: var(--cyan-900);
-    --foreground: var(--accent);
+    --foreground: var(--hue) 50 95;
+    --muted-foreground: var(--hue) 20 50;
+    --background: var(--hue) 100 2;
+
+    --card: var(--hue) 100 2;
+    --border: var(--hue) 10 15;
+    --shadow: var(--primary);
+  }
+
+  .slate {
   }
 
   *,
@@ -119,14 +121,14 @@
   }
 
   .card {
-    @apply h-full min-h-10 w-full rounded-lg border border-grey-border bg-white p-4 shadow-md transition-all hover:scale-[1.02] hover:shadow-lg;
+    @apply h-full min-h-10 w-full rounded-lg border border-border bg-card p-4 shadow-md transition-all hover:scale-[1.02] hover:shadow-lg;
   }
 
   .form-field {
     @apply flex flex-col gap-1;
   }
   .form-input {
-    @apply w-full rounded-md border border-grey-border bg-white p-2 text-foreground focus:ring focus:ring-accent;
+    @apply w-full rounded-md border border-border bg-card p-2 text-foreground focus:ring focus:ring-accent;
   }
 }
 
@@ -140,6 +142,7 @@
   .section-full {
     @apply min-h-[calc(100vh-5rem)] content-center;
   }
+  /* Manage section's dark-mode here ? */
 
   .backdrop {
     @apply backdrop-blur-xs backdrop-brightness-50;

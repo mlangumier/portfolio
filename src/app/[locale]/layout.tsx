@@ -11,8 +11,9 @@ import { LayoutProps } from '@/utils/types';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
-import type { Metadata } from 'next';
+import Providers from './providers';
 
+import type { Metadata } from 'next';
 const dmSans = DM_Sans({
   subsets: ['latin'],
   display: 'swap',
@@ -48,10 +49,10 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
   const messages = await getMessages();
 
   return (
-    <html lang={locale} className={`${dmSans.variable}`}>
+    <html lang={locale} className={`${dmSans.variable}`} suppressHydrationWarning>
       <body>
         <NextIntlClientProvider messages={messages}>
-          {children}
+          <Providers>{children}</Providers>
           <Analytics />
           <SpeedInsights />
         </NextIntlClientProvider>

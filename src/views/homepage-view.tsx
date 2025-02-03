@@ -11,6 +11,7 @@ import SectionWrapper from '@/components/section-block';
 import SectionTitle from '@/components/section-title-block';
 import SkillsBlock from '@/components/skills-block';
 import { emailDisplay, socials } from '@/data/socials';
+import ThemeSelector from '@/styles/theme-selector';
 
 const HomepageView = () => {
   const tPage = useTranslations('Pages.Homepage.sections');
@@ -46,6 +47,10 @@ const HomepageView = () => {
           />
         </div>
       </SectionWrapper>
+
+      {/* --- Temporary tests - Remove when done with setup */}
+      <ThemeSelector />
+      {/* --- End test */}
 
       <SectionWrapper id="skills" dark>
         <SectionTitle title={tPage('skills.title')} description={tPage('skills.description')} dark />
