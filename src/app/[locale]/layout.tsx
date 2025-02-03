@@ -14,6 +14,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import Providers from './providers';
 
 import type { Metadata } from 'next';
+
 const dmSans = DM_Sans({
   subsets: ['latin'],
   display: 'swap',

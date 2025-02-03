@@ -11,7 +11,6 @@ import SectionWrapper from '@/components/section-block';
 import SectionTitle from '@/components/section-title-block';
 import SkillsBlock from '@/components/skills-block';
 import { emailDisplay, socials } from '@/data/socials';
-import ThemeSelector from '@/styles/theme-selector';
 
 const HomepageView = () => {
   const tPage = useTranslations('Pages.Homepage.sections');
@@ -48,12 +47,8 @@ const HomepageView = () => {
         </div>
       </SectionWrapper>
 
-      {/* --- Temporary tests - Remove when done with setup */}
-      <ThemeSelector />
-      {/* --- End test */}
-
-      <SectionWrapper id="skills" dark>
-        <SectionTitle title={tPage('skills.title')} description={tPage('skills.description')} dark />
+      <SectionWrapper id="skills" invertedSection>
+        <SectionTitle title={tPage('skills.title')} description={tPage('skills.description')} />
         <SkillsBlock />
       </SectionWrapper>
 
@@ -64,7 +59,7 @@ const HomepageView = () => {
         <ExperiencesBlock />
       </SectionWrapper>
 
-      <SectionWrapper id="contact" dark>
+      <SectionWrapper id="contact" invertedSection>
         <SectionTitle
           title={tPage('contact.title')}
           description={tPage.rich('contact.description', {
@@ -72,7 +67,6 @@ const HomepageView = () => {
             code: chunk => <span className="border-b border-primary font-bold">{chunk}</span>,
             br: () => <br />,
           })}
-          dark
         >
           <ExternalLink href={socials.linkedin.url}>{socials.linkedin.label}</ExternalLink>
           <ExternalLink href={socials.github.url}>{socials.github.label}</ExternalLink>
