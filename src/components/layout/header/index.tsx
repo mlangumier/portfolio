@@ -95,7 +95,7 @@ const Header: React.FC<Props> = ({ navItems }) => {
               <p className="font-light uppercase text-foreground-muted">{tHeader('pages')}</p>
               <ul className="flex h-full flex-col">
                 {navItems.map((item: INavRouteItem, i) => (
-                  <li key={i} className="flex border-b border-grey-border last-of-type:border-none">
+                  <li key={i} className="flex border-b border-border last-of-type:border-none">
                     <Link
                       href={item.pathname}
                       aria-current={pathname === item.pathname}

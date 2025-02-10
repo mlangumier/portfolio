@@ -5,41 +5,48 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
-    --cyan-900: 196.4 63.6 23.7;
-    --cyan-700: 192.9 82.3 31;
-    --sky-50: 204 100 97.1;
-    --cyan-950: 200 50 10;
-    --slate-500: 215.4 16.3 46.9;
-    --slate-200: 214.3 31.8 91.4;
+  :root,
+  .light {
+    --hue: 195;
 
-    --primary: var(--cyan-900);
-    --accent: var(--cyan-700);
-    --accent-hover: var(--primary);
-    --secondary: var(--sky-50);
-    --tertiary: var(--cyan-950);
+    --primary: var(--hue) 55 20;
+    --secondary: var(--hue) 100 90;
+    --accent: var(--hue) 80 30;
+    --accent-hover: var(--hue) 80 35;
 
-    --background: var(--secondary);
-    --foreground: var(--tertiary);
-    --muted-foreground: var(--slate-500);
+    --foreground: var(--hue) 50 5;
+    --foreground-muted: var(--hue) 20 60;
+    --background: var(--hue) 100 98;
 
-    --border: var(--slate-200);
+    --border: var(--hue) 10 85;
     --shadow: var(--primary);
+
+    /*--- Fixed elements color, they don't change with sections' "inverted-theme" ---*/
+    --foreground-dark: var(--hue) 50 5;
+    --background-light: var(--hue) 100 98;
+
+    --card-title: var(--hue) 80 30;
+    --card-foreground-muted: var(--hue) 20 65;
+
+    --button-foreground: var(--hue) 100 98;
+    --button-background: var(--hue) 80 30;
+    --button-background-hover: var(--hue) 80 35;
   }
 
-  .dark {
-    --cyan-900: 196.4 63.6 23.7;
-    --cyan-700: 192.9 82.3 31;
-    --sky-50: 204 100 97.1;
-    --sky-100: 204 100 90;
+  .inverted-theme {
+    /* Light theme only: manages sections inverted colors -> sections with dark background */
 
-    --primary: var(--sky-100);
-    --accent: var(--sky-50);
-    --accent-hover: var(--primary);
-    --secondary: var(--cyan-700);
+    --primary: var(--hue) 55 80;
+    --secondary: var(--hue) 100 10;
+    --accent: var(--hue) 90 75;
+    --accent-hover: var(--hue) 50 90;
 
-    --background: var(--cyan-900);
-    --foreground: var(--accent);
+    --foreground: var(--hue) 50 95;
+    --foreground-muted: var(--hue) 20 60;
+    --background: var(--hue) 80 15;
+
+    --border: var(--hue) 10 15;
+    --shadow: var(--primary);
   }
 
   *,
@@ -73,18 +80,10 @@
     @apply text-lg font-medium;
   }
 
-  .title-card {
-    @apply text-lg font-bold text-accent;
-  }
-
   p,
   label,
   .body-text {
     @apply text-base font-normal text-foreground;
-  }
-
-  .body-muted {
-    @apply text-sm font-light text-foreground-muted;
   }
 
   button {
@@ -115,18 +114,24 @@
     @apply inline-flex flex-row items-center justify-between gap-2 rounded-md px-8 py-4 text-base font-semibold leading-none transition-all duration-150 ease-out hover:gap-8;
   }
   .btn-primary {
-    @apply bg-accent text-secondary hover:bg-accent-hover;
+    @apply bg-button-background text-button-foreground hover:bg-button-background-hover;
   }
 
   .card {
-    @apply h-full min-h-10 w-full rounded-lg border border-grey-border bg-white p-4 shadow-md transition-all hover:scale-[1.02] hover:shadow-lg;
+    @apply h-full min-h-10 w-full rounded-lg border border-border bg-background-light p-4 shadow-md transition-all hover:scale-[1.02] hover:shadow-lg;
+  }
+  .title-card {
+    @apply text-lg font-bold text-card-title;
+  }
+  .card-muted {
+    @apply text-sm font-light text-card-foreground-muted;
   }
 
   .form-field {
     @apply flex flex-col gap-1;
   }
   .form-input {
-    @apply w-full rounded-md border border-grey-border bg-white p-2 text-foreground focus:ring focus:ring-accent;
+    @apply w-full rounded-md border border-border bg-background-light p-2 text-foreground-dark focus:ring-2 focus:ring-accent;
   }
 }
 

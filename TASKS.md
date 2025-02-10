@@ -43,22 +43,26 @@ To add later / when relevant:
 - Redux
 - Database (PostgreSQL?, RESTful API, auth, assets storage)
 - Jest (tests unitaires)
+- Shadcn
 
 ## ROADMAP - Current Tasks
 
-- [ ] Internationalization - Check issue with Next-Intl always using 'en' as default locale (check setup, provider & cookies)
+- [x] Internationalization - Check issue with Next-Intl always using 'en' as default locale (check setup, provider & cookies)
 - [x] Markdown - Update files & formatting, add table of contents (cf. extension)
 - [ ] Theme - Setup dark mode integration (+ colored themes?)
 - [ ] Architecture - Use `FSD` ([Feature-Slided Design](https://feature-sliced.design/docs/guides/tech/with-nextjs#app-router)) for better clarity & scaling
   - [ ] (Optional) Add eslint-plugin-boundaries to enforce architectural rules ([example here](https://www.youtube.com/watch?v=xyxrB2Aa7KE))
   - [ ] (Optional) Refactor files & components names to work with React snippets extension (-> PascalCase)
-- [ ] Internationalization - Reorganize dictionnaires into different files (separate pages & features)
-  - [ ] Add i18n-ally extension for VSCode
+- [ ] Internationalization (check if both work together, or pick one):
+  - [ ] Reorganize dictionnaires into different files (separate pages & features)
+  - [ ] Add i18n-ally extension for VSCode for easier messages setup & preview
 
 ## Roadmap - Fixes & Updates
 
 Not linked to any roadmap, to do when relevant or if necessary.
 
+- [ ] Upgrade - Tailwind v4
+- [ ] Config - Transfer VSCode local config to the projet's `.vscode` file (extensions & extensions's setup)
 - [ ] Component - Change language switcher to a `Select` component (if theme switcher is onClick)
 - [ ] Component - Add a scroll-to-top button
 - [ ] Routes - Upon adding new pages, reorganise routes (& reorganize `/data` & `/utils`)

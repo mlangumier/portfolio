@@ -18,7 +18,7 @@ const ExperienceCard: React.FC<Props> = ({ item }) => {
       <div
         id="icon"
         className={cn(
-          'border-border-white flex size-6 shrink-0 items-center justify-center rounded-full bg-accent shadow-md md:order-1 md:group-odd:-translate-x-7 md:group-even:translate-x-7',
+          'flex size-6 shrink-0 items-center justify-center rounded-full border-border bg-accent shadow-md md:order-1 md:group-odd:-translate-x-7 md:group-even:translate-x-7',
           inView ? 'opacity-1 transition-opacity delay-1000 duration-1000 ease-out' : 'opacity-0'
         )}
       />
@@ -34,16 +34,16 @@ const ExperienceCard: React.FC<Props> = ({ item }) => {
         <div
           className={cn(
             'card space-y-4',
-            'before:absolute before:left-0 before:top-1/2 before:size-5 before:-translate-x-1/2 before:-translate-y-1/2 before:rotate-45 before:border-b before:border-l before:border-grey-border before:bg-white md:group-even:before:left-full md:group-even:before:border-b-0 md:group-even:before:border-l-0 md:group-even:before:border-r md:group-even:before:border-t'
+            'before:absolute before:left-0 before:top-1/2 before:size-5 before:-translate-x-1/2 before:-translate-y-1/2 before:rotate-45 before:border-b before:border-l before:border-border before:bg-background-light md:group-even:before:left-full md:group-even:before:border-b-0 md:group-even:before:border-l-0 md:group-even:before:border-r md:group-even:before:border-t'
           )}
         >
           <div>
             <p className="title-card">{item.title}</p>
-            <p className="body-muted">
+            <p className="card-muted">
               {item.dates} | <span className="font-semibold">{item.business}</span>, {item.location}
             </p>
           </div>
-          <p>{item.description}</p>
+          <p className="text-foreground-dark">{item.description}</p>
         </div>
       </article>
     </div>
