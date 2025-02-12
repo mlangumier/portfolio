@@ -18,6 +18,13 @@ const ExperiencesBlock: React.FC = () => {
 
   const experienceItems: Experience[] = [
     {
+      title: t('training.title'),
+      business: t('training.business'),
+      dates: '2024-2025',
+      location: 'St-Étienne',
+      description: t('training.description'),
+    },
+    {
       title: t('dixeed.title'),
       business: t('dixeed.business'),
       dates: '2022-2024',

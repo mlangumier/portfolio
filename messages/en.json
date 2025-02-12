@@ -69,20 +69,25 @@
         "experiences": {
           "title": "Experience",
           "cards": {
+            "training": {
+              "title": "Personal Project-based Learning",
+              "business": "Self",
+              "description": "I develop personal projects to deepen my technical skills and conduct regular tech watch to stay up to date with industry trends and broaden my expertise in web tools."
+            },
             "dixeed": {
               "title": "Front-end Developer",
               "business": "Dixeed",
-              "description": "I developed and maintained optimized web and mobile applications according to the requirements of various clients."
+              "description": "I contributed to the development, maintenance, and optimization of web and mobile applications, ensuring they met clients' specific requirements while delivering high-performance solutions tailored to business needs."
             },
             "ffy": {
               "title": "React / Full-stack Developer",
               "business": "Flying For You",
-              "description": "I reworked the website according to the new designs and developed new features that allowed better monitoring of the marketing campaigns."
+              "description": "I led the graphic redesign of the website in collaboration with the marketing team and contributed to the development of new features aimed at improving campaign tracking and optimizing the user experience."
             },
             "humanBooster": {
               "title": "Full-stack Developer Training",
               "business": "Human Booster",
-              "description": "I developed various short-term and long-term projects and learned how to quickly adapt and gain skills with different languages and tools."
+              "description": "I developed Full-stack projects both short and long-term, adapting quickly to new tools and languages, and strengthening my technical skills to meet project requirements."
             }
           }
         },

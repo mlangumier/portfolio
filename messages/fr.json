@@ -69,20 +69,25 @@
         "experiences": {
           "title": "Expériences",
           "cards": {
+            "training": {
+              "title": "Projets Personnels & Veille technologique",
+              "business": "Auto-formation",
+              "description": "Je développe des projets personnels pour approfondir mes compétences techniques et je réalise une veille technologique régulière afin de suivre les évolutions du secteur et d'élargir mon expertise des outils web."
+            },
             "dixeed": {
               "title": "Développeur Front-end",
               "business": "Dixeed",
-              "description": "J'ai participé au développement et à la maintenance d'applications web et mobiles performantes pour répondre aux besoins de différents clients."
+              "description": "J'ai contribué au développement, à la maintenance et à l'optimisation d'applications web et mobiles, en veillant à répondre aux exigences spécifiques des clients et à garantir des solutions performantes et adaptées aux besoins métiers."
             },
             "ffy": {
               "title": "Développeur React / Full-stack",
               "business": "Flying For You",
-              "description": "J'ai effectué une refonte graphique du site et participé au développement de nouvelles fonctionnalités qui ont permis un meilleur suivi des campagnes marketing."
+              "description": "J'ai mené la refonte graphique du site en collaboration avec l'équipe marketing et contribué au développement de nouvelles fonctionnalités dans le but d'améliorer le suivi des campagnes marketing et optimiser l'expérience utilisateur."
             },
             "humanBooster": {
               "title": "Formation Développeur Full-stack",
               "business": "Human Booster",
-              "description": "J'ai développé des projets Full-stack sur court et long terme et appris à m'adapter et monter en compétences rapidement sur différents outils et langages."
+              "description": "J'ai développé des projets Full-stack à court et long terme, en m'adaptant rapidement aux nouveaux outils et langages, et en consolidant mes compétences techniques pour répondre aux exigences des projets."
             }
           }
         },
