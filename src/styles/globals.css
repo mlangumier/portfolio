@@ -5,11 +5,12 @@
 @tailwind utilities;
 
 @layer base {
+  /**  DEFAULT - LIGHT THEME  */
   :root,
   .light {
     --hue: 195;
 
-    --primary: var(--hue) 55 20;
+    --primary: var(--hue) 55 25;
     --secondary: var(--hue) 100 90;
     --accent: var(--hue) 80 30;
     --accent-hover: var(--hue) 80 35;
@@ -21,34 +22,61 @@
     --border: var(--hue) 10 85;
     --shadow: var(--primary);
 
-    /*--- Fixed elements color, they don't change with sections' "inverted-theme" ---*/
+    /*--- Elements with backgrounds, independent from "inverted" sections ---*/
     --foreground-dark: var(--hue) 50 5;
     --background-light: var(--hue) 100 98;
 
     --card-title: var(--hue) 80 30;
-    --card-foreground-muted: var(--hue) 20 65;
+    --card-foreground-muted: var(--hue) 20 55;
 
     --button-foreground: var(--hue) 100 98;
     --button-background: var(--hue) 80 30;
     --button-background-hover: var(--hue) 80 35;
   }
-
   .inverted-theme {
-    /* Light theme only: manages sections inverted colors -> sections with dark background */
-
     --primary: var(--hue) 55 80;
     --secondary: var(--hue) 100 10;
-    --accent: var(--hue) 90 75;
+    --accent: var(--hue) 90 85;
     --accent-hover: var(--hue) 50 90;
 
     --foreground: var(--hue) 50 95;
     --foreground-muted: var(--hue) 20 60;
-    --background: var(--hue) 80 15;
+    --background: var(--hue) 80 20;
 
     --border: var(--hue) 10 15;
     --shadow: var(--primary);
   }
 
+  /**  OPTIONAL - DARK THEME  */
+  .dark {
+    --primary: var(--hue) 55 75;
+    --secondary: var(--hue) 100 10;
+    --accent: var(--hue) 80 70;
+    --accent-hover: var(--hue) 80 35;
+
+    --foreground: var(--hue) 50 95;
+    --foreground-muted: var(--hue) 20 50;
+    --background: var(--hue) 100 5;
+
+    --border: var(--hue) 10 20;
+    --shadow: var(--primary);
+
+    /*--- Elements with backgrounds, independent from "inverted" sections ---*/
+    --foreground-dark: var(--hue) 50 95; /* Bad-naming: inverted in dark-mode */
+    --background-light: var(--hue) 70 12; /* Bad-naming: inverted in dark-mode */
+
+    --card-title: var(--hue) 80 70;
+    --card-foreground-muted: var(--hue) 20 55;
+
+    --button-foreground: var(--hue) 100 2;
+    --button-background: var(--hue) 80 80;
+    --button-background-hover: var(--hue) 80 85;
+  }
+  .inverted-dark {
+    --background: var(--hue) 80 8;
+  }
+
+  /** SETUP */
   *,
   *::before,
   *::after {
