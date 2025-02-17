@@ -22,7 +22,8 @@
     "Header": {
       "title": "Mathieu Langumier",
       "pages": "Pages",
-      "switchLanguage": "Changer de langue"
+      "switchLanguage": "Changer de langue",
+      "switchTheme": "Changer de mode"
     },
     "Footer": {
       "pages": "Pages",
