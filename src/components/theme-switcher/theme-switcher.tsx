@@ -4,12 +4,28 @@ import { useTheme } from 'next-themes';
 import React, { useEffect, useState } from 'react';
 import { MdDarkMode, MdOutlineLightMode } from 'react-icons/md';
 
-const ThemeSwitcher = () => {
+interface Props {
+  handleCloseMobileMenu?: () => void;
+}
+
+const ThemeSwitcher: React.FC<Props> = ({ handleCloseMobileMenu }) => {
   const [isMounted, setIsMounted] = useState<boolean>(false);
   const { setTheme, resolvedTheme } = useTheme();
 
   // Wait for system's mode to be detected
   useEffect(() => setIsMounted(true), []);
+
+  const handleChangeTheme = (newTheme: 'light' | 'dark') => {
+    if (newTheme === 'light') {
+      setTheme('light');
+    } else {
+      setTheme('dark');
+    }
+
+    if (handleCloseMobileMenu) {
+      handleCloseMobileMenu();
+    }
+  };
 
   // Show a placeholder while theme is being resolved
   if (!isMounted)
@@ -22,14 +38,14 @@ const ThemeSwitcher = () => {
   // Display the corresponding theme-switcher icon
   if (resolvedTheme === 'light')
     return (
-      <button onClick={() => setTheme('dark')}>
+      <button onClick={() => handleChangeTheme('dark')}>
         <MdDarkMode className="size-9 fill-primary md:size-7" />
       </button>
     );
 
   if (resolvedTheme === 'dark')
     return (
-      <button onClick={() => setTheme('light')}>
+      <button onClick={() => handleChangeTheme('light')}>
         <MdOutlineLightMode className="size-9 fill-primary md:size-7" />
       </button>
     );

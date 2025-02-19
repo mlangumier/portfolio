@@ -124,7 +124,7 @@ const Header: React.FC<Props> = ({ navItems }) => {
               <p className="font-light uppercase text-foreground-muted">{tHeader('switchTheme')}</p>
               <ul className="flex h-full flex-col">
                 <li className="mt-2 px-4">
-                  <ThemeSwitcher />
+                  <ThemeSwitcher handleCloseMobileMenu={() => handleBurgerMenu('close')} />
                 </li>
               </ul>
             </div>
