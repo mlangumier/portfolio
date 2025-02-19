@@ -4,6 +4,7 @@ import { useTranslations } from 'next-intl';
 import React, { useEffect, useState } from 'react';
 
 import LocalSwitcher from '@/components/locale-switcher';
+import ThemeSwitcher from '@/components/theme-switcher/theme-switcher';
 import useViewportBreakpoint from '@/hooks/use-viewport-breakpoint';
 import { Link, usePathname } from '@/i18n/routing';
 import { cn } from '@/utils/tailwindcss';
@@ -66,7 +67,7 @@ const Header: React.FC<Props> = ({ navItems }) => {
 
         {/* Navigation - Desktop */}
         <div className="hidden md:block">
-          <ul className="flex flex-row gap-6">
+          <ul className="flex flex-row items-center gap-6">
             {navItems.map((item: INavRouteItem, i) => (
               <li key={i}>
                 <Link
@@ -78,6 +79,7 @@ const Header: React.FC<Props> = ({ navItems }) => {
                 </Link>
               </li>
             ))}
+            <ThemeSwitcher />
             <LocalSwitcher />
           </ul>
         </div>
@@ -114,6 +116,15 @@ const Header: React.FC<Props> = ({ navItems }) => {
               <ul className="flex h-full flex-col">
                 <li className="mt-2 px-4">
                   <LocalSwitcher handleCloseMobileMenu={() => handleBurgerMenu('close')} />
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <p className="font-light uppercase text-foreground-muted">{tHeader('switchTheme')}</p>
+              <ul className="flex h-full flex-col">
+                <li className="mt-2 px-4">
+                  <ThemeSwitcher handleCloseMobileMenu={() => handleBurgerMenu('close')} />
                 </li>
               </ul>
             </div>
