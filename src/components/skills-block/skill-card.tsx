@@ -33,7 +33,7 @@ const SkillCard: React.FC<Props> = ({ item, index, isViewportLg }) => {
   return (
     <article
       ref={ref}
-      className={cn(hasLoaded ? 'duration-1000 animate-in fade-in slide-in-from-bottom' : 'opacity-0')}
+      className={cn(hasLoaded ? 'animate-in fade-in slide-in-from-bottom duration-1000' : 'opacity-0')}
     >
       <div className="card space-y-4">
         <p className="title-card flex flex-row items-center justify-between gap-4">

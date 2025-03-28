@@ -52,7 +52,7 @@ const ExperiencesBlock: React.FC = () => {
       id="timeline-container"
       className={cn(
         'relative mt-20 space-y-4',
-        'before:absolute before:inset-0 before:ml-3 before:h-full before:w-0.5 before:-translate-x-px before:bg-gradient-to-b before:from-transparent before:via-accent before:to-transparent md:before:mx-auto md:before:translate-x-0'
+        'before:bg-linear-to-b before:via-accent before:absolute before:inset-0 before:ml-3 before:h-full before:w-0.5 before:-translate-x-px before:from-transparent before:to-transparent md:before:mx-auto md:before:translate-x-0'
       )}
     >
       {experienceItems.map((item: Experience, index: number) => (

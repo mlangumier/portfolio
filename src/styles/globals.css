@@ -1,11 +1,69 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --font-display: "DM Sans", "sans-serif";
+
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+
+  --color-primary: hsl(var(--primary));
+  --color-secondary: hsl(var(--secondary));
+  --color-accent: hsl(var(--accent));
+  --color-accent-hover: hsl(var(--accent-hover));
+
+  --color-foreground: hsl(var(--foreground));
+  --color-foreground-muted: hsl(var(--foreground-muted));
+  --color-background: hsl(var(--background));
+  --color-background-muted: hsl(var(--background-muted));
+
+  --color-border: hsl(var(--border));
+  --color-shadow: hsl(var(--shadow) / 0.2);
+
+  --color-foreground-dark: hsl(var(--foreground-dark));
+  --color-background-light: hsl(var(--background-light));
+
+  --color-card-title: hsl(var(--card-title));
+  --color-card-foreground-muted: hsl(var(--card-foreground-muted));
+
+  --color-button-foreground: hsl(var(--button-foreground));
+  --color-button-background: hsl(var(--button-background));
+  --color-button-background-hover: hsl(var(--button-background-hover));
+
+  /* --- ANIMATIONS --- */
+
+  --duration-1500: 1s;
+
+  --animate-slide-in-from-left: slide-in-from-left var(--duration-1500);
+  --animate-slide-in-from-right: slide-in-from-right var(--duration-1500) ease-out;
+
+  @keyframes slide-in-from-left {
+    0% {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0%);
+    }
+  }
+
+  @keyframes slide-in-from-right {
+    0% {
+      opacity: 0;
+      transform: translateX(100%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0%);
+    }
+  }
+}
 
 @layer base {
-  /**  DEFAULT - LIGHT THEME  */
   :root,
   .light {
     --hue: 195;
@@ -18,11 +76,11 @@
     --foreground: var(--hue) 50 5;
     --foreground-muted: var(--hue) 20 60;
     --background: var(--hue) 100 98;
+    --background-muted: var(--hue) 80 95;
 
     --border: var(--hue) 10 85;
-    --shadow: var(--primary);
+    --shadow: var(--accent);
 
-    /*--- Elements with backgrounds, independent from "inverted" sections ---*/
     --foreground-dark: var(--hue) 50 5;
     --background-light: var(--hue) 100 98;
 
@@ -33,21 +91,7 @@
     --button-background: var(--hue) 80 30;
     --button-background-hover: var(--hue) 80 35;
   }
-  .inverted-theme {
-    --primary: var(--hue) 55 80;
-    --secondary: var(--hue) 100 10;
-    --accent: var(--hue) 90 85;
-    --accent-hover: var(--hue) 50 90;
 
-    --foreground: var(--hue) 50 95;
-    --foreground-muted: var(--hue) 20 60;
-    --background: var(--hue) 80 20;
-
-    --border: var(--hue) 10 15;
-    --shadow: var(--primary);
-  }
-
-  /**  OPTIONAL - DARK THEME  */
   .dark {
     --primary: var(--hue) 55 75;
     --secondary: var(--hue) 100 10;
@@ -56,40 +100,21 @@
 
     --foreground: var(--hue) 50 95;
     --foreground-muted: var(--hue) 20 50;
-    --background: var(--hue) 100 5;
+    --background: var(--hue) 100 10;
+    --background-muted: var(--hue) 100 8;
 
-    --border: var(--hue) 10 20;
-    --shadow: var(--primary);
+    --border: var(--hue) 50 30;
+    --shadow: var(--accent);
 
-    /*--- Elements with backgrounds, independent from "inverted" sections ---*/
     --foreground-dark: var(--hue) 50 95; /* Bad-naming: inverted in dark-mode */
-    --background-light: var(--hue) 70 12; /* Bad-naming: inverted in dark-mode */
+    --background-light: var(--hue) 70 15; /* Bad-naming: inverted in dark-mode */
 
     --card-title: var(--hue) 80 70;
-    --card-foreground-muted: var(--hue) 20 55;
+    --card-foreground-muted: var(--hue) 20 70;
 
     --button-foreground: var(--hue) 100 2;
     --button-background: var(--hue) 80 80;
     --button-background-hover: var(--hue) 80 85;
-  }
-  .inverted-dark {
-    --background: var(--hue) 80 8;
-  }
-
-  /** SETUP */
-  *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
-  }
-
-  html,
-  body {
-    @apply h-full scroll-p-20 scroll-smooth;
-  }
-
-  body {
-    @apply grid min-h-svh grid-rows-layout bg-background text-base text-foreground;
   }
 
   /** TYPOGRAPHY */
@@ -101,7 +126,7 @@
 
   h2,
   .title-section {
-    @apply text-3xl font-bold uppercase text-accent;
+    @apply text-accent text-3xl font-bold uppercase;
   }
 
   .title-category {
@@ -111,7 +136,7 @@
   p,
   label,
   .body-text {
-    @apply text-base font-normal text-foreground;
+    @apply text-foreground text-base font-normal;
   }
 
   button {
@@ -120,61 +145,104 @@
 
   input,
   textarea {
-    @apply focus:outline-none;
+    @apply focus:outline-hidden;
   }
 }
 
-@layer components {
-  .nav {
-    @apply hover:cursor-pointer hover:text-primary;
-  }
-  .nav-header {
-    @apply text-lg uppercase;
-  }
-  .nav-mobile {
-    @apply text-xl uppercase;
-  }
-  .nav-active {
-    @apply text-accent;
-  }
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
 
-  .btn {
-    @apply inline-flex flex-row items-center justify-between gap-2 rounded-md px-8 py-4 text-base font-semibold leading-none transition-all duration-150 ease-out hover:gap-8;
-  }
-  .btn-primary {
-    @apply bg-button-background text-button-foreground hover:bg-button-background-hover;
-  }
-
-  .card {
-    @apply h-full min-h-10 w-full rounded-lg border border-border bg-background-light p-4 shadow-md transition-all hover:scale-[1.02] hover:shadow-lg;
-  }
-  .title-card {
-    @apply text-lg font-bold text-card-title;
-  }
-  .card-muted {
-    @apply text-sm font-light text-card-foreground-muted;
-  }
-
-  .form-field {
-    @apply flex flex-col gap-1;
-  }
-  .form-input {
-    @apply w-full rounded-md border border-border bg-background-light p-2 text-foreground-dark focus:ring-2 focus:ring-accent;
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+  */
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
   }
 }
 
-@layer utilities {
-  .section-py {
-    @apply py-20 md:py-32;
-  }
-  .section-py-first {
-    @apply py-20 pt-10 md:pb-32 md:pt-32;
-  }
-  .section-full {
-    @apply min-h-[calc(100vh-5rem)] content-center;
+/** SETUP */
+@layer base {
+  * {
+    @apply border-border;
   }
 
-  .backdrop {
-    @apply backdrop-blur-xs backdrop-brightness-50;
+  html,
+  body {
+    @apply h-full scroll-p-20 scroll-smooth;
   }
+
+  body {
+    @apply bg-background font-display text-foreground min-h-svh text-base;
+  }
+}
+
+.container {
+  @apply mx-auto p-4 xl:p-0;
+}
+
+@utility nav {
+  @apply hover:text-primary hover:cursor-pointer;
+}
+
+@utility nav-header {
+  @apply text-lg uppercase;
+}
+
+@utility nav-mobile {
+  @apply text-xl uppercase;
+}
+
+@utility nav-active {
+  @apply text-accent;
+}
+
+@utility btn {
+  @apply inline-flex flex-row items-center justify-between gap-2 rounded-md px-8 py-4 text-base font-semibold leading-none transition-all duration-150 ease-out hover:gap-8;
+}
+
+@utility btn-primary {
+  @apply bg-button-background text-button-foreground hover:bg-button-background-hover;
+}
+
+@utility card {
+  @apply border-border bg-background-light shadow-shadow h-full min-h-10 w-full rounded-lg border p-4 shadow-md transition-all hover:scale-[1.02] hover:shadow-lg;
+}
+
+@utility title-card {
+  @apply text-card-title text-lg font-bold;
+}
+
+@utility card-muted {
+  @apply text-card-foreground-muted text-sm font-light;
+}
+
+@utility form-field {
+  @apply flex flex-col gap-1;
+}
+
+@utility form-input {
+  @apply border-border bg-background-light text-foreground-dark focus:ring-accent w-full rounded-md border p-2 focus:ring-2;
+}
+
+@utility section-py {
+  @apply py-20 md:py-32;
+}
+
+@utility section-py-first {
+  @apply py-20 pt-10 md:pb-32 md:pt-32;
+}
+
+@utility section-full {
+  @apply min-h-[calc(100vh-5rem)] content-center;
+}
+
+@utility backdrop {
+  @apply backdrop-blur-xs backdrop-brightness-50;
 }

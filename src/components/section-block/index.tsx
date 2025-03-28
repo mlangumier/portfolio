@@ -1,7 +1,4 @@
-'use client';
-
-import { useTheme } from 'next-themes';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 import { cn } from '@/utils/tailwindcss';
 
@@ -31,20 +28,14 @@ const SectionWrapper: React.FC<Props> = ({
   containerStyle,
   children,
 }) => {
-  const { theme } = useTheme();
-
-  // Temporary fix for the inverted section flickering on page load
-  const [isMounted, setIsMounted] = useState<boolean>(false);
-  useEffect(() => setIsMounted(true), []);
-
   return (
     <section
       id={id}
       className={cn(
-        'overflow-clip bg-background',
+        'bg-background overflow-clip',
         first ? 'section-py-first' : 'section-py',
         full && 'section-full',
-        invertedSection && isMounted && (theme === 'dark' ? 'inverted-dark' : 'inverted-theme')
+        invertedSection && 'bg-background-muted'
       )}
     >
       <div className={cn('container', containerStyle)}>{children}</div>

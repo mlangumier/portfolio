@@ -16,7 +16,7 @@ Hello and welcome! This project is meant to showcase some of my skills as well a
     - [Rework - Design with Figma](#rework---design-with-figma)
   - [Stack](#stack)
     - [Core Stack - React/Next.js \& TypeScript + Zod](#core-stack---reactnextjs--typescript--zod)
-    - [Style - Tailwind CSS](#style---tailwind-css)
+    - [Style - Tailwind CSS v4](#style---tailwind-css-v4)
     - [Teamwork - Docker, Git, Github](#teamwork---docker-git-github)
     - [Formatting - Prettier, ESLint, Husky](#formatting---prettier-eslint-husky)
     - [Internationalization - Next-intl](#internationalization---next-intl)
@@ -61,7 +61,7 @@ Now, as I said, the goal was to setup this project as I would in a professional 
 
 My area of expertise, so these were the best candidates for this project. `React` for the effective use of hooks, `Next.js` for server & client components, and `TypeScript` because using types makes managing data and props so much easier, and `Zod` is perfect for data validation and type inference with TS.
 
-#### Style - Tailwind CSS
+#### Style - Tailwind CSS v4
 
 I see what you're wondering: "No ShadCn??", and I have thought about it, but my goal was to first work on more advanced `Tailwind CSS` features, and get a more in-depth understanding of this library. Now that I have, there is a good chance I'm going to use ShadCN on future projects, and I might even add it to this project at some point.
 
