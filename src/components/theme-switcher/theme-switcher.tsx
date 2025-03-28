@@ -31,7 +31,7 @@ const ThemeSwitcher: React.FC<Props> = ({ handleCloseMobileMenu }) => {
   if (!isMounted)
     return (
       <div className="mx-auto text-center">
-        <div className="mx-auto size-6 animate-pulse rounded-full bg-secondary" />
+        <div className="bg-secondary mx-auto size-6 animate-pulse rounded-full" />
       </div>
     );
 
@@ -39,14 +39,14 @@ const ThemeSwitcher: React.FC<Props> = ({ handleCloseMobileMenu }) => {
   if (resolvedTheme === 'light')
     return (
       <button onClick={() => handleChangeTheme('dark')}>
-        <MdDarkMode className="size-9 fill-primary md:size-7" />
+        <MdDarkMode className="fill-primary size-9 md:size-7" />
       </button>
     );
 
   if (resolvedTheme === 'dark')
     return (
       <button onClick={() => handleChangeTheme('light')}>
-        <MdOutlineLightMode className="size-9 fill-primary md:size-7" />
+        <MdOutlineLightMode className="fill-primary size-9 md:size-7" />
       </button>
     );
 };

@@ -13,19 +13,19 @@ const BurgerIcon: React.FC<Props> = ({ isOpen, handleIsOpen, className }) => {
     <div onClick={handleIsOpen} className={cn('relative h-7 w-10 hover:cursor-pointer', className)}>
       <span
         className={cn(
-          'absolute left-0 h-1 rounded-sm bg-accent transition-all',
+          'rounded-xs bg-accent absolute left-0 h-1 transition-all',
           isOpen ? 'top-1/2 w-full -translate-y-1/2 rotate-45 duration-500' : 'top-0 w-2/3 duration-200'
         )}
       />
       <span
         className={cn(
-          'absolute top-1/2 h-1 -translate-y-1/2 transform rounded-sm bg-accent transition-all',
+          'rounded-xs bg-accent absolute top-1/2 h-1 -translate-y-1/2 transform transition-all',
           isOpen ? 'left-1/2 w-0 -translate-x-1/2 duration-200' : 'left-0 w-full duration-500'
         )}
       />
       <span
         className={cn(
-          'absolute right-0 h-1 rounded-sm bg-accent transition-all',
+          'rounded-xs bg-accent absolute right-0 h-1 transition-all',
           isOpen ? 'bottom-1/2 w-full translate-y-1/2 -rotate-[45deg] duration-500' : 'bottom-0 w-2/3 duration-200'
         )}
       />
