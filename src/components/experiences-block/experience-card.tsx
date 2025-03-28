@@ -18,23 +18,21 @@ const ExperienceCard: React.FC<Props> = ({ item }) => {
       <div
         id="icon"
         className={cn(
-          'flex size-6 shrink-0 items-center justify-center rounded-full border-border bg-accent shadow-md md:order-1 md:group-odd:translate-x-7 md:group-even:-translate-x-7',
-          inView ? 'opacity-1 transition-opacity delay-1000 duration-1000 ease-out' : 'opacity-0'
+          'border-border bg-accent flex size-6 shrink-0 items-center justify-center rounded-full shadow-md md:order-1 md:group-odd:translate-x-7 md:group-even:-translate-x-7',
+          inView ? 'opacity-100 transition-opacity delay-1000 duration-1000 ease-out' : 'opacity-0'
         )}
       />
 
       <article
         className={cn(
           'relative w-[calc(100%-2.5rem)] md:w-[calc(50%-2.5rem)]',
-          inView
-            ? 'animate-in fade-in slide-in-from-right duration-1500 md:group-odd:slide-in-from-left md:group-even:slide-in-from-right'
-            : 'opacity-0'
+          inView ? 'animate-slide-in-from-right md:group-odd:animate-slide-in-from-left' : 'opacity-0'
         )}
       >
         <div
           className={cn(
             'card space-y-4',
-            'before:absolute before:left-0 before:top-1/2 before:size-5 before:-translate-x-1/2 before:-translate-y-1/2 before:rotate-45 before:border-b before:border-l before:border-border before:bg-background-light md:group-odd:before:left-full md:group-odd:before:border-b-0 md:group-odd:before:border-l-0 md:group-odd:before:border-r md:group-odd:before:border-t'
+            'before:border-border before:bg-background-light before:absolute before:left-0 before:top-1/2 before:size-5 before:-translate-x-1/2 before:-translate-y-1/2 before:rotate-45 before:border-b before:border-l md:group-odd:before:left-full md:group-odd:before:border-b-0 md:group-odd:before:border-l-0 md:group-odd:before:border-r md:group-odd:before:border-t'
           )}
         >
           <div>

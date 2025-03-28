@@ -49,17 +49,17 @@ const Header: React.FC<Props> = ({ navItems }) => {
   }, [isMenuOpen]);
 
   return (
-    <header className="fixed z-40 w-full bg-background">
+    <header className="bg-background shadow-shadow/50 fixed z-40 w-full shadow-md">
       <div className="container relative flex h-20 flex-row items-center justify-between">
         {/* Title */}
-        <div className="grid w-full grid-cols-header-title-center items-center gap-3 md:w-fit md:grid-cols-header-title-start">
-          <div id="website-name-square" className="hidden size-6 rotate-[15deg] bg-accent md:inline-block" />
+        <div className="grid w-full grid-cols-[auto_1fr] items-center gap-3 md:w-fit md:grid-cols-[auto_1fr_minmax(0,_2.5rem)]">
+          <div id="website-name-square" className="bg-accent hidden size-6 rotate-[15deg] md:inline-block" />
           <BurgerIcon isOpen={isMenuOpen} handleIsOpen={toggleBurgerMenu} className="md:hidden" />
 
           <Link
             href="/"
             onClick={() => handleBurgerMenu('close')}
-            className="text-nowrap text-center text-2xl font-bold text-primary md:text-wrap md:text-start"
+            className="text-primary text-nowrap text-center text-2xl font-bold md:text-wrap md:text-start"
           >
             {tHeader('title')}
           </Link>
@@ -92,12 +92,12 @@ const Header: React.FC<Props> = ({ navItems }) => {
             isMenuOpen ? 'visible left-0' : 'invisible left-[-100%]'
           )}
         >
-          <div className="flex h-full w-full min-w-fit max-w-screen-sm flex-col gap-4 bg-background px-6">
+          <div className="bg-background max-w-(--breakpoint-sm) flex h-full w-full min-w-fit flex-col gap-4 px-6">
             <div className="mt-4">
-              <p className="font-light uppercase text-foreground-muted">{tHeader('pages')}</p>
+              <p className="text-foreground-muted font-light uppercase">{tHeader('pages')}</p>
               <ul className="flex h-full flex-col">
                 {navItems.map((item: INavRouteItem, i) => (
-                  <li key={i} className="flex border-b border-border last-of-type:border-none">
+                  <li key={i} className="border-border flex border-b last-of-type:border-none">
                     <Link
                       href={item.pathname}
                       aria-current={pathname === item.pathname}
@@ -112,7 +112,7 @@ const Header: React.FC<Props> = ({ navItems }) => {
             </div>
 
             <div>
-              <p className="font-light uppercase text-foreground-muted">{tHeader('switchLanguage')}</p>
+              <p className="text-foreground-muted font-light uppercase">{tHeader('switchLanguage')}</p>
               <ul className="flex h-full flex-col">
                 <li className="mt-2 px-4">
                   <LocalSwitcher handleCloseMobileMenu={() => handleBurgerMenu('close')} />
@@ -121,7 +121,7 @@ const Header: React.FC<Props> = ({ navItems }) => {
             </div>
 
             <div>
-              <p className="font-light uppercase text-foreground-muted">{tHeader('switchTheme')}</p>
+              <p className="text-foreground-muted font-light uppercase">{tHeader('switchTheme')}</p>
               <ul className="flex h-full flex-col">
                 <li className="mt-2 px-4">
                   <ThemeSwitcher handleCloseMobileMenu={() => handleBurgerMenu('close')} />
