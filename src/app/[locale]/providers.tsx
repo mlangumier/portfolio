@@ -1,16 +1,18 @@
 'use client';
 
-import { ThemeProvider } from 'next-themes';
+import dynamic from 'next/dynamic';
 import React from 'react';
+
+const NextThemesProvider = dynamic(() => import('next-themes').then(e => e.ThemeProvider), { ssr: false });
 
 interface Props {
   children: React.ReactNode;
 }
 const Providers: React.FC<Props> = ({ children }) => {
   return (
-    <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+    <NextThemesProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
       {children}
-    </ThemeProvider>
+    </NextThemesProvider>
   );
 };
 

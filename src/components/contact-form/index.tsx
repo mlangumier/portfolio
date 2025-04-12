@@ -20,8 +20,8 @@ const ContactForm: React.FC = () => {
 
   if (state.status === EStatus.SUCCESS) {
     return (
-      <div className="mx-auto mt-20 max-w-md p-4 text-center">
-        <p className="text-secondary">{t.rich('responseMessages.success', { br: () => <br /> })}</p>
+      <div className="notification-block notification__success">
+        <p className="text-inherit">{t.rich('responseMessages.success', { br: () => <br /> })}</p>
       </div>
     );
   }
@@ -101,8 +101,8 @@ const ContactForm: React.FC = () => {
       />
 
       {state.status === EStatus.ERROR && (
-        <div className="mx-auto max-w-md p-4 text-center">
-          <p className="text-red-400">{state.message}</p>
+        <div className="notification-block notification__error">
+          <p className="text-inherit">{state.message}</p>
         </div>
       )}
 

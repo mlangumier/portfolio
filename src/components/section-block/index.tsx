@@ -38,7 +38,7 @@ const SectionWrapper: React.FC<Props> = ({
         invertedSection && 'bg-background-muted'
       )}
     >
-      <div className={cn('container', containerStyle)}>{children}</div>
+      <div className={cn('container-block', containerStyle)}>{children}</div>
     </section>
   );
 };

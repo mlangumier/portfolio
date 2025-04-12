@@ -24,7 +24,7 @@ const HomepageView = () => {
         containerStyle="flex flex-col-reverse justify-between gap-8 md:flex-row md:gap-12 lg:gap-32"
       >
         <div id="texts" className="text-center md:text-start">
-          <p className="text-primary font-bold md:text-start">{tPage('hero.salutation')}</p>
+          <p className="text-primary text-lg font-bold md:text-start">{tPage('hero.salutation')}</p>
           <h1 className="mt-4 md:mt-2 md:text-start">{tPage('hero.title')}</h1>
           <p className="mt-5 text-lg md:text-start">
             {tPage.rich('hero.description', {
