@@ -41,7 +41,7 @@ const ExperienceCard: React.FC<Props> = ({ item }) => {
               {item.dates} | <span className="font-semibold">{item.business}</span>, {item.location}
             </p>
           </div>
-          <p className="text-foreground-dark">{item.description}</p>
+          <p>{item.description}</p>
         </div>
       </article>
     </div>

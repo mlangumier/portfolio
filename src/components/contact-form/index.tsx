@@ -21,7 +21,7 @@ const ContactForm: React.FC = () => {
   if (state.status === EStatus.SUCCESS) {
     return (
       <div className="mx-auto mt-20 max-w-md p-4 text-center">
-        <p className="text-secondary">{t.rich('responseMessages.success', { br: () => <br /> })}</p>
+        <p className="text-primary">{t.rich('responseMessages.success', { br: () => <br /> })}</p>
       </div>
     );
   }

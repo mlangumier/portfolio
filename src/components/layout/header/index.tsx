@@ -49,7 +49,7 @@ const Header: React.FC<Props> = ({ navItems }) => {
   }, [isMenuOpen]);
 
   return (
-    <header className="bg-background shadow-shadow/50 fixed z-40 w-full shadow-md">
+    <header className="bg-background shadow-shadow/10 fixed z-40 w-full shadow-md">
       <div className="container relative flex h-20 flex-row items-center justify-between">
         {/* Title */}
         <div className="grid w-full grid-cols-[auto_1fr] items-center gap-3 md:w-fit md:grid-cols-[auto_1fr_minmax(0,_2.5rem)]">
