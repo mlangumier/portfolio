@@ -12,7 +12,7 @@
 
   "Components": {
     "Buttons": {
-      "talk": "Let's talk!",
+      "talk": "Let's talk",
       "sendEmail": "Send an email",
       "downloadResume": "Download Resume"
     }

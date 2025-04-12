@@ -1,37 +1,84 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
-
 @import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --primary: var(--color-cyan-800);
+    --accent: var(--color-cyan-700);
+
+    --foreground: var(--color-slate-950);
+    --foreground-muted: var(--color-slate-500);
+    --background: var(--color-white);
+    --background-muted: var(--color-sky-50);
+
+    --border: var(--color-slate-400);
+    --shadow: var(--color-slate-400);
+
+    --background-light: var(--color-white);
+
+    --card-title: var(--color-cyan-800);
+    --card-foreground-muted: var(--color-slate-600);
+
+    --button-foreground: var(--color-white);
+    --button-background: var(--color-cyan-700);
+    --button-background-hover: var(--color-cyan-800);
+
+    --error: var(--color-red-600);
+    --success: var(--color-green-700);
+  }
+
+  .dark {
+    --primary: var(--color-cyan-300);
+    --accent: var(--color-cyan-300);
+
+    --foreground: var(--color-slate-50);
+    --foreground-muted: var(--color-slate-200);
+    --background: var(--color-slate-900);
+    --background-muted: var(--color-slate-800);
+
+    --border: var(--color-slate-500);
+    --shadow: var(--color-slate-500);
+
+    --background-light: var(--color-slate-700);
+
+    --card-title: var(--color-cyan-300);
+    --card-foreground-muted: var(--color-slate-100);
+
+    --button-foreground: var(--color-slate-50);
+    --button-background: var(--color-cyan-900);
+    --button-background-hover: var(--color-cyan-800);
+
+    --error: var(--color-red-400);
+    --success: var(--color-green-400);
+  }
+}
 
 @theme {
   --font-display: "DM Sans", "sans-serif";
 
-  --breakpoint-sm: 576px;
-  --breakpoint-md: 768px;
-  --breakpoint-lg: 1024px;
-  --breakpoint-xl: 1280px;
+  --color-primary: var(--primary);
+  --color-accent: var(--accent);
 
-  --color-primary: hsl(var(--primary));
-  --color-secondary: hsl(var(--secondary));
-  --color-accent: hsl(var(--accent));
-  --color-accent-hover: hsl(var(--accent-hover));
+  --color-foreground: var(--foreground);
+  --color-foreground-muted: var(--foreground-muted);
+  --color-background: var(--background);
+  --color-background-muted: var(--background-muted);
 
-  --color-foreground: hsl(var(--foreground));
-  --color-foreground-muted: hsl(var(--foreground-muted));
-  --color-background: hsl(var(--background));
-  --color-background-muted: hsl(var(--background-muted));
+  --color-border: var(--border);
+  --color-shadow: var(--shadow);
 
-  --color-border: hsl(var(--border));
-  --color-shadow: hsl(var(--shadow) / 0.2);
+  --color-background-light: var(--background-light);
 
-  --color-foreground-dark: hsl(var(--foreground-dark));
-  --color-background-light: hsl(var(--background-light));
+  --color-card-title: var(--card-title);
+  --color-card-foreground-muted: var(--card-foreground-muted);
 
-  --color-card-title: hsl(var(--card-title));
-  --color-card-foreground-muted: hsl(var(--card-foreground-muted));
+  --color-button-foreground: var(--button-foreground);
+  --color-button-background: var(--button-background);
+  --color-button-background-hover: var(--button-background-hover);
 
-  --color-button-foreground: hsl(var(--button-foreground));
-  --color-button-background: hsl(var(--button-background));
-  --color-button-background-hover: hsl(var(--button-background-hover));
+  --color-error: var(--error);
+  --color-success: var(--success);
 
   /* --- ANIMATIONS --- */
 
@@ -64,57 +111,21 @@
 }
 
 @layer base {
-  :root,
-  .light {
-    --hue: 195;
-
-    --primary: var(--hue) 55 25;
-    --secondary: var(--hue) 100 90;
-    --accent: var(--hue) 80 30;
-    --accent-hover: var(--hue) 80 35;
-
-    --foreground: var(--hue) 50 5;
-    --foreground-muted: var(--hue) 20 60;
-    --background: var(--hue) 100 98;
-    --background-muted: var(--hue) 80 95;
-
-    --border: var(--hue) 10 85;
-    --shadow: var(--accent);
-
-    --foreground-dark: var(--hue) 50 5;
-    --background-light: var(--hue) 100 98;
-
-    --card-title: var(--hue) 80 30;
-    --card-foreground-muted: var(--hue) 20 55;
-
-    --button-foreground: var(--hue) 100 98;
-    --button-background: var(--hue) 80 30;
-    --button-background-hover: var(--hue) 80 35;
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
   }
 
-  .dark {
-    --primary: var(--hue) 55 75;
-    --secondary: var(--hue) 100 10;
-    --accent: var(--hue) 80 70;
-    --accent-hover: var(--hue) 80 35;
+  html,
+  body {
+    @apply h-full scroll-p-20 scroll-smooth;
+  }
 
-    --foreground: var(--hue) 50 95;
-    --foreground-muted: var(--hue) 20 50;
-    --background: var(--hue) 100 10;
-    --background-muted: var(--hue) 100 8;
-
-    --border: var(--hue) 50 30;
-    --shadow: var(--accent);
-
-    --foreground-dark: var(--hue) 50 95; /* Bad-naming: inverted in dark-mode */
-    --background-light: var(--hue) 70 15; /* Bad-naming: inverted in dark-mode */
-
-    --card-title: var(--hue) 80 70;
-    --card-foreground-muted: var(--hue) 20 70;
-
-    --button-foreground: var(--hue) 100 2;
-    --button-background: var(--hue) 80 80;
-    --button-background-hover: var(--hue) 80 85;
+  body {
+    @apply bg-background font-display text-foreground min-h-svh text-base;
   }
 
   /** TYPOGRAPHY */
@@ -149,100 +160,84 @@
   }
 }
 
-/*
-  The default border color has changed to `currentColor` in Tailwind CSS v4,
-  so we've added these compatibility styles to make sure everything still
-  looks the same as it did with Tailwind CSS v3.
-
-  If we ever want to remove these styles, we need to add an explicit border
-  color utility to any element that depends on these defaults.
-  */
-@layer base {
-  *,
-  ::after,
-  ::before,
-  ::backdrop,
-  ::file-selector-button {
-    border-color: var(--color-gray-200, currentColor);
-  }
+@utility container-block {
+  @apply container mx-auto px-4;
+}
+@utility border-block {
+  @apply border-border/25 border;
+}
+@utility shadow-block {
+  @apply shadow-shadow/25 shadow-md;
 }
 
-/** SETUP */
-@layer base {
-  * {
-    @apply border-border;
+@layer components {
+  .section-py {
+    @apply py-20 md:py-32;
   }
 
-  html,
-  body {
-    @apply h-full scroll-p-20 scroll-smooth;
+  .section-py-first {
+    @apply py-20 pt-10 md:pb-32 md:pt-32;
   }
 
-  body {
-    @apply bg-background font-display text-foreground min-h-svh text-base;
+  .section-full {
+    @apply min-h-[calc(100vh-5rem)] content-center;
   }
-}
 
-.container {
-  @apply mx-auto p-4 xl:p-0;
-}
+  .nav {
+    @apply hover:text-primary;
+  }
 
-@utility nav {
-  @apply hover:text-primary hover:cursor-pointer;
-}
+  .nav-header {
+    @apply text-lg uppercase;
+  }
 
-@utility nav-header {
-  @apply text-lg uppercase;
-}
+  .nav-mobile {
+    @apply text-xl uppercase;
+  }
 
-@utility nav-mobile {
-  @apply text-xl uppercase;
-}
+  .nav-active {
+    @apply text-accent;
+  }
 
-@utility nav-active {
-  @apply text-accent;
-}
+  .btn {
+    @apply inline-flex flex-row items-center justify-between gap-2 rounded-md px-8 py-4 text-base font-semibold leading-none transition-all duration-150 ease-out hover:gap-8;
+  }
 
-@utility btn {
-  @apply inline-flex flex-row items-center justify-between gap-2 rounded-md px-8 py-4 text-base font-semibold leading-none transition-all duration-150 ease-out hover:gap-8;
-}
+  .btn-primary {
+    @apply bg-button-background text-button-foreground hover:bg-button-background-hover;
+  }
 
-@utility btn-primary {
-  @apply bg-button-background text-button-foreground hover:bg-button-background-hover;
-}
+  .card {
+    @apply shadow-block border-block bg-background-light h-full min-h-10 w-full rounded-lg p-4 transition-all hover:scale-[1.02] hover:shadow-lg;
+  }
 
-@utility card {
-  @apply border-border bg-background-light shadow-shadow h-full min-h-10 w-full rounded-lg border p-4 shadow-md transition-all hover:scale-[1.02] hover:shadow-lg;
-}
+  .title-card {
+    @apply text-card-title text-lg font-bold;
+  }
 
-@utility title-card {
-  @apply text-card-title text-lg font-bold;
-}
+  .card-muted {
+    @apply text-card-foreground-muted font-light;
+  }
 
-@utility card-muted {
-  @apply text-card-foreground-muted text-sm font-light;
-}
+  .form-field {
+    @apply flex flex-col gap-1;
+  }
 
-@utility form-field {
-  @apply flex flex-col gap-1;
-}
+  .form-input {
+    @apply border-block bg-background-light focus:ring-accent w-full rounded-md p-2 focus:ring-2;
+  }
 
-@utility form-input {
-  @apply border-border bg-background-light text-foreground-dark focus:ring-accent w-full rounded-md border p-2 focus:ring-2;
-}
+  .notification-block {
+    @apply mx-auto mt-20 max-w-md rounded-md border-2 p-4 text-center;
+  }
+  .notification__success {
+    @apply border-success/50 text-success;
+  }
+  .notification__error {
+    @apply border-error/50 text-error;
+  }
 
-@utility section-py {
-  @apply py-20 md:py-32;
-}
-
-@utility section-py-first {
-  @apply py-20 pt-10 md:pb-32 md:pt-32;
-}
-
-@utility section-full {
-  @apply min-h-[calc(100vh-5rem)] content-center;
-}
-
-@utility backdrop {
-  @apply backdrop-blur-xs backdrop-brightness-50;
+  .backdrop {
+    @apply backdrop-blur-xs backdrop-brightness-50;
+  }
 }

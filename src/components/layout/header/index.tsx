@@ -49,8 +49,8 @@ const Header: React.FC<Props> = ({ navItems }) => {
   }, [isMenuOpen]);
 
   return (
-    <header className="bg-background shadow-shadow/50 fixed z-40 w-full shadow-md">
-      <div className="container relative flex h-20 flex-row items-center justify-between">
+    <header className="bg-background shadow-block fixed z-40 w-full">
+      <div className="container-block relative flex h-20 flex-row items-center justify-between">
         {/* Title */}
         <div className="grid w-full grid-cols-[auto_1fr] items-center gap-3 md:w-fit md:grid-cols-[auto_1fr_minmax(0,_2.5rem)]">
           <div id="website-name-square" className="bg-accent hidden size-6 rotate-[15deg] md:inline-block" />

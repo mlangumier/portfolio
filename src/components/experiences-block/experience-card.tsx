@@ -18,7 +18,7 @@ const ExperienceCard: React.FC<Props> = ({ item }) => {
       <div
         id="icon"
         className={cn(
-          'border-border bg-accent flex size-6 shrink-0 items-center justify-center rounded-full shadow-md md:order-1 md:group-odd:translate-x-7 md:group-even:-translate-x-7',
+          'bg-accent flex size-6 shrink-0 items-center justify-center rounded-full shadow-md md:order-1 md:group-odd:translate-x-7 md:group-even:-translate-x-7',
           inView ? 'opacity-100 transition-opacity delay-1000 duration-1000 ease-out' : 'opacity-0'
         )}
       />
@@ -32,7 +32,7 @@ const ExperienceCard: React.FC<Props> = ({ item }) => {
         <div
           className={cn(
             'card space-y-4',
-            'before:border-border before:bg-background-light before:absolute before:left-0 before:top-1/2 before:size-5 before:-translate-x-1/2 before:-translate-y-1/2 before:rotate-45 before:border-b before:border-l md:group-odd:before:left-full md:group-odd:before:border-b-0 md:group-odd:before:border-l-0 md:group-odd:before:border-r md:group-odd:before:border-t'
+            'before:border-border/25 before:bg-background-light before:absolute before:left-0 before:top-1/2 before:size-5 before:-translate-x-1/2 before:-translate-y-1/2 before:rotate-45 before:border-b before:border-l md:group-odd:before:left-full md:group-odd:before:border-b-0 md:group-odd:before:border-l-0 md:group-odd:before:border-r md:group-odd:before:border-t'
           )}
         >
           <div>
@@ -41,7 +41,7 @@ const ExperienceCard: React.FC<Props> = ({ item }) => {
               {item.dates} | <span className="font-semibold">{item.business}</span>, {item.location}
             </p>
           </div>
-          <p className="text-foreground-dark">{item.description}</p>
+          <p>{item.description}</p>
         </div>
       </article>
     </div>

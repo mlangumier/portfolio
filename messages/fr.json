@@ -12,7 +12,7 @@
 
   "Components": {
     "Buttons": {
-      "talk": "Discutons !",
+      "talk": "Discutons",
       "sendEmail": "Envoyer un email",
       "downloadResume": "Télécharger le CV"
     }
