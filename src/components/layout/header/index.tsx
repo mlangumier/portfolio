@@ -20,7 +20,7 @@ const Header: React.FC<Props> = ({ navItems }) => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const pathname = usePathname();
   const tHeader = useTranslations('Layout.Header');
-  const isViewportMd = useViewportBreakpoint('sm');
+  const isViewportMd = useViewportBreakpoint('md');
 
   const handleBurgerMenu = (state: 'open' | 'close') => {
     setIsMenuOpen(state === 'open');
@@ -52,21 +52,21 @@ const Header: React.FC<Props> = ({ navItems }) => {
     <header className="bg-background shadow-block fixed z-40 w-full">
       <div className="container-block relative flex h-20 flex-row items-center justify-between">
         {/* Title */}
-        <div className="grid w-full grid-cols-[auto_1fr] items-center gap-3 sm:w-fit sm:grid-cols-[auto_1fr_minmax(0,_2.5rem)]">
-          <div id="website-name-square" className="bg-accent hidden size-6 rotate-[15deg] sm:inline-block" />
-          <BurgerIcon isOpen={isMenuOpen} handleIsOpen={toggleBurgerMenu} className="sm:hidden" />
+        <div className="grid w-full grid-cols-[auto_1fr] items-center gap-3 md:w-fit md:grid-cols-[auto_1fr_minmax(0,_2.5rem)]">
+          <div id="website-name-square" className="bg-accent hidden size-6 rotate-[15deg] md:inline-block" />
+          <BurgerIcon isOpen={isMenuOpen} handleIsOpen={toggleBurgerMenu} className="md:hidden" />
 
           <Link
             href="/"
             onClick={() => handleBurgerMenu('close')}
-            className="text-primary text-nowrap text-center text-2xl font-bold sm:text-wrap sm:text-start"
+            className="text-primary text-nowrap text-center text-2xl font-bold md:text-wrap md:text-start"
           >
             {tHeader('title')}
           </Link>
         </div>
 
         {/* Navigation - Desktop */}
-        <div className="hidden sm:block">
+        <div className="hidden md:block">
           <ul className="flex flex-row items-center gap-6">
             {navItems.map((item: INavRouteItem, i) => (
               <li key={i}>
@@ -87,7 +87,7 @@ const Header: React.FC<Props> = ({ navItems }) => {
         {/* Navigation - Mobile */}
         <div
           className={cn(
-            'fixed inset-0 top-20 z-40 flex flex-row sm:hidden',
+            'fixed inset-0 top-20 z-40 flex flex-row md:hidden',
             'transition-all duration-500 ease-out',
             isMenuOpen ? 'visible left-0' : 'invisible left-[-100%]'
           )}
