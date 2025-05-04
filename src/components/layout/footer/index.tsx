@@ -3,7 +3,7 @@ import React from 'react';
 
 import { socialsList } from '@/data/socials';
 import { Link } from '@/i18n/routing';
-import { INavRouteItem } from '@/utils/types';
+import { INavRouteItem } from '@/types/globals';
 
 import { CategoryBlock } from './category-block';
 

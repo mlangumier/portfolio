@@ -1,4 +1,4 @@
-import { IExternalLink } from '../utils/types';
+import { IExternalLink } from '../types/globals';
 
 export const emailDisplay = 'mathieu.langumier[at]gmail.com';
 
