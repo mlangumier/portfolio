@@ -1,7 +1,7 @@
 import { getTranslations } from 'next-intl/server';
 import React from 'react';
 
-import { PageProps } from '@/utils/types';
+import { PageProps } from '@/types/globals';
 import HomepageView from '@/views/homepage-view';
 
 export async function generateMetadata({ params }: PageProps) {

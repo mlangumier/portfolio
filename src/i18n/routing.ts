@@ -5,6 +5,8 @@ export const routing = defineRouting({
   locales: ['fr', 'en'],
   defaultLocale: 'fr',
   pathnames: {
+    //--- Main portfolio
+
     '/': '/',
     '/about': {
       fr: '/a-propos',
@@ -14,6 +16,14 @@ export const routing = defineRouting({
       fr: '/projets',
       en: '/projects',
     },
+
+    //--- Individual project pages
+
+    // TODO: rename & setup tests
+    // '/project/first-project': {
+    //   fr: '/premier-projet',
+    //   en: '/first-project',
+    // },
   },
 });
 

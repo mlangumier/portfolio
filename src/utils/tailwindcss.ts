@@ -4,7 +4,7 @@ import { twMerge } from 'tailwind-merge';
 export type IBreakpoint = 'sm' | 'md' | 'lg' | 'xl';
 
 export enum EBreakpoints {
-  sm = '576px',
+  sm = '640px',
   md = '768px',
   lg = '1024px',
   xl = '1280px',

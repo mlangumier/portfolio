@@ -7,7 +7,7 @@ import { notFound } from 'next/navigation';
 import React from 'react';
 
 import { ILocale, routing } from '@/i18n/routing';
-import { LayoutProps } from '@/utils/types';
+import { LayoutProps } from '@/types/globals';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 

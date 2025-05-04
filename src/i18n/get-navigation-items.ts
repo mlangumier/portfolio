@@ -1,6 +1,6 @@
 import { getTranslations } from 'next-intl/server';
 
-import { INavRouteItem } from '../utils/types';
+import { INavRouteItem } from '../types/globals';
 
 export const getNavigationRoutes = async () => {
   const t = await getTranslations('Common.Routes');
