@@ -10,12 +10,24 @@ const prettierConfig = {
   jsxSingleQuote: false,
   quoteProps: 'as-needed',
 
-  tailwindConfig: './globals.css',
   tailwindFunctions: ['clsx'],
-
   plugins: ['prettier-plugin-tailwindcss'],
 
   overrides: [
+    // TailwindCSS overrides for multiple config files
+    {
+      files: ['./src/app/(portfolio)/**'],
+      options: {
+        tailwindStylesheet: './src/app/(portfolio)/[locale]/styles.css',
+      },
+    },
+    {
+      files: ['./src/app/(projects)/**'],
+      options: {
+        tailwindStylesheet: './src/app/(projects)/[locale]/styles.css',
+      },
+    },
+    // Other settings
     {
       files: ['*.ts', '*.tsx'],
       options: {

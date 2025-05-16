@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
@@ -128,22 +129,6 @@
     @apply bg-background font-display text-foreground min-h-svh text-base;
   }
 
-  /** TYPOGRAPHY */
-
-  h1,
-  .title-main {
-    @apply text-4xl font-bold;
-  }
-
-  h2,
-  .title-section {
-    @apply text-accent text-3xl font-bold uppercase;
-  }
-
-  .title-category {
-    @apply text-lg font-medium;
-  }
-
   p,
   label,
   .body-text {
@@ -171,16 +156,28 @@
 }
 
 @layer components {
+  .title-main {
+    @apply text-4xl font-bold;
+  }
+
+  .title-category {
+    @apply text-lg font-medium;
+  }
+
   .section-py {
     @apply py-20 md:py-32;
   }
 
   .section-py-first {
-    @apply py-20 pt-10 md:pb-32 md:pt-32;
+    @apply py-20 pt-10 md:pt-32 md:pb-32;
   }
 
   .section-full {
     @apply min-h-[calc(100vh-5rem)] content-center;
+  }
+
+  .section-title {
+    @apply text-accent text-3xl font-bold uppercase;
   }
 
   .nav {
@@ -200,7 +197,7 @@
   }
 
   .btn {
-    @apply inline-flex flex-row items-center justify-between gap-2 rounded-md px-8 py-4 text-base font-semibold leading-none transition-all duration-150 ease-out hover:gap-8;
+    @apply inline-flex flex-row items-center justify-between gap-2 rounded-md px-8 py-4 text-base leading-none font-semibold transition-all duration-150 ease-out hover:cursor-pointer hover:gap-8;
   }
 
   .btn-primary {
@@ -208,7 +205,7 @@
   }
 
   .card {
-    @apply shadow-block border-block bg-background-light h-full min-h-10 w-full rounded-lg p-4 transition-all hover:scale-[1.02] hover:shadow-lg;
+    @apply border-block bg-background-light shadow-block h-full min-h-10 w-full rounded-lg p-4 transition-all hover:scale-[1.02] hover:shadow-lg;
   }
 
   .title-card {

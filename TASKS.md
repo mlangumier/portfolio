@@ -7,11 +7,15 @@ This file is a way to organise the developpement process and regroup some useful
 - [Table of Content](#table-of-content)
 - [Dependencies](#dependencies)
 - [ROADMAP - Current Tasks](#roadmap---current-tasks)
+  - [Routes Setup \& Project pages](#routes-setup--project-pages)
+    - [Update Project Structure](#update-project-structure)
+    - [Integrate New Project](#integrate-new-project)
+    - [Create Projects Page (main route)](#create-projects-page-main-route)
 - [Roadmap - Fixes \& Updates](#roadmap---fixes--updates)
 - [Future Roadmap \& Ideas](#future-roadmap--ideas)
   - [Pages](#pages)
   - [Potential projects](#potential-projects)
-    - [Project Task Manager](#project-task-manager)
+    - [Project / Tasks Manager](#project--tasks-manager)
     - [Interactive Dashboard](#interactive-dashboard)
 - [ROADMAP - Done](#roadmap---done)
   - [Initialisation](#initialisation)
@@ -22,6 +26,7 @@ This file is a way to organise the developpement process and regroup some useful
     - [Design \& planning](#design--planning)
     - [Layout \& Homepage](#layout--homepage)
     - [Animation \& interaction](#animation--interaction)
+  - [Updates](#updates)
 
 ## Dependencies
 
@@ -43,32 +48,53 @@ To add later / when relevant:
 - Redux
 - Database (PostgreSQL?, RESTful API, auth, assets storage)
 - Jest (tests unitaires)
-- Shadcn
+- TailwindCSS library (Shadcn, DaisyUi)
 
 ## ROADMAP - Current Tasks
 
-- [x] Internationalization - Check issue with Next-Intl always using 'en' as default locale (check setup, provider & cookies)
-- [x] Markdown - Update files & formatting, add table of contents (cf. extension)
-- [x] Theme - Dark mode integration
-- [x] Update Tailwind CSS to v4
-- [ ] Architecture - Use `FSD` ([Feature-Slided Design](https://feature-sliced.design/docs/guides/tech/with-nextjs#app-router)) for better clarity & scaling
+### Routes Setup & Project pages
+
+- [ ] Reorganize project structure to account for both:
+
+  - [ ] Projects with different styles: each project will have its own TailwindCSS stylesheet
+  - [ ] Scalable architecture (**FSD**?)
+
+- [ ] Add first project (TBD: WorkShpere or MapLibre)
+
+#### Update Project Structure
+
+- [x] Routes - Reorganize routes allow multiple RootLayouts (one for `main` & one for each project-page (TBD)) -> [Documentation](https://nextjs.org/docs/app/getting-started/project-structure#creating-multiple-root-layouts)
+- [x] Theme - Move `Tailwind CSS` stylesheet to related route -> keep style to the route it affects
+- [ ] Architecture - Use pages & features (FSD?) to organize the project's structure (ex: separate main routes with `pages` folders, then inside use the `FSD`)
+
   - [ ] (Optional) Add eslint-plugin-boundaries to enforce architectural rules ([example here](https://www.youtube.com/watch?v=xyxrB2Aa7KE))
-  - [ ] (Optional) Refactor files & components names to work with React snippets extension (-> PascalCase)
-- [ ] Internationalization (check if both work together, or pick one):
-  - [ ] Reorganize dictionnaires into different files (separate pages & features)
-  - [ ] Add i18n-ally extension for VSCode for easier messages setup & preview
+
+- [ ] Next-intl update setup
+- [ ] i18n - Use different files for each route
+  - [ ] Setup file for new project route
+  - [ ] Update setup to account for multiple files
+  - [ ] (optional) check if VSCode extension `i18n-ally` works with multiple files
+
+#### Integrate New Project
+
+- [ ] Setup - Decide which project to add first and think of setup (style, route)
+- [ ] Integrate existing project into Portfolio
+
+#### Create Projects Page (main route)
+
+- [ ] Design - Find interesting layout to display the projects, think of a preview system (modal or detail page?)
+- [ ] Setup layout
+- [ ] Add project & link to route
+- [ ] Add preview
 
 ## Roadmap - Fixes & Updates
 
 Not linked to any roadmap, to do when relevant or if necessary.
 
-- [ ] Upgrade - Tailwind v4
 - [ ] Config - Transfer VSCode local config to the projet's `.vscode` file (extensions & extensions's setup)
 - [ ] Component - Change language switcher to a `Select` component (if theme switcher is onClick)
 - [ ] Component - Add a scroll-to-top button
-- [ ] Routes - Upon adding new pages, reorganise routes (& reorganize `/data` & `/utils`)
 - [ ] Internationalization - Add translations for accessibility & common items (links, buttons)
-- [ ] Theme - When creating project, check if relevant to use different style files specific to the project's route to override generic style (layout, component, fonts etc.).
 
 ## Future Roadmap & Ideas
 
@@ -80,13 +106,13 @@ Not linked to any roadmap, to do when relevant or if necessary.
 
 ### Potential projects
 
-- Project Manager
+- Project / Tasks Manager
 - Interactive Dashboard
-- D&D Character Creator
-- Mini-game
+- D&D Character Creator (using D&D-2024's SRD & free API)
+- Mini-games
 - Next.js boilerplate repository
 
-#### Project Task Manager
+#### Project / Tasks Manager
 
 (This project would replace this file)
 
@@ -100,7 +126,7 @@ Would be similar to Notion and Jira, but with basic features (inspired by [Auror
 
 #### Interactive Dashboard
 
-Dashboard showing statistics about dev languages & tech:
+Dashboard showing statistics about... (dev languages & tech? TBD):
 
 **Skills & tools**: forms validation, CRUD/services + database, public API fetch (optional), diagrams display (library), specific UI style (ex: neon?), dark mode
 
@@ -232,3 +258,10 @@ Now that our page is looking much better, we're going to add some animations and
   - [x] Setup form validation with Zod
   - [x] Setup email sender
   - [x] Send confirmation email when message is received?
+
+### Updates
+
+- [x] Internationalization - Check issue with Next-Intl always using 'en' as default locale (check setup, provider & cookies)
+- [x] Markdown - Update files & formatting, add table of contents (cf. extension)
+- [x] Theme - Dark mode integration
+- [x] Update Tailwind CSS to v4

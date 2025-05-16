@@ -8,7 +8,7 @@ interface Props {
 
 export const CategoryBlock: React.FC<Props> = ({ title, children, className }) => (
   <div className={className}>
-    <h6 className="title-category">{title}</h6>
+    <p className="title-category">{title}</p>
     <ul className="mt-2 flex flex-col gap-2">{children}</ul>
   </div>
 );

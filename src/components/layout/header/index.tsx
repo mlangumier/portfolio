@@ -59,7 +59,7 @@ const Header: React.FC<Props> = ({ navItems }) => {
           <Link
             href="/"
             onClick={() => handleBurgerMenu('close')}
-            className="text-primary text-nowrap text-center text-2xl font-bold md:text-wrap md:text-start"
+            className="text-primary text-center text-2xl font-bold text-nowrap md:text-start md:text-wrap"
           >
             {tHeader('title')}
           </Link>
@@ -92,7 +92,7 @@ const Header: React.FC<Props> = ({ navItems }) => {
             isMenuOpen ? 'visible left-0' : 'invisible left-[-100%]'
           )}
         >
-          <div className="bg-background max-w-(--breakpoint-sm) flex h-full w-full min-w-fit flex-col gap-4 px-6">
+          <div className="bg-background flex h-full w-full max-w-(--breakpoint-sm) min-w-fit flex-col gap-4 px-6">
             <div className="mt-4">
               <p className="text-foreground-muted font-light uppercase">{tHeader('pages')}</p>
               <ul className="flex h-full flex-col">
