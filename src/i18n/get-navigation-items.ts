@@ -7,8 +7,8 @@ export const getNavigationRoutes = async () => {
 
   const items: INavRouteItem[] = [
     { label: t('home'), pathname: '/' },
-    // { label: t('about'), pathname: '/about' },
-    // { label: t('projects'), pathname: '/projects' },
+    { label: t('projects'), pathname: '/projects' },
+    { label: 'First Project', pathname: '/projects/first' },
   ];
 
   return items;

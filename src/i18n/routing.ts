@@ -5,25 +5,20 @@ export const routing = defineRouting({
   locales: ['fr', 'en'],
   defaultLocale: 'fr',
   pathnames: {
-    //--- Main portfolio
+    //--- (portfolio) Main portfolio
 
     '/': '/',
-    '/about': {
-      fr: '/a-propos',
-      en: '/about',
-    },
     '/projects': {
-      fr: '/projets',
       en: '/projects',
+      fr: '/projets',
     },
 
-    //--- Individual project pages
+    //--- (projects) Individual project pages
 
-    // TODO: rename & setup tests
-    // '/project/first-project': {
-    //   fr: '/premier-projet',
-    //   en: '/first-project',
-    // },
+    '/projects/first': {
+      en: '/projects/first',
+      fr: '/projets/premier',
+    },
   },
 });
 
