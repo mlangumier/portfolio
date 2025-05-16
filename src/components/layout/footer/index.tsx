@@ -16,7 +16,7 @@ const Footer: React.FC<Props> = ({ navItems }) => {
   const tFiles = useTranslations('Common.Files');
 
   return (
-    <footer className="bg-background pt-8 sm:pb-6 md:pb-8 md:pt-12">
+    <footer className="bg-background pt-8 sm:pb-6 md:pt-12 md:pb-8">
       <div className="container-block grid grid-cols-2 grid-rows-2 gap-x-4 gap-y-8 sm:grid-cols-4 sm:grid-rows-1 sm:gap-y-0">
         <CategoryBlock title={tFooter('pages')}>
           {navItems.map((route, i) => (

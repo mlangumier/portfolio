@@ -14,6 +14,6 @@ export async function generateMetadata({ params }: PageProps) {
   };
 }
 
-export default async function Homepage({}: PageProps) {
+export default async function Homepage() {
   return <HomepageView />;
 }

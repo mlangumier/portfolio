@@ -10,8 +10,8 @@ const NotFoundView: React.FC = () => {
 
   return (
     <SectionWrapper id="not-found" full first containerStyle="flex grow flex-col items-center justify-center gap-8">
-      <Image src={notFoundImage} alt="" width={480} height={320} className="max-w-(--breakpoint-sm) w-full" />
-      <p className="title-section text-center">{t('text')}</p>
+      <Image src={notFoundImage} alt="" width={480} height={320} className="w-full max-w-(--breakpoint-sm)" />
+      <p className="section-title text-center">{t('text')}</p>
     </SectionWrapper>
   );
 };

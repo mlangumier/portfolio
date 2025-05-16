@@ -15,8 +15,8 @@ const UnderConstructionView: React.FC = () => {
       first
       containerStyle="flex grow flex-col items-center justify-center gap-8"
     >
-      <Image src={underConstructionImage} alt="" width={480} height={295} className="max-w-(--breakpoint-sm) w-full" />
-      <p className="title-section text-center">{t('text')}</p>
+      <Image src={underConstructionImage} alt="" width={480} height={295} className="w-full max-w-(--breakpoint-sm)" />
+      <p className="section-title text-center">{t('text')}</p>
     </SectionWrapper>
   );
 };

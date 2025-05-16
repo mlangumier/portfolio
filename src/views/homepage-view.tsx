@@ -25,7 +25,7 @@ const HomepageView = () => {
       >
         <div id="texts" className="text-center md:text-start">
           <p className="text-primary text-lg font-bold md:text-start">{tPage('hero.salutation')}</p>
-          <h1 className="mt-4 md:mt-2 md:text-start">{tPage('hero.title')}</h1>
+          <h1 className="title-main mt-4 md:mt-2 md:text-start">{tPage('hero.title')}</h1>
           <p className="mt-5 text-lg md:text-start">
             {tPage.rich('hero.description', {
               jobTitle: chunk => <span className="text-primary font-bold">{chunk}</span>,

@@ -1,10 +1,10 @@
-import { getPathname, ILocale, routing } from '@/i18n/routing';
 import { MetadataRoute } from 'next';
+
+import { getPathname, ILocale, routing } from '@/i18n/routing';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     getEntry('/'),
-    // getEntry('/about'),
     // getEntry('/projects')
   ];
 }
