@@ -11,7 +11,14 @@
 }
 
 @theme {
+  --font-display: "DM Sans", "sans-serif";
   --color-primary: var(--primary);
+}
+
+@layer base {
+  body {
+    @apply font-display;
+  }
 }
 
 /* @layer components {} */

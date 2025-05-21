@@ -1,6 +1,7 @@
 import './styles.css';
 
 import { getMessages, setRequestLocale } from 'next-intl/server';
+import { DM_Sans } from 'next/font/google';
 import { notFound } from 'next/navigation';
 import React from 'react';
 
@@ -12,6 +13,12 @@ import { LayoutProps } from '@/types/globals';
 import Providers from './providers';
 
 import type { Metadata } from 'next';
+
+const dmSans = DM_Sans({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-dm-sans',
+});
 
 export function generateStaticParams() {
   return routing.locales.map(locale => ({ locale }));
@@ -42,7 +49,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
   const messages: IntlMessages = (await getMessages()) as IntlMessages;
 
   return (
-    <DocumentHtml locale={locale} messages={messages}>
+    <DocumentHtml locale={locale} messages={messages} className={dmSans.variable}>
       <Providers>
         <MainLayout>{children}</MainLayout>
       </Providers>
