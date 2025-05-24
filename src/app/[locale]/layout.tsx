@@ -5,15 +5,15 @@ import { DM_Sans } from 'next/font/google';
 import { notFound } from 'next/navigation';
 import React from 'react';
 
-import DocumentHtml from '@/components/document-html';
 import MainLayout from '@/components/layout/main-layout';
 import { ILocale, routing } from '@/i18n/routing';
 import { LayoutProps } from '@/types/globals';
+import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 import Providers from './providers';
 
 import type { Metadata } from 'next';
-
 const dmSans = DM_Sans({
   subsets: ['latin'],
   display: 'swap',
@@ -49,10 +49,14 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
   const messages: IntlMessages = (await getMessages()) as IntlMessages;
 
   return (
-    <DocumentHtml locale={locale} messages={messages} className={dmSans.variable}>
-      <Providers>
-        <MainLayout>{children}</MainLayout>
-      </Providers>
-    </DocumentHtml>
+    <html lang={locale} suppressHydrationWarning className={`${dmSans.variable}`}>
+      <body>
+        <Providers locale={locale} messages={messages}>
+          <MainLayout>{children}</MainLayout>
+          <Analytics />
+          <SpeedInsights />
+        </Providers>
+      </body>
+    </html>
   );
 }

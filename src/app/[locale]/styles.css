@@ -125,13 +125,13 @@
   }
 
   body {
-    @apply bg-background font-display text-foreground min-h-svh text-base;
+    @apply min-h-svh bg-background font-display text-base text-foreground;
   }
 
   p,
   label,
   .body-text {
-    @apply text-foreground text-base font-normal;
+    @apply text-base font-normal text-foreground;
   }
 
   button {
@@ -148,10 +148,10 @@
   @apply container mx-auto px-4;
 }
 @utility border-block {
-  @apply border-border/25 border;
+  @apply border border-border/25;
 }
 @utility shadow-block {
-  @apply shadow-shadow/25 shadow-md;
+  @apply shadow-md shadow-shadow/25;
 }
 
 @layer components {
@@ -176,7 +176,7 @@
   }
 
   .section-title {
-    @apply text-accent text-3xl font-bold uppercase;
+    @apply text-3xl font-bold text-accent uppercase;
   }
 
   .nav {
@@ -204,15 +204,15 @@
   }
 
   .card {
-    @apply border-block bg-background-light shadow-block h-full min-h-10 w-full rounded-lg p-4 transition-all hover:scale-[1.02] hover:shadow-lg;
+    @apply h-full min-h-10 w-full rounded-lg border-block bg-background-light p-4 shadow-block transition-all hover:scale-[1.02] hover:shadow-lg;
   }
 
   .title-card {
-    @apply text-card-title text-lg font-bold;
+    @apply text-lg font-bold text-card-title;
   }
 
   .card-muted {
-    @apply text-card-foreground-muted font-light;
+    @apply font-light text-card-foreground-muted;
   }
 
   .form-field {
@@ -220,7 +220,7 @@
   }
 
   .form-input {
-    @apply border-block bg-background-light focus:ring-accent w-full rounded-md p-2 focus:ring-2;
+    @apply w-full rounded-md border-block bg-background-light p-2 focus:ring-2 focus:ring-accent;
   }
 
   .notification-block {

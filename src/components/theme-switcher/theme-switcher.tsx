@@ -26,9 +26,9 @@ const ThemeSwitcher: React.FC<Props> = ({ handleCloseMobileMenu }) => {
   return (
     <button onClick={() => handleChangeTheme(theme === 'dark' ? 'light' : 'dark')} className="hover:cursor-pointer">
       {theme === 'dark' ? (
-        <MdOutlineLightMode className="fill-primary size-9 md:size-7" />
+        <MdOutlineLightMode className="size-9 fill-primary md:size-7" />
       ) : (
-        <MdDarkMode className="fill-primary size-9 md:size-7" />
+        <MdDarkMode className="size-9 fill-primary md:size-7" />
       )}
     </button>
   );

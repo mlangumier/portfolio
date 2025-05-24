@@ -63,16 +63,13 @@ To add later / when relevant:
 
 #### Update Project Structure
 
-- [x] Routes - Reorganize routes allow multiple RootLayouts (one for `main` & one for each project-page (TBD)) -> [Documentation](https://nextjs.org/docs/app/getting-started/project-structure#creating-multiple-root-layouts)
-- [x] Theme - Move `Tailwind CSS` stylesheet to related route -> keep style to the route it affects
-- [ ] Architecture - Use pages & features (FSD?) to organize the project's structure (ex: separate main routes with `pages` folders, then inside use the `FSD`)
+- [x] Theme - Move `Tailwind CSS` stylesheet to related route
+- [ ] Architecture - Use pages & features (FSD?) to organize the project's structure
 
   - [ ] (Optional) Add eslint-plugin-boundaries to enforce architectural rules ([example here](https://www.youtube.com/watch?v=xyxrB2Aa7KE))
 
-- [ ] Next-intl update setup
-- [ ] i18n - Use different files for each route
-  - [ ] Setup file for new project route
-  - [ ] Update setup to account for multiple files
+- [ ] i18n updates:
+  - [ ] NextIntl update setup
   - [ ] (optional) check if VSCode extension `i18n-ally` works with multiple files
 
 #### Integrate New Project

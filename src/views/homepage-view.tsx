@@ -24,12 +24,12 @@ const HomepageView = () => {
         containerStyle="flex flex-col-reverse justify-between gap-8 md:flex-row md:gap-12 lg:gap-32"
       >
         <div id="texts" className="text-center md:text-start">
-          <p className="text-primary text-lg font-bold md:text-start">{tPage('hero.salutation')}</p>
+          <p className="text-lg font-bold text-primary md:text-start">{tPage('hero.salutation')}</p>
           <h1 className="title-main mt-4 md:mt-2 md:text-start">{tPage('hero.title')}</h1>
           <p className="mt-5 text-lg md:text-start">
             {tPage.rich('hero.description', {
-              jobTitle: chunk => <span className="text-primary font-bold">{chunk}</span>,
-              tech: chunk => <span className="text-primary font-bold">{chunk}</span>,
+              jobTitle: chunk => <span className="font-bold text-primary">{chunk}</span>,
+              tech: chunk => <span className="font-bold text-primary">{chunk}</span>,
             })}
           </p>
           <NavigationLink href={{ pathname: '/', hash: '#contact' }} scroll={true} className="mt-8">
@@ -64,7 +64,7 @@ const HomepageView = () => {
           title={tPage('contact.title')}
           description={tPage.rich('contact.description', {
             emailAddress: emailDisplay,
-            code: chunk => <span className="border-primary border-b font-bold">{chunk}</span>,
+            code: chunk => <span className="border-b border-primary font-bold">{chunk}</span>,
             br: () => <br />,
           })}
         >

@@ -14,7 +14,7 @@ const FormTextArea: React.FC<Props> = ({ label, id, className, errorMessage, ...
   return (
     <div className={cn('form-field', className)}>
       {label && <label htmlFor={id}>{label}</label>}
-      <textarea id={id} {...rest} className={cn('form-input', errorMessage && 'border-error border-2')} />
+      <textarea id={id} {...rest} className={cn('form-input', errorMessage && 'border-2 border-error')} />
 
       {errorMessage && <FormErrorMessage id={id} errorMessage={errorMessage} />}
     </div>

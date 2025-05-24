@@ -32,7 +32,7 @@ const SectionWrapper: React.FC<Props> = ({
     <section
       id={id}
       className={cn(
-        'bg-background overflow-clip',
+        'overflow-clip bg-background',
         first ? 'section-py-first' : 'section-py',
         full && 'section-full',
         invertedSection && 'bg-background-muted'

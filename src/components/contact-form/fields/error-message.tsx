@@ -6,7 +6,7 @@ interface Props {
 }
 const FormErrorMessage: React.FC<Props> = ({ id, errorMessage }) => {
   return (
-    <p id={`${id}-error`} className="text-error ml-2 font-light">
+    <p id={`${id}-error`} className="ml-2 font-light text-error">
       {errorMessage}
     </p>
   );
